@@ -1,6 +1,6 @@
 import streamlit as st
 
-st.image('images/logo_VisionCellAI.png', width=150)
+st.image('images/logo_VisionCellAI.png', width=250)
 
 # Titre principal
 st.title('Cell Vision AI')
