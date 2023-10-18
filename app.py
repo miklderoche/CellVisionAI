@@ -1,7 +1,7 @@
 import streamlit as st
 
 # Afficher une image (remplace 'monimage.jpg' par le chemin d'accès de ton image ou l'URL)
-st.image('/images/logo_VisionCellAI_2.png', use_column_width=True, caption="logo CellVisionAI")
+st.image('images/logo_VisionCellAI_2.png', use_column_width=True, caption="logo CellVisionAI")
 
 # Titre principal
 st.title('Cell Vision AI')
