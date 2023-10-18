@@ -1,11 +1,6 @@
 import streamlit as st
 
-st.markdown(
-    "<img src='images/logo_VisionCellAI_2.png' width='50' height='50'>",
-    unsafe_allow_html=True
-)
-
-st.image('images/logo_VisionCellAI_2.png', width=50)
+st.image('images/logo_VisionCellAI_2.png', width=150)
 
 # Titre principal
 st.title('Cell Vision AI')
