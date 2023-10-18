@@ -1,13 +1,6 @@
 import streamlit as st
 
-# Utilisez du HTML et du CSS pour centrer l'image
-st.markdown("""
-    <div style="display: flex; justify-content: center;">
-        <img src='images/logo_VisionCellAI.png' width='250'>
-    </div>
-    """, 
-    unsafe_allow_html=True
-)
+st.image('images/logo_VisionCellAI.png', width=250, use_column_width='auto')
     
 # Titre principal
 st.title('Cell Vision AI')
