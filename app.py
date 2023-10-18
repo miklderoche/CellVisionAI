@@ -11,7 +11,7 @@ st.markdown(
       margin-right: auto;
     }
     </style>
-    <img src='images/logo_VisionCellAI_2.png' class='center' width='250'>""",
+    <img src='images/logo_VisionCellAI.png' class='center' width='250'>""",
     unsafe_allow_html=True
 )
 
