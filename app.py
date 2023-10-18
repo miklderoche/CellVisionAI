@@ -1,4 +1,5 @@
 import streamlit as st
 
 st.title('Cell Vision AIIIIIII')
-st.write('Bonjour, /nbienvenue dans mon application !')
+st.write('Bonjour,')
+st.write('Bienvenue dans mon application !')
