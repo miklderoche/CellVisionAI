@@ -4,6 +4,8 @@ import streamlit as st
 col1, col2, col3 = st.beta_columns([1,6,1])
 
 # Affichez l'image dans la colonne du milieu
+with col1
+    st.write('Coucou')
 with col2:
     st.image('images/logo_VisionCellAI.png', width=250)
     
