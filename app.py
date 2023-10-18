@@ -2,6 +2,19 @@ import streamlit as st
 
 st.image('images/logo_VisionCellAI.png', width=250, align=center)
 
+st.markdown(
+    """
+    <style>
+    .center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    </style>
+    <img src='images/logo_VisionCellAI_2.png' class='center' width='250'>""",
+    unsafe_allow_html=True
+)
+
 # Titre principal
 st.title('Cell Vision AI')
 
