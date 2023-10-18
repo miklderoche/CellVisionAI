@@ -11,6 +11,3 @@ initial_sidebar_state = "expanded"
 
 [server]
 headless = true
-
-[browser]
-gatherUsageStats = false
