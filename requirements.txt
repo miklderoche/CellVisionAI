@@ -1,0 +1,28 @@
+# Bibliothèques pour le traitement des données
+numpy>=1.21.0
+pandas>=1.3.0
+scipy>=1.7.0
+
+# Bibliothèques pour la visualisation des données
+matplotlib>=3.4.0
+seaborn>=0.11.0
+plotly>=5.0.0
+
+# Bibliothèques pour le machine learning
+scikit-learn>=0.24.0
+tensorflow>=2.5.0  # Si tu prévois d'utiliser TensorFlow
+keras>=2.4.0       # Si tu utilises Keras en tant que bibliothèque de haut niveau pour TensorFlow
+pytorch>=1.9.0     # Si tu prévois d'utiliser PyTorch
+
+# Bibliothèques pour la gestion des données
+sqlalchemy>=1.4.0
+pymysql>=1.0.2     # Si tu utilises MySQL
+psycopg2>=2.9.1    # Si tu utilises PostgreSQL
+
+# Autres outils utiles
+joblib>=1.0.1      # Pour la sérialisation des modèles et autres objets de grande taille
+scikit-image>=0.18.1  # Pour le traitement des images
+
+# Spécifie la version exacte si nécessaire
+# Tu peux spécifier une version exacte en l'écrivant juste après le nom du paquet, par exemple :
+# tensorflow==2.5.0
