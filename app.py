@@ -1,7 +1,12 @@
 import streamlit as st
 
-st.image('images/logo_VisionCellAI.png', width=250)
+# Créez trois colonnes pour centrer l'image
+col1, col2, col3 = st.beta_columns([1,6,1])
 
+# Affichez l'image dans la colonne du milieu
+with col2:
+    st.image('images/logo_VisionCellAI.png', width=250)
+    
 # Titre principal
 st.title('Cell Vision AI')
 
