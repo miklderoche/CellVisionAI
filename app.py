@@ -9,7 +9,6 @@ with cent_co:
 st.title('Cell Vision AI')
 
 # Introduction
-st.header('Introduction')
 st.write(
     '''
     Dans le domaine de la médecine et de la recherche biomédicale, l'analyse des cellules dans les frottis sanguins 
