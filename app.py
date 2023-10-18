@@ -1,6 +1,6 @@
 import streamlit as st
 
-st.image('images/logo_VisionCellAI.png', width=250, align=center)
+st.image('images/logo_VisionCellAI.png', width=250)
 
 st.markdown(
     """
