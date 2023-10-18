@@ -9,6 +9,7 @@ with cent_co:
 st.title('Cell Vision AI')
 
 # Introduction
+st.header('Introduction 1')
 st.write(
     '''
     Dans le domaine de la médecine et de la recherche biomédicale, l'analyse des cellules dans les frottis sanguins 
@@ -19,7 +20,7 @@ st.write(
 )
 
 # Objectif du projet
-
+st.header('Objectif du Projet')
 st.write(
     '''
     L’objectif principal du projet est la création d’algorithmes d’apprentissage machine et d’apprentissage profond 
