@@ -5,6 +5,8 @@ st.markdown(
     unsafe_allow_html=True
 )
 
+st.image('images/logo_VisionCellAI_2.png', width=50)
+
 # Titre principal
 st.title('Cell Vision AI')
 
