@@ -1,15 +1,6 @@
 import streamlit as st
 
-col1, col2, col3 = st.beta_columns([1,6,1])
-
-with col1:
-st.write("")
-
-with col2:
 st.image('images/logo_VisionCellAI.png', width=250)
-
-with col3:
-st.write("")
 
 # Titre principal
 st.title('Cell Vision AI')
