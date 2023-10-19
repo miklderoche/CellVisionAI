@@ -19,7 +19,7 @@ st.write(
 )
 
 # Objectif du projet
-st.header(' du Projet')
+st.header('Objectif du Projet')
 st.write(
     '''
     L’objectif principal du projet est la création d’algorithmes d’apprentissage machine et d’apprentissage profond 
@@ -29,6 +29,7 @@ st.write(
 )
 
 # Equipe du projet
+st.header('Equipe du Projet')
 st.write(
     '''
     CellVisionAI est un projet réalisé par Wilfried Condemine, Michael Deroche, Claudia Mattei et Charles Sallard. Promotion sept23_DS Datascientest.
