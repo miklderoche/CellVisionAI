@@ -42,24 +42,25 @@ def page_accueil():
     )
 
 def page_projet():
-    st.title("Projet")
-    st.write("Voici la page du Projet.")
     # contenu de la page démonstration...
+    st.title("Projet")
+    st.write("Voici la page du projet.")
 
 def page_demo():
+    # contenu de la page démonstration...
     st.title("Démonstration")
     st.write("Voici la page de démonstration.")
-    # contenu de la page démonstration...
 
 def page_resultats():
+    # contenu de la page résultats...
     st.title("Résultats")
     st.write("Voici la page des résultats.")
-    # contenu de la page résultats...
 
 def page_docs():
+    # contenu de la page Documentation...
     st.title("Documentation")
     st.write("Voici la page de documentation.")
-    # contenu de la page Documentation...
+   
 
 # %% (_.~" MENU LATERAL "~._) 
 
