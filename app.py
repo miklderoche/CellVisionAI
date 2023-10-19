@@ -3,7 +3,7 @@ import streamlit as st
 # %% (_.~" PAGES "~._) 
 
 # Fonctions pour chaque page
-def page_projet():
+def page_accueil():
 # contenu de la page d'accueil...
 
     left_co, cent_co,last_co = st.columns(3)
@@ -41,6 +41,11 @@ def page_projet():
     '''
     )
 
+def page_projet():
+    st.title("Projet")
+    st.write("Voici la page du Projet.")
+    # contenu de la page démonstration...
+
 def page_demo():
     st.title("Démonstration")
     st.write("Voici la page de démonstration.")
@@ -64,6 +69,8 @@ if 'page' not in st.session_state:
 st.sidebar.image('images/logo_VisionCellAI_2.png', width=100)
 
 # Menu latéral avec des boutons
+if st.sidebar.button('Accueil'):
+    st.session_state['page'] = 'Accueil'
 if st.sidebar.button('Projet'):
     st.session_state['page'] = 'Projet'
 if st.sidebar.button('Démonstration'):
