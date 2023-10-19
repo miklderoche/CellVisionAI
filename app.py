@@ -11,7 +11,7 @@ def page_projet():
         st.image('images/logo_VisionCellAI.png')
 
 # Titre principal
-    st.title('Cell Vision AI')
+    st.title('Cell Vision AI', "🏠")
 
 # Introduction
     st.write(
