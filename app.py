@@ -27,7 +27,7 @@ def page_accueil():
     st.header('Objectif du Projet')
     st.write(
     '''
-    L’objectif principal du projet est la création d’algorithmes d’apprentissage machine et d’apprentissage profond 
+    L’objectif principal du projet **CellVisionAI** est la création d’algorithmes d’apprentissage machine et d’apprentissage profond 
     dédiés à la reconnaissance et la classification de cellules du sang. Cet outil pourrait être utilisé pour 
     faciliter le diagnostic de la leucémie en détectant des leucocytes anormaux.
     '''
