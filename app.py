@@ -43,7 +43,7 @@ def page_accueil():
 
 # Contenu de la page "Projet"
 def page_projet():
-    st.title("Projet", size=int("30"))
+    st.title("Projet")
     st.header('Le Projet')
 
     # Onglet "Objectif du Projet"
@@ -53,20 +53,17 @@ def page_projet():
                 '''
                 Voici l'objectif du projet.
                 ''',
-                size=16,
             )
             st.write(
                 '''
                 Le projet **CellVisionAI** vise à créer un outil d'aide au diagnostic de la leucémie. Cet outil sera basé sur des algorithmes d'apprentissage machine et d'apprentissage profond capables de reconnaître et de classifier les cellules du sang.
                 ''',
-                size=14,
             )
         elif st.tab_selection == "Fonctionnalités":
             st.write(
                 '''
                 Voici les fonctionnalités du projet.
                 ''',
-                size=16,
             )
             st.write(
                 '''
@@ -75,31 +72,28 @@ def page_projet():
                 * Classification des cellules du sang
                 * Diagnostic de la leucémie
                 ''',
-                size=14,
             )
 
 # Contenu de la page "Démonstration"
 def page_demo():
-    st.title("Démonstration", size=int("30"))
+    st.title("Démonstration")
     st.header('Objectif de la démonstration')
 
     st.write(
         '''
         La démonstration du projet **CellVisionAI** consiste en une interface utilisateur permettant à l'utilisateur de charger une image de frottis sanguin. L'outil est ensuite capable de reconnaître et de classifier les cellules du sang présentes dans l'image.
         ''',
-        size=16,
     )
 
 # Contenu de la page "Résultats"
 def page_resultats():
-    st.title("Résultats", size=int("30"))
+    st.title("Résultats")
     st.header('Objectif des résultats')
 
     st.write(
         '''
         Les résultats du projet **CellVisionAI** sont encore en cours d'évaluation. Cependant, les premiers résultats sont prometteurs. L'outil est capable de reconnaître et de classifier avec précision les cellules du sang présentes dans les frottis
         ''',
-        size=16,
     )
 
 # %% (_.~" MENU LATERAL "~._) 
@@ -162,7 +156,6 @@ if st.session_state['page'] == 'Résultats':
 
         Le projet **CellVisionAI** a le potentiel de révolutionner le diagnostic de la leucémie. Il pourrait permettre aux médecins de diagnostiquer la leucémie plus rapidement et plus précisément, ce qui pourrait améliorer les chances de survie des patients.
         ''',
-        size=14,
     )
 
 # %% (_.~" DOCUMENTATION "~._) 
@@ -175,5 +168,4 @@ if st.session_state['page'] == 'Documentation':
 
         La documentation est disponible en anglais et en français.
         ''',
-        size=14,
     )
