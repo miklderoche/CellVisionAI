@@ -21,7 +21,7 @@ def page_accueil():
     analyse manuelle est fastidieuse, sujette à des erreurs humaines, et peut être chronophage. De plus, cela 
     nécessite de nombreux appareils relativement onéreux et l’utilisation de consommables potentiellement dangereux.
     '''
-)
+    )
 
 # Objectif du projet
     st.header('Objectif du Projet')
