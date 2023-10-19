@@ -89,7 +89,7 @@ if 'page' not in st.session_state:
     st.session_state['page'] = 'Accueil'
 
 # Image en haut du menu latéral
-st.sidebar.image('images/logo_VisionCellAI.png', width="50%")
+st.sidebar.image('images/logo_VisionCellAI.png', width="100")
 
 # Menu latéral avec des boutons
 if st.sidebar.button('Accueil'):
