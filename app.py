@@ -44,7 +44,7 @@ def page_accueil():
 def page_projet():
     # contenu de la page démonstration...
     st.title("Projet")
-    st.header('Objectif du Projet')
+    st.header('Le Projet')
     st.write(
     '''
     Voici la page du projet.
@@ -97,11 +97,11 @@ if st.sidebar.button('Accueil'):
 if st.sidebar.button('Projet'):
    st.session_state['page'] = 'Projet'
 if st.sidebar.button('Démonstration'):
-   st.session_state['page'] = 'Démonstration'
+   st.session_state['page'] = 'Demo'
 if st.sidebar.button('Résultats'):
-   st.session_state['page'] = 'Résultats'
+   st.session_state['page'] = 'Resultats'
 if st.sidebar.button('Documentation'):
-   st.session_state['page'] = 'Documentation'
+   st.session_state['page'] = 'docs'
 
 # Affichage de la page en fonction de l'état de la session
 if st.session_state['page'] == 'Accueil':
