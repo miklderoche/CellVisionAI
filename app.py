@@ -66,7 +66,7 @@ def page_resultats():
     '''
     Voici la page des résultats.
     '''
-    )
+    
 
 def page_docs():
     # contenu de la page Documentation...
