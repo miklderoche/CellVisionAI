@@ -6,7 +6,7 @@ import streamlit as st
 def page_accueil():
     left_co, cent_co, last_co = st.columns(3)
     with cent_co:
-        st.image('images/logo_VisionCellAI.png')
+        st.image('images/logo_VisionCellAI.png', width=200)
 
     st.title('Cell Vision AI')
 
@@ -39,25 +39,26 @@ def page_projet():
     st.title("Projet")
     st.header('Le Projet')
 
-    with st.tabs() as tabs:
-        with tabs.tab("Objectif du Projet"):
-            st.write(
-                '''
-                Voici l'objectif du projet.
-                Le projet **CellVisionAI** vise à créer un outil d'aide au diagnostic de la leucémie. Cet outil sera basé sur des algorithmes d'apprentissage machine et d'apprentissage profond capables de reconnaître et de classifier les cellules du sang.
-                '''
-            )
-            
-        with tabs.tab("Fonctionnalités"):
-            st.write(
-                '''
-                Voici les fonctionnalités du projet.
-                Le projet **CellVisionAI** aura les fonctionnalités suivantes :
-                - Reconnaissance des cellules du sang
-                - Classification des cellules du sang
-                - Diagnostic de la leucémie
-                '''
-            )
+    tab1, tab2 = st.tabs(["Objectif du Projet", "Fonctionnalités"])
+
+    with tab1:
+        st.write(
+            '''
+            Voici l'objectif du projet.
+            Le projet **CellVisionAI** vise à créer un outil d'aide au diagnostic de la leucémie. Cet outil sera basé sur des algorithmes d'apprentissage machine et d'apprentissage profond capables de reconnaître et de classifier les cellules du sang.
+            '''
+        )
+        
+    with tab2:
+        st.write(
+            '''
+            Voici les fonctionnalités du projet.
+            Le projet **CellVisionAI** aura les fonctionnalités suivantes :
+            - Reconnaissance des cellules du sang
+            - Classification des cellules du sang
+            - Diagnostic de la leucémie
+            '''
+        )
 
 def page_demo():
     st.title("Démonstration")
