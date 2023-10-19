@@ -68,6 +68,11 @@ pages = {
 
 selection = st.sidebar.selectbox("", list(pages.keys()))
 
+with st.sidebar:
+    selected = option_menu("Main Menu", ["Home", 'Settings'], 
+        icons=['house', 'gear'], menu_icon="cast", default_index=1)
+    selected
+    
 # Affichage de la page en fonction de la sélection
 pages[selection]()
 
