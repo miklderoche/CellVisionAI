@@ -6,7 +6,7 @@ import streamlit as st
 def page_projet():
 # contenu de la page d'accueil...
 
-left_co, cent_co,last_co = st.columns(3)
+    left_co, cent_co,last_co = st.columns(3)
     with cent_co:
         st.image('images/logo_VisionCellAI.png')
 
