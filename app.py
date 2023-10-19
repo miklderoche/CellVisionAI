@@ -60,8 +60,10 @@ def page_docs():
 if 'page' not in st.session_state:
     st.session_state['page'] = 'Projet'
 
-# Menu latéral avec des boutons
+# Image en haut du menu latéral
 st.sidebar.image('images/logo_VisionCellAI_2.png')
+
+# Menu latéral avec des boutons
 if st.sidebar.button('Projet'):
     st.session_state['page'] = 'Projet'
 if st.sidebar.button('Démonstration'):
