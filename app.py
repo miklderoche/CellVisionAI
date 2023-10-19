@@ -63,7 +63,7 @@ def page_docs():
 
 # Initialisation de l'état de la session
 if 'page' not in st.session_state:
-    st.session_state['page'] = 'Projet'
+    st.session_state['page'] = 'Accueil'
 
 # Image en haut du menu latéral
 st.sidebar.image('images/logo_VisionCellAI_2.png', width=100)
