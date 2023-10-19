@@ -89,14 +89,15 @@ st.sidebar.image('images/logo_VisionCellAI_2.png', width=100)
 
 # Menu latéral avec des boutons
 if st.sidebar.button('Accueil'):
+   st.session_state['page'] = 'Accueil'
 if st.sidebar.button('Projet'):
-    st.session_state['page'] = 'Projet'
+   st.session_state['page'] = 'Projet'
 if st.sidebar.button('Démonstration'):
-    st.session_state['page'] = 'Démonstration'
+   st.session_state['page'] = 'Démonstration'
 if st.sidebar.button('Résultats'):
-    st.session_state['page'] = 'Résultats'
+   st.session_state['page'] = 'Résultats'
 if st.sidebar.button('Documentation'):
-    st.session_state['page'] = 'Documentation'
+   st.session_state['page'] = 'Documentation'
 
 # Affichage de la page en fonction de l'état de la session
 if st.session_state['page'] == 'Accueil':
