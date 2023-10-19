@@ -11,7 +11,7 @@ def page_projet():
         st.image('images/logo_VisionCellAI.png')
 
 # Titre principal
-    st.title('Cell Vision AI', "🏠")
+    st.title('Cell Vision AI')
 
 # Introduction
     st.write(
@@ -62,14 +62,6 @@ if 'page' not in st.session_state:
     st.session_state['page'] = 'Projet'
 
 # Menu latéral avec des boutons
-st.sidebar.markdown("## Menu")
-
-menu_items = {
-    "Projet": "🏠",
-    "Démonstration": "🎥",
-    "Résultats": "📊",
-    "Documentation": "📄"
-}
 
 for item, icon in menu_items.items():
     button_code = f'<a style="text-decoration:none;" href="javascript:void(0);" onclick="document.getElementById(\'{item}\').click();">{icon} {item}</a>'
