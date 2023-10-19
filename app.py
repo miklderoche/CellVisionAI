@@ -56,17 +56,24 @@ def page_docs():
 
 # %% (_.~" MENU LATERAL "~._) 
 
-# Menu latéral
-st.sidebar.title("")
-pages = {
-    "Projet": page_projet,
-    "Démonstration": page_demo,
-    "Résultats": page_resultats,
-    "Documentation": page_docs,
-}
+# Initialisation de l'état de la session
+if 'page' not in st.session_state:
+    st.session_state['page'] = 'Projet'
 
-selection = st.sidebar.selectbox("", list(pages.keys()))
-    
-# Affichage de la page en fonction de la sélection
-pages[selection]()
+# Menu latéral avec des boutons
+st.sidebar.title("Menu")
+if st.sidebar.button('Projet'):
+    st.session_state['page'] = 'Projet'
+if st.sidebar.button('Démonstration'):
+    st.session_state['page'] = 'Démonstration'
+if st.sidebar.button('Résultats'):
+    st.session_state['page'] = 'Résultats'
+if st.sidebar.button('Documentation'):
+    st.session_state['page'] = 'Documentation'
+
+# Affichage de la page en fonction de l'état de la session
+if st.session_state['page'] == 'Projet':
+    page_projet()
+elif st.session_state['page'] == 'Démonstration':
+    page_demo()
 
