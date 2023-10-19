@@ -29,7 +29,6 @@ st.write(
 )
 
 # Equipe du projet
-st.header('Equipe du Projet')
 st.write(
     '''
     CellVisionAI est un projet réalisé par Wilfried Condemine, Michael Deroche, Claudia Mattei et Charles Sallard. Promotion sept23_DS Datascientest.
