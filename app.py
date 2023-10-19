@@ -62,16 +62,30 @@ if 'page' not in st.session_state:
     st.session_state['page'] = 'Projet'
 
 # Menu latéral avec des boutons
-st.image('images/logo_VisionCellAI.png')
-st.sidebar.title("")
-if st.sidebar.button('Projet'):
-    st.session_state['page'] = 'Projet'
-if st.sidebar.button('Démonstration'):
-    st.session_state['page'] = 'Démonstration'
-if st.sidebar.button('Résultats'):
-    st.session_state['page'] = 'Résultats'
-if st.sidebar.button('Documentation'):
-    st.session_state['page'] = 'Documentation'
+st.sidebar.markdown("## Menu")
+
+menu_items = {
+    "Projet": "🏠",
+    "Démonstration": "🎥",
+    "Résultats": "📊",
+    "Documentation": "📄"
+}
+
+for item, icon in menu_items.items():
+    button_code = f'<a style="text-decoration:none;color:white;" href="javascript:void(0);" onclick="document.getElementById(\'{item}\').click();">{icon} {item}</a>'
+    st.sidebar.markdown(button_code, unsafe_allow_html=True)
+    if st.sidebar.button(item, key=item, on_click=lambda x=item: st.session_state.update({"page": x}), help=f"Cliquez pour aller à {item}"):
+        pass
+
+# CSS pour l'effet de survol
+hover_css = """
+<style>
+a:hover {{
+    color: red;
+}}
+</style>
+"""
+st.sidebar.markdown(hover_css, unsafe_allow_html=True)
 
 # Affichage de la page en fonction de l'état de la session
 if st.session_state['page'] == 'Projet':
