@@ -89,3 +89,36 @@ def page_docs():
     Voici la page de la documentation.
     '''
     )
+
+# %% (_.~" MENU LATERAL "~._) 
+
+# Initialisation de l'état de la session
+if 'page' not in st.session_state:
+    st.session_state['page'] = 'Accueil'
+
+# Image en haut du menu latéral
+st.sidebar.image('images/logo_VisionCellAI.png', width=100)
+
+# Menu latéral avec des boutons
+if st.sidebar.button('Accueil'):
+   st.session_state['page'] = 'Accueil'
+if st.sidebar.button('Projet'):
+   st.session_state['page'] = 'Projet'
+if st.sidebar.button('Démonstration'):
+   st.session_state['page'] = 'Démonstration'
+if st.sidebar.button('Résultats'):
+   st.session_state['page'] = 'Résultats'
+if st.sidebar.button('Documentation'):
+   st.session_state['page'] = 'Documentation'
+
+# Affichage de la page en fonction de l'état de la session
+if st.session_state['page'] == 'Accueil':
+    page_accueil()
+if st.session_state['page'] == 'Projet':
+    page_projet()
+if st.session_state['page'] == 'Démonstration':
+    page_demo()
+if st.session_state['page'] == 'Résultats':
+    page_resultats()
+if st.session_state['page'] == 'Documentation':
+    page_docs()
