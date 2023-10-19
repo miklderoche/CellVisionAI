@@ -58,10 +58,15 @@ def page_docs():
 
 # Menu latéral
 
-with st.sidebar:
-    selected = option_menu("Main Menu", ["Home", 'Settings'], 
-        icons=['house', 'gear'], menu_icon="cast", default_index=1)
-    selected
+st.sidebar.title("")
+pages = {
+    "Projet": page_projet,
+    "Démonstration": page_demo,
+    "Résultats": page_resultats,
+    "Documentation": page_docs,
+}
+
+selection = st.sidebar.selectbox("", list(pages.keys()))
     
 # Affichage de la page en fonction de la sélection
 pages[selection]()
