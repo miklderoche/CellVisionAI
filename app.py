@@ -108,9 +108,9 @@ if st.session_state['page'] == 'Accueil':
     page_accueil()
 if st.session_state['page'] == 'Projet':
     page_projet()
-elif st.session_state['page'] == 'Démonstration':
+if st.session_state['page'] == 'Démonstration':
     page_demo()
-elif st.session_state['page'] == 'Résultats':
+if st.session_state['page'] == 'Résultats':
     page_resultats()
-elif st.session_state['page'] == 'Documentation':
+if st.session_state['page'] == 'Documentation':
     page_docs()
