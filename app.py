@@ -63,7 +63,7 @@ def page_docs():
 
 # Initialisation de l'état de la session
 if 'page' not in st.session_state:
-    st.session_state['page'] = 'Projet'
+    st.session_state['page'] = 'Accueil'
 
 # Image en haut du menu latéral
 st.sidebar.image('images/logo_VisionCellAI_2.png', width=100)
@@ -82,7 +82,7 @@ if st.sidebar.button('Documentation'):
 
 # Affichage de la page en fonction de l'état de la session
 if st.session_state['page'] == 'Accueil':
-    page_projet()
+    page_accueil()
 elif st.session_state['page'] == 'Projet':
-    page_demo()
+    page_projet()
 
