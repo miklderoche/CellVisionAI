@@ -88,7 +88,7 @@ a:hover {{
 st.sidebar.markdown(hover_css, unsafe_allow_html=True)
 
 # Affichage de la page en fonction de l'état de la session
-if st.session_state['page'] == 'Projet':
+if st.session_state['page'] == 'Accueil':
     page_projet()
 elif st.session_state['page'] == 'Démonstration':
     page_demo()
