@@ -44,6 +44,20 @@ def page_accueil():
 def page_projet():
     # contenu de la page démonstration...
     st.title("Projet")
+            # Onglet "Objectif de la démonstration"
+    with st.tabs(["Introduction", "Les données", "Contexte", "Analyse"]):
+        if st.tab_selection == "Introduction":
+            st.write(
+                '''
+                Cet onglet présente l'introduction.
+                '''
+            )
+        elif st.tab_selection == "Les données":
+            st.write(
+                '''
+                Cet onglet présente les données à disposition.
+                '''
+            )
     st.header('Le Projet')
     st.write(
     '''
