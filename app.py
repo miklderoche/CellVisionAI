@@ -39,7 +39,7 @@ def page_projet():
     st.title("Projet")
     st.header('Le Projet')
 
-    with st.tabs(selected_key="Objectif du Projet") as tabs:
+    with st.tabs() as tabs:
         with tabs.tab("Objectif du Projet"):
             st.write(
                 '''
