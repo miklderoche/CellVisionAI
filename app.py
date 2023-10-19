@@ -80,8 +80,13 @@ for item, icon in menu_items.items():
 # CSS pour l'effet de survol
 hover_css = """
 <style>
+a {{
+    border: none;
+}}
 a:hover {{
-    color: red;
+    border: 1px solid #f63366;
+    border-radius: 5px;
+    padding: 5px;
 }}
 </style>
 """
