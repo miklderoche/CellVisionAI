@@ -44,6 +44,7 @@ def page_accueil():
 def page_projet():
     # contenu de la page démonstration...
     st.title("Projet")
+    st.header('Objectif du Projet')
     st.write(
     '''
     Voici la page du projet.
@@ -53,6 +54,7 @@ def page_projet():
 def page_demo():
     # contenu de la page démonstration...
     st.title("Démonstration")
+    st.header('Objectif de la démonstration')
     st.write(
     '''
     Voici la page de la démonstration.
@@ -62,6 +64,7 @@ def page_demo():
 def page_resultats():
     # contenu de la page résultats...
     st.title("Résultats")
+    st.header('Objectif des résultats')
     st.write(
     '''
     Voici la page des résultats.
@@ -71,6 +74,7 @@ def page_resultats():
 def page_docs():
     # contenu de la page Documentation...
     st.title("Documentation")
+    st.header('Objectif de la documentation')
     st.write(
     '''
     Voici la page de la documentation.
