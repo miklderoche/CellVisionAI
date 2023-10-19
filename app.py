@@ -57,44 +57,16 @@ def page_docs():
 # %% (_.~" MENU LATERAL "~._) 
 
 # Menu latéral
-# Initialisation de l'état de la session
-if 'page' not in st.session_state:
-    st.session_state['page'] = 'Projet'
-
-# Menu latéral avec des boutons
-st.sidebar.markdown("## Menu")
-
-menu_items = {
-    "Projet": "🏠",
-    "Démonstration": "🎥",
-    "Résultats": "📊",
-    "Documentation": "📄"
+st.sidebar.title("")
+pages = {
+    "Projet": page_projet,
+    "Démonstration": page_demo,
+    "Résultats": page_resultats,
+    "Documentation": page_docs,
 }
 
-for item, icon in menu_items.items():
-    button_code = f'<a style="text-decoration:none;color:white;" href="javascript:void(0);" onclick="document.getElementById(\'{item}\').click();">{icon} {item}</a>'
-    st.sidebar.markdown(button_code, unsafe_allow_html=True)
-    if st.sidebar.button(item, key=item, on_click=lambda x=item: st.session_state.update({"page": x}), help=f"Cliquez pour aller à {item}"):
-        pass
-
-# CSS pour l'effet de survol
-hover_css = """
-<style>
-a {{
-    border: none;
-}}
-a:hover {{
-    border: 1px solid #f63366;
-    border-radius: 5px;
-    padding: 5px;
-}}
-</style>
-"""
-st.sidebar.markdown(hover_css, unsafe_allow_html=True)
-
-# Affichage de la page en fonction de l'état de la session
-if st.session_state['page'] == 'Accueil':
-    page_projet()
-elif st.session_state['page'] == 'Démonstration':
-    page_demo()
+selection = st.sidebar.selectbox("", list(pages.keys()))
+    
+# Affichage de la page en fonction de la sélection
+pages[selection]()
 
