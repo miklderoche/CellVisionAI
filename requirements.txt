@@ -1,15 +1,10 @@
-# Bibliothèques pour le traitement des données
 numpy>=1.21.0
 pandas>=1.3.0
-scipy>=1.7.0
-
-# Bibliothèques pour la visualisation des données
 matplotlib>=3.4.0
 seaborn>=0.11.0
 plotly>=5.0.0
-
-# Autres bibliothèques nécessaires
 Pillow
 opencv-python
 st-aggrid
 streamlit-option-menu
+streamlit
