@@ -44,7 +44,11 @@ def page_accueil():
 def page_projet():
     # contenu de la page démonstration...
     st.title("Projet")
-    st.write("Voici la page du projet.")
+    st.write(
+    '''
+    Voici la page du projet.
+    '''
+    )
 
 def page_demo():
     # contenu de la page démonstration...
