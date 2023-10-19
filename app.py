@@ -65,7 +65,7 @@ pages = {
     "Documentation": page_docs,
 }
 
-selection = st.sidebar.title("hh", list(pages.keys()))
+selection = st.sidebar.checkbox("", list(pages.keys()))
 
 # Affichage de la page en fonction de la sélection
 pages[selection]()
