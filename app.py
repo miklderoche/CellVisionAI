@@ -106,7 +106,7 @@ if st.sidebar.button('Documentation'):
 # Affichage de la page en fonction de l'état de la session
 if st.session_state['page'] == 'Accueil':
     page_accueil()
-elif st.session_state['page'] == 'Projet':
+if st.session_state['page'] == 'Projet':
     page_projet()
 elif st.session_state['page'] == 'Démonstration':
     page_demo()
