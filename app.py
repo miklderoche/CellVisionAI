@@ -62,7 +62,7 @@ if 'page' not in st.session_state:
     st.session_state['page'] = 'Projet'
 
 # Menu latéral avec des boutons
-
+st.sidebar.title("")
 if st.sidebar.button('Projet'):
     st.session_state['page'] = 'Projet'
 if st.sidebar.button('Démonstration'):
