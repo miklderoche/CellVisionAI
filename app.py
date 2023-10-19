@@ -4,12 +4,11 @@ import streamlit as st
 
 # Fonctions pour chaque page
 def page_projet():
-    st.title("Projet")    
-    # contenu de la page d'accueil...
+# contenu de la page d'accueil...
 
-    left_co, cent_co,last_co = st.columns(3)
-    with cent_co:
-        st.image('images/logo_VisionCellAI.png')
+left_co, cent_co,last_co = st.columns(3)
+with cent_co:
+    st.image('images/logo_VisionCellAI.png')
 
 # Titre principal
     st.title('Cell Vision AI')
