@@ -19,7 +19,7 @@ st.write(
 )
 
 # Objectif du projet
-st.header('Objectif du Projet')
+st.header(' du Projet')
 st.write(
     '''
     L’objectif principal du projet est la création d’algorithmes d’apprentissage machine et d’apprentissage profond 
