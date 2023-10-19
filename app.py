@@ -28,6 +28,10 @@ st.write(
     '''
 )
 
-# Tu peux ajouter d'autres sections si nécessaire, par exemple:
-# st.header('Méthodologie')
-# st.write('...')
+# Equipe du projet
+st.header('Equipe du Projet')
+st.write(
+    '''
+    CellVisionAI est un projet réalisé par Wilfried Condemine, Michael Deroche, Claudia Mattei et Charles Sallard. Promotion sept23_DS Datascientest.
+    '''
+)
