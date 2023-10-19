@@ -12,6 +12,7 @@ with st.sidebar:
                    "Machine Learning",
                    "Analyses",
                    "Conclusion",]
+)
         
 left_co, cent_co,last_co = st.columns(3)
 with cent_co:
