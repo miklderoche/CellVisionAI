@@ -4,14 +4,14 @@ import streamlit as st
 
 with st.sidebar:
     selectedMenu = option_menu(
-        menu_title = "Switch bestsellers",
-        menu_icon= "nintendo-switch",
+        menu_title = "Cell Vision AI",
+        menu_icon= "",
         options = ["Projet",
                    "Contexte",
-                   "Methodologie",
+                   "Méthodologie",
+                   "Machine Learning",
                    "Analyses",
-                   "Conclusion",
-                   "Scrap-App"]
+                   "Conclusion",]
         
 left_co, cent_co,last_co = st.columns(3)
 with cent_co:
