@@ -58,15 +58,15 @@ def page_docs():
 
 # Menu latéral
 st.sidebar.title("")
-pages = {
-    "Projet": page_projet,
-    "Démonstration": page_demo,
-    "Résultats": page_resultats,
-    "Documentation": page_docs,
-}
 
-selection = st.sidebar.selectbox("", list(pages.keys()))
-    
-# Affichage de la page en fonction de la sélection
-pages[selection]()
+if st.sidebar.button('Projet'):
+    page_projet()
+elif st.sidebar.button('Démonstration'):
+    page_demo()
+elif st.sidebar.button('Résultats'):
+    page_resultats()
+elif st.sidebar.button('Documentation'):
+    page_docs()
+else:
+    page_projet()  # affiche la page du projet par défaut
 
