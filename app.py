@@ -82,3 +82,26 @@ def page_resultats():
 
 def page_docs():
     # contenu
+    st.title("Documentation")
+    st.header('Objectif de la documentation')
+    st.write(
+    '''
+    Voici la page de la documentation.
+    '''
+    )
+   
+
+# %% (_.~" MENU LATERAL "~._) 
+
+# Initialisation de l'état de la session
+if 'page' not in st.session_state:
+    st.session_state['page'] = 'Accueil'
+
+# Image en haut du menu latéral
+st.sidebar.image('images/logo_VisionCellAI.png', width=100)
+
+# Menu latéral avec des boutons
+if st.sidebar.button('Accueil'):
+   st.session_state['page'] = 'Accueil'
+if st.sidebar.button('Projet'):
+   st.session
