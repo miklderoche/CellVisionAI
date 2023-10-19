@@ -63,7 +63,7 @@ pages = {
     "Démonstration": page_demo,
     "Résultats": page_resultats,
     "Documentation": page_docs,
-    }
+}
 
 selection = st.sidebar.selectbox("", list(pages.keys()))
     
