@@ -54,10 +54,9 @@ def page_docs():
     st.title("Documentation")
     # contenu de la page Documentation...
 
-# %% (_.~" MENU BARRE LATERALE "~._) 
+# %% (_.~" MENU LATERAL "~._) 
 
 # Menu latéral
-
 st.sidebar.title("")
 pages = {
     "Projet": page_projet,
