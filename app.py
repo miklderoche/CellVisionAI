@@ -1,18 +1,4 @@
 import streamlit as st
-
-# %%% Navigation
-
-with st.sidebar:
-    selectedMenu = option_menu(
-        menu_title = "Cell Vision AI",
-        menu_icon= "",
-        options = ["Projet",
-                   "Contexte",
-                   "Méthodologie",
-                   "Machine Learning",
-                   "Analyses",
-                   "Conclusion",]
-)
         
 left_co, cent_co,last_co = st.columns(3)
 with cent_co:
