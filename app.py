@@ -58,7 +58,7 @@ def page_docs():
 
 # Menu latéral
 
-st.sidebar.selectbox("")
+st.sidebar.title("")
 pages = {
     "Projet": page_projet,
     "Démonstration": page_demo,
