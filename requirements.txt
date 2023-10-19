@@ -13,4 +13,4 @@ streamlit-option-menu
 Pillow
 opencv-python
 st-aggrid
-
+pip install streamlit-option-menu
