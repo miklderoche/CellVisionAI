@@ -43,7 +43,7 @@ def page_accueil():
 
 # Contenu de la page "Projet"
 def page_projet():
-    st.title("Projet", size=30)
+    st.title("Projet", size=int("30"))
     st.header('Le Projet')
 
     # Onglet "Objectif du Projet"
@@ -80,7 +80,7 @@ def page_projet():
 
 # Contenu de la page "Démonstration"
 def page_demo():
-    st.title("Démonstration", size=30)
+    st.title("Démonstration", size=int("30"))
     st.header('Objectif de la démonstration')
 
     st.write(
@@ -92,7 +92,7 @@ def page_demo():
 
 # Contenu de la page "Résultats"
 def page_resultats():
-    st.title("Résultats", size=30)
+    st.title("Résultats", size=int("30"))
     st.header('Objectif des résultats')
 
     st.write(
