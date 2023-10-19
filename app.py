@@ -97,15 +97,20 @@ if st.sidebar.button('Accueil'):
 if st.sidebar.button('Projet'):
    st.session_state['page'] = 'Projet'
 if st.sidebar.button('Démonstration'):
-   st.session_state['page'] = 'Demo'
+   st.session_state['page'] = 'Démonstration'
 if st.sidebar.button('Résultats'):
-   st.session_state['page'] = 'Resultats'
+   st.session_state['page'] = 'Résultats'
 if st.sidebar.button('Documentation'):
-   st.session_state['page'] = 'docs'
+   st.session_state['page'] = 'Documentation'
 
 # Affichage de la page en fonction de l'état de la session
 if st.session_state['page'] == 'Accueil':
     page_accueil()
 elif st.session_state['page'] == 'Projet':
     page_projet()
-
+elif st.session_state['page'] == 'Démonstration':
+    page_demo()
+elif st.session_state['page'] == 'Résultats':
+    page_resultats()
+elif st.session_state['page'] == 'Documentation':
+    page_docs()
