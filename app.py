@@ -57,7 +57,7 @@ def page_docs():
 # %% (_.~" MENU LATERAL "~._) 
 
 # Menu latéral
-st.sidebar.title("")
+st.sidebar.title("Accueil")
 pages = {
     "Projet": page_projet,
     "Démonstration": page_demo,
@@ -65,7 +65,7 @@ pages = {
     "Documentation": page_docs,
 }
 
-selection = st.sidebar.selectbox("", list(pages.keys()))
+selection = st.sidebar.selectbox("Select", list(pages.keys()))
     
 # Affichage de la page en fonction de la sélection
 pages[selection]()
