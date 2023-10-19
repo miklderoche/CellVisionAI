@@ -31,6 +31,6 @@ st.write(
 st.write(
     '''
     **Projet réalisé par Wilfried Condemine, Michael Deroche, Claudia Mattei et Charles Sallard**.
-    /n(Promotion sept23_DS Datascientest)
+    (Promotion sept23_DS Datascientest)
     '''
 )
