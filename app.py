@@ -1,21 +1,5 @@
 import streamlit as st
 
-# %% (_.~" MENU BARRE LATERALE "~._) 
-
-# Menu latéral
-st.sidebar.title("Navigation")
-pages = {
-    "Projet": page_projet,
-    "Démonstration": page_demo,
-    "Résultats": page_resultats,
-    "Documentation": page_docs,
-}
-
-selection = st.sidebar.radio("Sélectionner une page", list(pages.keys()))
-
-# Affichage de la page en fonction de la sélection
-pages[selection]()
-
 # %% (_.~" PAGES "~._) 
 
 # Fonctions pour chaque page
@@ -71,11 +55,19 @@ def page_docs():
     st.title("Documentation")
     # contenu de la page Documentation...
 
+# %% (_.~" MENU BARRE LATERALE "~._) 
+
 # Menu latéral
 st.sidebar.title("Navigation")
-selection = st.sidebar.radio("Aller à", list(pages.keys()))
+pages = {
+    "Projet": page_projet,
+    "Démonstration": page_demo,
+    "Résultats": page_resultats,
+    "Documentation": page_docs,
+}
+
+selection = st.sidebar.radio("Sélectionner une page", list(pages.keys()))
 
 # Affichage de la page en fonction de la sélection
-page = pages[selection]
-page()
+pages[selection]()
 
