@@ -89,7 +89,6 @@ st.sidebar.image('images/logo_VisionCellAI_2.png', width=100)
 
 # Menu latéral avec des boutons
 if st.sidebar.button('Accueil'):
-    st.session_state['page'] = 'Accueil'
 if st.sidebar.button('Projet'):
     st.session_state['page'] = 'Projet'
 if st.sidebar.button('Démonstration'):
