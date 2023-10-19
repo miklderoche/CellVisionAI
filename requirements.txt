@@ -8,9 +8,8 @@ matplotlib>=3.4.0
 seaborn>=0.11.0
 plotly>=5.0.0
 
+# Autres bibliothèques nécessaires
 Pillow
 opencv-python
 st-aggrid
-
-pip install streamlit-option-menu
-from streamlit_option_menu import option_menu
+streamlit-option-menu
