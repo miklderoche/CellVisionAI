@@ -4,16 +4,12 @@ import streamlit as st
 
 # Fonctions pour chaque page
 def page_accueil():
-# contenu de la page d'accueil...
-
-    left_co, cent_co,last_co = st.columns(3)
+    left_co, cent_co, last_co = st.columns(3)
     with cent_co:
         st.image('images/logo_VisionCellAI.png')
 
-# Titre principal
     st.title('Cell Vision AI')
 
-# Introduction
     st.write(
     '''
     Dans le domaine de la médecine et de la recherche biomédicale, l'analyse des cellules dans les frottis sanguins 
@@ -23,7 +19,6 @@ def page_accueil():
     '''
     )
 
-# Objectif du projet
     st.header('Objectif du Projet')
     st.write(
     '''
@@ -33,7 +28,6 @@ def page_accueil():
     '''
     )
 
-# Equipe du projet
     st.write(
     '''
     **Projet réalisé par Wilfried Condemine, Michael Deroche, Claudia Mattei et Charles Sallard**.
@@ -41,40 +35,30 @@ def page_accueil():
     '''
     )
 
-# Contenu de la page "Projet"
 def page_projet():
     st.title("Projet")
     st.header('Le Projet')
 
-    # Onglet "Objectif du Projet"
-    with st.tabs(["Objectif du Projet", "Fonctionnalités"]):
-        if st.tab_selection == "Objectif du Projet":
+    with st.tabs(selected_key="Objectif du Projet") as tabs:
+        with tabs.tab("Objectif du Projet"):
             st.write(
                 '''
                 Voici l'objectif du projet.
-                ''',
-            )
-            st.write(
-                '''
                 Le projet **CellVisionAI** vise à créer un outil d'aide au diagnostic de la leucémie. Cet outil sera basé sur des algorithmes d'apprentissage machine et d'apprentissage profond capables de reconnaître et de classifier les cellules du sang.
-                ''',
+                '''
             )
-        elif st.tab_selection == "Fonctionnalités":
+            
+        with tabs.tab("Fonctionnalités"):
             st.write(
                 '''
                 Voici les fonctionnalités du projet.
-                ''',
-            )
-            st.write(
-                '''
                 Le projet **CellVisionAI** aura les fonctionnalités suivantes :
-                * Reconnaissance des cellules du sang
-                * Classification des cellules du sang
-                * Diagnostic de la leucémie
-                ''',
+                - Reconnaissance des cellules du sang
+                - Classification des cellules du sang
+                - Diagnostic de la leucémie
+                '''
             )
 
-# Contenu de la page "Démonstration"
 def page_demo():
     st.title("Démonstration")
     st.header('Objectif de la démonstration')
@@ -82,18 +66,25 @@ def page_demo():
     st.write(
         '''
         La démonstration du projet **CellVisionAI** consiste en une interface utilisateur permettant à l'utilisateur de charger une image de frottis sanguin. L'outil est ensuite capable de reconnaître et de classifier les cellules du sang présentes dans l'image.
-        ''',
+        '''
     )
 
-# Contenu de la page "Résultats"
 def page_resultats():
     st.title("Résultats")
     st.header('Objectif des résultats')
 
     st.write(
         '''
-        Les résultats du projet **CellVisionAI** sont encore en cours d'évaluation. Cependant, les premiers résultats sont prometteurs. L'outil est capable de reconnaître et de classifier avec précision les cellules du sang présentes dans les frottis
-        ''',
+        Les résultats du projet **CellVisionAI** sont encore en cours d'évaluation. Cependant, les premiers résultats sont prometteurs. L'outil est capable de reconnaître et de classifier avec précision les cellules du sang présentes dans les frottis sanguins.
+        '''
+    )
+
+def page_docs():
+    st.title("Documentation")
+    st.write(
+        '''
+        La documentation du projet **CellVisionAI** est en cours de préparation.
+        '''
     )
 
 # %% (_.~" MENU LATERAL "~._) 
@@ -107,24 +98,24 @@ st.sidebar.image('images/logo_VisionCellAI.png', width=100)
 
 # Menu latéral avec des boutons
 if st.sidebar.button('Accueil'):
-   st.session_state['page'] = 'Accueil'
+    st.session_state['page'] = 'Accueil'
 if st.sidebar.button('Projet'):
-   st.session_state['page'] = 'Projet'
+    st.session_state['page'] = 'Projet'
 if st.sidebar.button('Démonstration'):
-   st.session_state['page'] = 'Démonstration'
+    st.session_state['page'] = 'Démonstration'
 if st.sidebar.button('Résultats'):
-   st.session_state['page'] = 'Résultats'
+    st.session_state['page'] = 'Résultats'
 if st.sidebar.button('Documentation'):
-   st.session_state['page'] = 'Documentation'
+    st.session_state['page'] = 'Documentation'
 
 # Affichage de la page en fonction de l'état de la session
 if st.session_state['page'] == 'Accueil':
     page_accueil()
-if st.session_state['page'] == 'Projet':
+elif st.session_state['page'] == 'Projet':
     page_projet()
-if st.session_state['page'] == 'Démonstration':
+elif st.session_state['page'] == 'Démonstration':
     page_demo()
-if st.session_state['page'] == 'Résultats':
+elif st.session_state['page'] == 'Résultats':
     page_resultats()
-if st.session_state['page'] == 'Documentation':
+elif st.session_state['page'] == 'Documentation':
     page_docs()
