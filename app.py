@@ -30,6 +30,11 @@ st.write(
 # Equipe du projet
 st.write(
     '''
-    **Projet réalisé par Wilfried Condemine, Michael Deroche, Claudia Mattei et Charles Sallard**. (Promotion sept23_DS Datascientest)
+    **Projet réalisé par Wilfried Condemine, Michael Deroche, Claudia Mattei et Charles Sallard**.
+    '''
+)
+st.write(
+    '''
+    (Promotion sept23_DS Datascientest)
     '''
 )
