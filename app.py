@@ -98,7 +98,9 @@ def page_resultats():
     st.write(
         '''
         Les résultats du projet **CellVisionAI** sont encore en cours d'évaluation. Cependant, les premiers résultats sont prometteurs. L'outil est capable de reconnaître et de classifier avec précision les cellules du sang présentes dans les frottis
-
+        ''',
+        size=16,
+    )
 
 # %% (_.~" MENU LATERAL "~._) 
 
