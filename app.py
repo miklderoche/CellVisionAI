@@ -53,10 +53,12 @@ def page_demo():
 
 def page_resultats():
     st.title("Résultats")
+    st.write("Voici la page des résultats.")
     # contenu de la page résultats...
 
 def page_docs():
     st.title("Documentation")
+    st.write("Voici la page de documentation.")
     # contenu de la page Documentation...
 
 # %% (_.~" MENU LATERAL "~._) 
