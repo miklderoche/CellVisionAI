@@ -65,7 +65,7 @@ pages = {
     "Documentation": page_docs,
 }
 
-selection = st.sidebar.st.selectbox("Sélectionner une page", list(pages.keys()))
+selection = st.selectbox("Sélectionner une page", list(pages.keys()))
 
 # Affichage de la page en fonction de la sélection
 pages[selection]()
