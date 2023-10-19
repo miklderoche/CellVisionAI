@@ -1,9 +1,21 @@
 import streamlit as st
 
+# %%% Navigation
+
+with st.sidebar:
+    selectedMenu = option_menu(
+        menu_title = "Switch bestsellers",
+        menu_icon= "nintendo-switch",
+        options = ["Projet",
+                   "Contexte",
+                   "Methodologie",
+                   "Analyses",
+                   "Conclusion",
+                   "Scrap-App"]
+        
 left_co, cent_co,last_co = st.columns(3)
 with cent_co:
     st.image('images/logo_VisionCellAI.png')
-
 
 # Titre principal
 st.title('Cell Vision AI')
