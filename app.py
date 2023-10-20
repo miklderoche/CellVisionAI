@@ -62,10 +62,10 @@ elif st.session_state['page'] == 'Analyse':
     st.title("Analyse")
     st.header('Analyse des jeux de données')
 
-    tab1, tab2, tab3 = st.tabs(["Dataset 1 - PBC Dataset Normal DIB", "Dataset 2 - Leukemia Dataset", "Dataset 3 - Acute Promyelocytic Leukemia APL"])
+    tab1, tab2, tab3 = st.tabs(["#1 PBC Dataset Normal DIB", "#2 Leukemia Dataset", "#3 Acute Promyelocytic Leukemia APL"])
 
     with tab1:
-        st.header("Section 1 : Dataset 1 - PBC Dataset Normal DIB")
+        st.header("Dataset 1 - PBC Dataset Normal DIB")
     
         st.write(
             '''
