@@ -133,9 +133,7 @@ elif st.session_state['page'] == 'Documentation':
     tab5, tab6 = st.tabs(["Datasets", "Littératures"])
 
     with tab5:
-        st.write(
-        **Données** :
-        )
+        st.write('''**Données** :''')
         st.markdown(\nhttps://www.ncbi.nlm.nih.gov/pmc/articles/PMC7182702/)
         st.markdown(https://www.kaggle.com/eugeneshenderov/acute-promyelocytic-leukemia-apl)
         st.markdown(https://www.kaggle.com/nikhilsharma00/leukemia-dataset)
