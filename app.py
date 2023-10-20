@@ -208,7 +208,7 @@ elif st.session_state['page'] == 'Résultats':
 elif st.session_state['page'] == 'Documentation':
     st.title("Documentation")
     
-    tab7, tab8 = st.tabs(["Datasets", "Bibliographie"])
+    tab7, tab8, tab9 = st.tabs(["Datasets", "Bibliographie", "Crédits"])
 
     with tab7:
         st.write(
@@ -224,5 +224,12 @@ elif st.session_state['page'] == 'Documentation':
         '''
         - [Recognition of peripheral blood cell images using convolutional neural networks](https://www.sciencedirect.com/science/article/abs/pii/S0169260719303578?via%3Dihub)
         - [A deep learning model (ALNet) for the diagnosis of acute leukaemia lineage using peripheral blood cell images](https://www.sciencedirect.com/science/article/abs/pii/S0169260721000742?via%3Dihub)
+        '''
+        )
+        
+    with tab9:
+        st.write(
+        '''
+        Le logo CellVisionAI et les images d'illustrations ont été générées par DALL•E 3.
         '''
         )
