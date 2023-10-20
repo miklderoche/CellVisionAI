@@ -133,10 +133,10 @@ elif st.session_state['page'] == 'Documentation':
     tab5, tab6 = st.tabs(["Datasets", "Littératures"])
 
     with tab5:
-        st.write('''**Données** :''')
-        st.markdown('''- https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7182702/''')
-        st.markdown('''- [Link](https://www.kaggle.com/eugeneshenderov/acute-promyelocytic-leukemia-apl)''')
-        st.markdown('''- https://www.kaggle.com/nikhilsharma00/leukemia-dataset''')
+        st.write('''**3 datasets nous ont été mis à disposition** :''')
+        st.write('''- https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7182702/''')
+        st.write('''- [Link](https://www.kaggle.com/eugeneshenderov/acute-promyelocytic-leukemia-apl)''')
+        st.write('''- https://www.kaggle.com/nikhilsharma00/leukemia-dataset''')
     
     with tab6:
         st.write(
