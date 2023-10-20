@@ -108,9 +108,8 @@ elif st.session_state['page'] == 'Analyse':
             **Analyse**
             
             - Une limitation est l'absence de classification des cellules, rendant difficile la vérification de la performance des modèles.
-            - Les coordonnées des centroïdes des cellules sont fournies pour les images ALL_IDB1
-            - Diversité des données pour construire un modèle robuste
-            - Nécessité de prétraitement spécifique pour les images TIFF
+            - Les coordonnées des centroïdes des cellules sont fournies pour les images ALL_IDB1.
+            - Diversité des données pour construire un modèle robuste.
             '''
             )
 
