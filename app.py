@@ -134,9 +134,13 @@ elif st.session_state['page'] == 'Documentation':
 
     with tab5:
         st.write('''**3 datasets nous ont été mis à disposition** :''')
-        st.write('''- https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7182702/''')
-        st.write('''- [Link](https://www.kaggle.com/eugeneshenderov/acute-promyelocytic-leukemia-apl)''')
-        st.write('''- https://www.kaggle.com/nikhilsharma00/leukemia-dataset''')
+        st.write(
+            '''
+            - [PBC_dataset_normal_DIB](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7182702/)
+            - [acute-promyelocytic-leukemia-apl](https://www.kaggle.com/eugeneshenderov/acute-promyelocytic-leukemia-apl)
+            - [leukemia-dataset](https://www.kaggle.com/nikhilsharma00/leukemia-dataset)
+        '''
+        )
     
     with tab6:
         st.write(
