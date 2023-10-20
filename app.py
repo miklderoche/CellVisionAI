@@ -81,7 +81,7 @@ elif st.session_state['page'] == 'Démonstration':
     st.title("Démonstration")
     st.header('Objectif de la démonstration')
 
-    tab3, tab4 = st.tabs(["Datasets", "Littérature"])
+    tab3, tab4 = st.tabs(["Machine Learning", "Deep Learning"])
 
     with tab3:
         st.write(
@@ -109,6 +109,17 @@ elif st.session_state['page'] == 'Résultats':
 
 elif st.session_state['page'] == 'Documentation':
     st.title("Documentation")
+    st.header('header')
+    tab5, tab6 = st.tabs(["Datasets", "Littératures"])
+
+    with tab5:
+    st.write(
+        '''
+        La documentation du projet **CellVisionAI** est en cours de préparation.
+        '''
+    )
+    
+    with tab6:
     st.write(
         '''
         La documentation du projet **CellVisionAI** est en cours de préparation.
