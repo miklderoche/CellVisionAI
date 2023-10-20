@@ -114,14 +114,14 @@ elif st.session_state['page'] == 'Documentation':
     tab5, tab6 = st.tabs(["Datasets", "Littératures"])
 
     with tab5:
-    st.write(
+        st.write(
         '''
         La documentation du projet **CellVisionAI** est en cours de préparation.
         '''
     )
     
     with tab6:
-    st.write(
+        st.write(
         '''
         La documentation du projet **CellVisionAI** est en cours de préparation.
         '''
