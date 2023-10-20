@@ -81,16 +81,16 @@ elif st.session_state['page'] == 'Démonstration':
     st.title("Démonstration")
     st.header('Objectif de la démonstration')
 
-    tab1, tab2 = st.tabs(["Datasets", "Littérature"])
+    tab3, tab4 = st.tabs(["Datasets", "Littérature"])
 
-    with tab1:
+    with tab3:
     st.write(
         '''
         La démonstration du projet **CellVisionAI** consiste en une interface utilisateur permettant à l'utilisateur de charger une image de frottis sanguin. L'outil est ensuite capable de reconnaître et de classifier les cellules du sang présentes dans l'image.
         '''
     )
     
-    with tab2:
+    with tab4:
     st.write(
         '''
         La démonstration du projet **CellVisionAI** consiste en une interface utilisateur permettant à l'utilisateur de charger une image de frottis sanguin. L'outil est ensuite capable de reconnaître et de classifier les cellules du sang présentes dans l'image.
