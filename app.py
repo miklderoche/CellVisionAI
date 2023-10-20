@@ -78,6 +78,7 @@ elif st.session_state['page'] == 'Analyse':
             - Volume : 268 Mo
             - Nombre d'Images : 17 092
             - Classes : 8
+            
             Ce jeu de données contient des images de cellules normales individuelles, classées en huit catégories. Les images ont été acquises à l'Hôpital de Barcelone.
             
             **Analyse**
