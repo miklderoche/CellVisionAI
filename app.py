@@ -4,6 +4,8 @@ import streamlit as st
 if 'page' not in st.session_state:
     st.session_state['page'] = 'Accueil'
 
+## %%% BARE LATERALE %%% ##
+
 # Image en haut du menu latéral
 st.sidebar.image('images/logo_VisionCellAI.png', width=100)
 
@@ -18,6 +20,8 @@ if st.sidebar.button('Résultats'):
     st.session_state['page'] = 'Résultats'
 if st.sidebar.button('Documentation'):
     st.session_state['page'] = 'Documentation'
+
+## %%% PAGE ACCUEIL %%% ##
 
 # Affichage de la page en fonction de l'état de la session
 if st.session_state['page'] == 'Accueil':
@@ -52,6 +56,8 @@ if st.session_state['page'] == 'Accueil':
     '''
     )
 
+## %%% PAGE PROJET %%% ##
+
 elif st.session_state['page'] == 'Projet':
     st.title("Projet")
     st.header('Le Projet')
@@ -77,6 +83,8 @@ elif st.session_state['page'] == 'Projet':
             '''
         )
 
+## %%% PAGE DEMONSTRATION %%% ##
+
 elif st.session_state['page'] == 'Démonstration':
     st.title("Démonstration")
     st.header('Objectif de la démonstration')
@@ -96,7 +104,9 @@ elif st.session_state['page'] == 'Démonstration':
         La démonstration du projet **CellVisionAI** consiste en une interface utilisateur permettant à l'utilisateur de charger une image de frottis sanguin. L'outil est ensuite capable de reconnaître et de classifier les cellules du sang présentes dans l'image.
         '''
     )
-    
+
+## %%% PAGE RESULTATS %%% ##
+
 elif st.session_state['page'] == 'Résultats':
     st.title("Résultats")
     st.header('Objectif des résultats')
@@ -106,6 +116,8 @@ elif st.session_state['page'] == 'Résultats':
         Les résultats du projet **CellVisionAI** sont encore en cours d'évaluation. Cependant, les premiers résultats sont prometteurs. L'outil est capable de reconnaître et de classifier avec précision les cellules du sang présentes dans les frottis sanguins.
         '''
     )
+
+## %%% PAGE DOCUMENTATION %%% ##
 
 elif st.session_state['page'] == 'Documentation':
     st.title("Documentation")
