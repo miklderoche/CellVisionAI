@@ -7,15 +7,16 @@ if 'page' not in st.session_state:
 # Image en haut du menu latéral
 st.sidebar.image('images/logo_VisionCellAI.png', width=100)
 
-if cols[0].button('Accueil'):
+# Menu latéral avec des boutons
+if st.sidebar.button('Accueil'):
     st.session_state['page'] = 'Accueil'
-if cols[1].button('Projet'):
+if st.sidebar.button('Projet'):
     st.session_state['page'] = 'Projet'
-if cols[2].button('Démonstration'):
+if st.sidebar.button('Démonstration'):
     st.session_state['page'] = 'Démonstration'
-if cols[3].button('Résultats'):
+if st.sidebar.button('Résultats'):
     st.session_state['page'] = 'Résultats'
-if cols[4].button('Documentation'):
+if st.sidebar.button('Documentation'):
     st.session_state['page'] = 'Documentation'
 
 # Affichage de la page en fonction de l'état de la session
