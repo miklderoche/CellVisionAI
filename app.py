@@ -62,7 +62,7 @@ elif st.session_state['page'] == 'Projet':
     st.title("Projet")
     st.header('Le Projet')
 
-    tab1, tab2 = st.tabs(["Objectif du Projet", "Fonctionnalités"])
+    tab1, tab2 = st.tabs(["Objectif du Projet", "Données à disposition"])
 
     with tab1:
         st.write(
@@ -135,13 +135,17 @@ elif st.session_state['page'] == 'Documentation':
     with tab5:
         st.write(
         '''
-        La documentation du projet **CellVisionAI** est en cours de préparation.
+        **Données** : 
+        https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7182702/
+        https://www.kaggle.com/eugeneshenderov/acute-promyelocytic-leukemia-apl
+        https://www.kaggle.com/nikhilsharma00/leukemia-dataset
         '''
     )
     
     with tab6:
         st.write(
         '''
-        La documentation du projet **CellVisionAI** est en cours de préparation.
-        '''
+        **Bibliographie** :
+        https://www.sciencedirect.com/science/article/abs/pii/S0169260719303578?via%3Dihub
+        https://www.sciencedirect.com/science/article/abs/pii/S0169260721000742?via%3Dihub        '''
     )
