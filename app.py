@@ -102,6 +102,7 @@ elif st.session_state['page'] == 'Analyse':
             - Type : Images JPEG et TIFF
             - Sous-ensembles : ALL_IDB1 (143 Mo, 108 images), ALL_IDB2 (49 Mo, 260 images)
             - Classes : Patients sains et patients atteints de Leucémie Lymphoblastique Aiguë (ALL)
+            
             Ce jeu de données contient des images de cellules sanguines provenant de patients sains et atteints de leucémie.
             
             **Analyse**
@@ -127,6 +128,7 @@ elif st.session_state['page'] == 'Analyse':
             - Volume : 515 Mo
             - Nombre d'Images : Plus de 25 000
             - Origine : Cellules de 106 patients de l’Hôpital Johns Hopkins, atteints de Leucémie Myéloïde Aiguë (AML) ou de Leucémie Aiguë Promyélocytaire (APL)
+            
             Ce jeu de données contient des images de cellules de patients atteints de deux types de leucémie. Les cellules sont classées dans des dossiers par catégorie, et il existe également un dossier pour les cellules non classées.
             
             **Analyse**
