@@ -96,6 +96,7 @@ elif st.session_state['page'] == 'Démonstration':
         La démonstration du projet **CellVisionAI** consiste en une interface utilisateur permettant à l'utilisateur de charger une image de frottis sanguin. L'outil est ensuite capable de reconnaître et de classifier les cellules du sang présentes dans l'image.
         '''
     )
+    
 elif st.session_state['page'] == 'Résultats':
     st.title("Résultats")
     st.header('Objectif des résultats')
