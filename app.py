@@ -67,9 +67,15 @@ elif st.session_state['page'] == 'Projet':
     with tab1:
         st.write(
             '''
-            Sur le **plan technique**, le projet repose sur des avancées récentes dans le domaine de la vision par ordinateur et de l'apprentissage automatique. Des algorithmes de deep learning seront utilisés pour extraire des informations pertinentes à partir d'images de frottis sanguins. Les données d'entraînement seront essentielles pour former le modèle et permettre une classification des cellules sanguines.
-            Du point de vue économique, le développement d'un tel outil réduirait possiblement les coûts de main-d'œuvre associés à l'analyse manuelle des échantillons de sang. Il pourrait également contribuer à des diagnostics plus rapides, améliorer les chances de traitement précoce des patients atteints de maladies du sang et réduire les coûts de soins de santé à long terme.
-            Sur le plan scientifique, ce projet permettrait d'explorer des approches pour l'analyse des cellules sanguines et d'approfondir la compréhension des mécanismes sous-jacents aux maladies du sang. En développant des modèles de classification précis, il peut ouvrir la voie à des recherches plus avancées sur la leucémie et autres pathologies.
+            Sur le plan **technique**, le projet repose sur des avancées récentes dans le domaine de la vision par ordinateur et de l'apprentissage automatique. 
+            Des algorithmes de deep learning seront utilisés pour extraire des informations pertinentes à partir d'images de frottis sanguins. 
+            Les données d'entraînement seront essentielles pour former le modèle et permettre une classification des cellules sanguines.
+            \n
+            Du point de vue **économique**, le développement d'un tel outil réduirait possiblement les coûts de main-d'œuvre associés à l'analyse manuelle des échantillons de sang. 
+            Il pourrait également contribuer à des diagnostics plus rapides, améliorer les chances de traitement précoce des patients atteints de maladies du sang et réduire 
+            les coûts de soins de santé à long terme.
+            \n
+            Sur le plan **scientifique**, ce projet permettrait d'explorer des approches pour l'analyse des cellules sanguines et d'approfondir la compréhension des mécanismes sous-jacents aux maladies du sang. En développant des modèles de classification précis, il peut ouvrir la voie à des recherches plus avancées sur la leucémie et autres pathologies.
             '''
         )
         
