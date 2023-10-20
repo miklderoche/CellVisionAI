@@ -1,9 +1,26 @@
 import streamlit as st
 
-# %% (_.~" PAGES "~._) 
+# Initialisation de l'état de la session
+if 'page' not in st.session_state:
+    st.session_state['page'] = 'Accueil'
 
-# Fonctions pour chaque page
-def page_accueil():
+# Image en haut du menu latéral
+st.sidebar.image('images/logo_VisionCellAI.png', width=100)
+
+# Menu latéral avec des boutons
+if st.sidebar.button('Accueil'):
+    st.session_state['page'] = 'Accueil'
+if st.sidebar.button('Projet'):
+    st.session_state['page'] = 'Projet'
+if st.sidebar.button('Démonstration'):
+    st.session_state['page'] = 'Démonstration'
+if st.sidebar.button('Résultats'):
+    st.session_state['page'] = 'Résultats'
+if st.sidebar.button('Documentation'):
+    st.session_state['page'] = 'Documentation'
+
+# Affichage de la page en fonction de l'état de la session
+if st.session_state['page'] == 'Accueil':
     left_co, cent_co, last_co = st.columns(3)
     with cent_co:
         st.image('images/logo_VisionCellAI.png', width=200)
@@ -35,7 +52,7 @@ def page_accueil():
     '''
     )
 
-def page_projet():
+elif st.session_state['page'] == 'Projet':
     st.title("Projet")
     st.header('Le Projet')
 
@@ -60,7 +77,7 @@ def page_projet():
             '''
         )
 
-def page_demo():
+elif st.session_state['page'] == 'Démonstration':
     st.title("Démonstration")
     st.header('Objectif de la démonstration')
 
@@ -70,7 +87,7 @@ def page_demo():
         '''
     )
 
-def page_resultats():
+elif st.session_state['page'] == 'Résultats':
     st.title("Résultats")
     st.header('Objectif des résultats')
 
@@ -80,43 +97,10 @@ def page_resultats():
         '''
     )
 
-def page_docs():
+elif st.session_state['page'] == 'Documentation':
     st.title("Documentation")
     st.write(
         '''
         La documentation du projet **CellVisionAI** est en cours de préparation.
         '''
     )
-
-# %% (_.~" MENU LATERAL "~._) 
-
-# Initialisation de l'état de la session
-if 'page' not in st.session_state:
-    st.session_state['page'] = 'Accueil'
-
-# Image en haut du menu latéral
-st.sidebar.image('images/logo_VisionCellAI.png', width=100)
-
-# Menu latéral avec des boutons
-if st.sidebar.button('Accueil'):
-    st.session_state['page'] = 'Accueil'
-if st.sidebar.button('Projet'):
-    st.session_state['page'] = 'Projet'
-if st.sidebar.button('Démonstration'):
-    st.session_state['page'] = 'Démonstration'
-if st.sidebar.button('Résultats'):
-    st.session_state['page'] = 'Résultats'
-if st.sidebar.button('Documentation'):
-    st.session_state['page'] = 'Documentation'
-
-# Affichage de la page en fonction de l'état de la session
-if st.session_state['page'] == 'Accueil':
-    page_accueil()
-elif st.session_state['page'] == 'Projet':
-    page_projet()
-elif st.session_state['page'] == 'Démonstration':
-    page_demo()
-elif st.session_state['page'] == 'Résultats':
-    page_resultats()
-elif st.session_state['page'] == 'Documentation':
-    page_docs()
