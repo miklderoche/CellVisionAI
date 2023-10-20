@@ -135,16 +135,12 @@ elif st.session_state['page'] == 'Analyse':
             
             - **Conditions d'Acquisition :** 
             Les conditions d'acquisition des images semblent similaires à celles du Dataset 1.
-            
             - **Classification des Cellules :**
             Plus de 15 000 images sont classées selon le type de cellules, mais environ 10 000 images ne sont pas classées.
-            
             - **Artifacts :**
             Certains types de cellules, tels que les "smudge cells", contiennent de nombreux outliers et pourraient ne pas être utiles pour l'analyse.
-            
             - **Variations de Taille :**
             Des variations de taille plus importantes sont observées par rapport au Dataset 1, sans dépendance apparente avec les classes de cellules.
-            
             - **Informations des Patients :**
             Un fichier master.csv contient les diagnostics et quelques informations sur les patients. Il y a une répartition équilibrée des données entre les sexes et les tranches d'âge, 
             avec une prédominance masculine conforme à la prévalence de la maladie.
