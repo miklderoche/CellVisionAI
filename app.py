@@ -62,7 +62,7 @@ elif st.session_state['page'] == 'Analyse':
     st.title("Analyse")
     st.header('Analyse des jeux de données')
 
-    tab1, tab2, tab3 = st.tabs(["#1 PBC Dataset Normal DIB", "#2 Leukemia Dataset", "#3 Acute Promyelocytic Leukemia APL"])
+    tab1, tab2, tab3 = st.tabs(["PBC Dataset Normal DIB", "Leukemia Dataset", "Acute Promyelocytic Leukemia (APL)"])
 
     with tab1:
         st.header("Dataset 1 - PBC Dataset Normal DIB")
@@ -86,24 +86,50 @@ elif st.session_state['page'] == 'Analyse':
             )
         
     with tab2:
+        st.header("Dataset 2 (Leukemia_dataset)")
+        
         st.write(
             '''
-            Voici les fonctionnalités du projet.
-            Le projet **CellVisionAI** aura les fonctionnalités suivantes :
-            - Reconnaissance des cellules du sang
-            - Classification des cellules du sang
-            - Diagnostic de la leucémie
+            **Description**
+            
+            - Type : Images JPEG et TIFF
+            - Sous-ensembles : ALL_IDB1 (143 Mo, 108 images), ALL_IDB2 (49 Mo, 260 images)
+            - Classes : Patients sains et patients atteints de Leucémie Lymphoblastique Aiguë (ALL)
+            Ce jeu de données contient des images de cellules sanguines provenant de patients sains et atteints de leucémie.
+            
+            **Analyse**
+            
+            - Les coordonnées des centroïdes des cellules sont fournies pour les images ALL_IDB1
+            - Diversité des données pour construire un modèle robuste
+            - Nécessité de prétraitement spécifique pour les images TIFF
             '''
             )
 
     with tab3:
+        st.header("Dataset 3 : Acute Promyelocytic Leukemia (APL)")
+        
         st.write(
             '''
-            Voici les fonctionnalités du projet.
-            Le projet **CellVisionAI** aura les fonctionnalités suivantes :
-            - Reconnaissance des cellules du sang
-            - Classification des cellules du sang
-            - Diagnostic de la leucémie
+            **Description**
+            
+            - Type : Images JPEG
+            - Volume : 515 Mo
+            - Nombre d'Images : Plus de 25 000
+            - Origine : Cellules de 106 patients de l’Hôpital Johns Hopkins, atteints de Leucémie Myéloïde Aiguë (AML) ou de Leucémie Aiguë Promyélocytaire (APL)
+            Ce jeu de données contient des images de cellules de patients atteints de deux types de leucémie. Les cellules sont classées dans des dossiers par catégorie, et il existe également un dossier pour les cellules non classées.
+            
+            **Analyse**
+            
+            - Conditions d'Acquisition :
+            Les conditions d'acquisition des images semblent similaires à celles du Dataset 1.
+            - Classification des Cellules :
+            Plus de 15 000 images sont classées selon le type de cellules, mais environ 10 000 images ne sont pas classées.
+            - Artifacts :
+            Certains types de cellules, tels que les "smudge cells", contiennent de nombreux outliers et pourraient ne pas être utiles pour l'analyse.
+            - Variations de Taille :
+            Des variations de taille plus importantes sont observées par rapport au Dataset 1, sans dépendance apparente avec les classes de cellules.
+            - Informations des Patients :
+            Un fichier master.csv contient les diagnostics et quelques informations sur les patients. Il y a une répartition équilibrée des données entre les sexes et les tranches d'âge, avec une prédominance masculine conforme à la prévalence de la maladie.
             '''
             )
         
