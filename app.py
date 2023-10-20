@@ -90,7 +90,7 @@ elif st.session_state['page'] == 'Analyse':
             )
         
     with tab2:
-        st.header("Leukemia_dataset")
+        st.header("Leukemia Dataset")
         
         st.write(
             '''
