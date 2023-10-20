@@ -133,7 +133,7 @@ elif st.session_state['page'] == 'Analyse':
             
             **Analyse**
             
-            - **Conditions d'Acquisition** : les conditions d'acquisition des images semblent similaires à celles du Dataset 1.
+            - Conditions d'Acquisition : les conditions d'acquisition des images semblent similaires à celles du Dataset 1.
             
             - Classification des Cellules :
             Plus de 15 000 images sont classées selon le type de cellules, mais environ 10 000 images ne sont pas classées.
