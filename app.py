@@ -134,13 +134,11 @@ elif st.session_state['page'] == 'Documentation':
 
     with tab5:
         st.write(
-        '''
-        **Données** : 
-        st.markdown(https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7182702/)
-        https://www.kaggle.com/eugeneshenderov/acute-promyelocytic-leukemia-apl
-        https://www.kaggle.com/nikhilsharma00/leukemia-dataset
-        '''
-    )
+        **Données** :
+        )
+        st.markdown(\nhttps://www.ncbi.nlm.nih.gov/pmc/articles/PMC7182702/)
+        st.markdown(https://www.kaggle.com/eugeneshenderov/acute-promyelocytic-leukemia-apl)
+        st.markdown(https://www.kaggle.com/nikhilsharma00/leukemia-dataset)
     
     with tab6:
         st.write(
