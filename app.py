@@ -62,13 +62,16 @@ elif st.session_state['page'] == 'Analyse':
     st.title("Analyse")
     st.header('Analyse des jeux de données')
 
-    tab1, tab2, tab3 = st.tabs(["PBC Dataset Normal DIB", "Leukemia Dataset", "Acute Promyelocytic Leukemia (APL)"])
+    tab1, tab2, tab3, tab4 = st.tabs(["PBC Dataset Normal DIB", "Leukemia Dataset", "Acute Promyelocytic Leukemia (APL)", "Recommandations"])
 
     with tab1:
         st.header("Dataset 1 - PBC Dataset Normal DIB")
     
         st.write(
             '''
+            Le dataset contient des images de cellules sanguines normales d'individus sains, servant de base de référence 
+            pour l'entraînement des modèles pour reconnaître différents types de cellules sanguines normales.
+            
             **Description**
 
             - Type : Images JPEG
@@ -90,6 +93,9 @@ elif st.session_state['page'] == 'Analyse':
         
         st.write(
             '''
+             Le dataset contient des images de cellules sanguines de patients sains et de patients atteints de Leucémie Lymphoblastique Aiguë (ALL), avec des informations sur les centroïdes. 
+             Il est utile pour tester la segmentation, la classification, et les méthodes de prétraitement des images.
+             
             **Description**
             
             - Type : Images JPEG et TIFF
@@ -99,6 +105,7 @@ elif st.session_state['page'] == 'Analyse':
             
             **Analyse**
             
+            - Une limitation est l'absence de classification des cellules, rendant difficile la vérification de la performance des modèles.
             - Les coordonnées des centroïdes des cellules sont fournies pour les images ALL_IDB1
             - Diversité des données pour construire un modèle robuste
             - Nécessité de prétraitement spécifique pour les images TIFF
@@ -110,6 +117,9 @@ elif st.session_state['page'] == 'Analyse':
         
         st.write(
             '''
+            Le dataset est composé d'images de cellules sanguines classées de patients atteints de différentes formes de leucémie. 
+            Certaines cellules n'ont pas été classées, introduisant de l'incertitude dans la variable cible.
+            
             **Description**
             
             - Type : Images JPEG
@@ -129,26 +139,49 @@ elif st.session_state['page'] == 'Analyse':
             - Variations de Taille :
             Des variations de taille plus importantes sont observées par rapport au Dataset 1, sans dépendance apparente avec les classes de cellules.
             - Informations des Patients :
-            Un fichier master.csv contient les diagnostics et quelques informations sur les patients. Il y a une répartition équilibrée des données entre les sexes et les tranches d'âge, avec une prédominance masculine conforme à la prévalence de la maladie.
+            Un fichier master.csv contient les diagnostics et quelques informations sur les patients. Il y a une répartition équilibrée des données entre les sexes et les tranches d'âge, 
+            avec une prédominance masculine conforme à la prévalence de la maladie.
             '''
             )
         
+    with tab4:
+        st.header("Recommandations pour le Traitement des Données")
+
+        st.write(
+            '''
+            **Analyse Exploratoire des Données :**
+            Effectuer une analyse approfondie pour comprendre les limites potentielles et les caractéristiques spécifiques de chaque jeu de données.
+            
+            **Nettoyage des Données :**
+            Pour le Dataset 3, bien que la majorité des données soient propres, une analyse détaillée des images peut révéler des problèmes, 
+            tels que la difficulté de reconnaissance des noyaux par les algorithmes, nécessitant l'élimination de certaines données.
+            
+            **Prétraitement :**
+            Des fichiers de données au format CSV ont été créés pour simplifier l’analyse statistique des données, y compris le nombre de classes, 
+            le nombre d’images par classe, et les formats et dimensions des images.
+            
+            **Gestion des Limitations :**
+            Les différences en termes de qualité, de format, et de représentativité des catégories de cellules entre les jeux de données peuvent poser des défis.
+            Une stratégie d'intégration et de normalisation doit être développée pour gérer ces différences.
+            Le manque de classification des cellules dans le Dataset 2 et les incertitudes dans le Dataset 3 nécessitent des stratégies spécifiques pour gérer et, si possible, minimiser ces limitations.
+            '''
+            )
 ## %%% PAGE DEMONSTRATION %%% ##
 
 elif st.session_state['page'] == 'Démonstration':
     st.title("Démonstration")
     st.header('Objectif de la démonstration')
 
-    tab4, tab5 = st.tabs(["Machine Learning", "Deep Learning"])
+    tab5, tab6 = st.tabs(["Machine Learning", "Deep Learning"])
 
-    with tab4:
+    with tab5:
         st.write(
         '''
         La démonstration du projet **CellVisionAI** consiste en une interface utilisateur permettant à l'utilisateur de charger une image de frottis sanguin. L'outil est ensuite capable de reconnaître et de classifier les cellules du sang présentes dans l'image.
         '''
     )
     
-    with tab5:
+    with tab6:
         st.write(
         '''
         La démonstration du projet **CellVisionAI** consiste en une interface utilisateur permettant à l'utilisateur de charger une image de frottis sanguin. L'outil est ensuite capable de reconnaître et de classifier les cellules du sang présentes dans l'image.
@@ -172,9 +205,9 @@ elif st.session_state['page'] == 'Résultats':
 elif st.session_state['page'] == 'Documentation':
     st.title("Documentation")
     
-    tab6, tab7 = st.tabs(["Datasets", "Bibliographie"])
+    tab7, tab8 = st.tabs(["Datasets", "Bibliographie"])
 
-    with tab6:
+    with tab7:
         st.write(
             '''
             - [PBC Dataset Normal DIB - National Library of Medicine](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7182702/)
@@ -183,7 +216,7 @@ elif st.session_state['page'] == 'Documentation':
         '''
         )
     
-    with tab7:
+    with tab8:
         st.write(
         '''
         - [Recognition of peripheral blood cell images using convolutional neural networks](https://www.sciencedirect.com/science/article/abs/pii/S0169260719303578?via%3Dihub)
