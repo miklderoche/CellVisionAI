@@ -135,9 +135,9 @@ elif st.session_state['page'] == 'Documentation':
     with tab5:
         st.write(
             '''
-            - [PBC Dataset Normal DIB (National Library of Medicine)](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7182702/)
-            - [Acute Promyelocytic Leukemia (APL) (Kaggle)](https://www.kaggle.com/eugeneshenderov/acute-promyelocytic-leukemia-apl)
-            - [Leukemia Dataset (Kaggle)](https://www.kaggle.com/nikhilsharma00/leukemia-dataset)
+            - [PBC Dataset Normal DIB - National Library of Medicine](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7182702/)
+            - [Acute Promyelocytic Leukemia (APL) - Kaggle](https://www.kaggle.com/eugeneshenderov/acute-promyelocytic-leukemia-apl)
+            - [Leukemia Dataset - Kaggle](https://www.kaggle.com/nikhilsharma00/leukemia-dataset)
         '''
         )
     
