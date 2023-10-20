@@ -130,12 +130,11 @@ elif st.session_state['page'] == 'Documentation':
     st.title("Documentation")
     st.header('header')
     
-    tab5, tab6 = st.tabs(["Datasets", "Littératures"])
+    tab5, tab6 = st.tabs(["Datasets", "Bibliographie"])
 
     with tab5:
         st.write(
             '''
-            **3 datasets nous ont été mis à disposition** :
             - [PBC_dataset_normal_DIB](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7182702/)
             - [acute-promyelocytic-leukemia-apl](https://www.kaggle.com/eugeneshenderov/acute-promyelocytic-leukemia-apl)
             - [leukemia-dataset](https://www.kaggle.com/nikhilsharma00/leukemia-dataset)
@@ -145,7 +144,6 @@ elif st.session_state['page'] == 'Documentation':
     with tab6:
         st.write(
         '''
-        **Bibliographie** :
         - [Recognition of peripheral blood cell images using convolutional neural networks](https://www.sciencedirect.com/science/article/abs/pii/S0169260719303578?via%3Dihub)
         - [A deep learning model (ALNet) for the diagnosis of acute leukaemia lineage using peripheral blood cell images](https://www.sciencedirect.com/science/article/abs/pii/S0169260721000742?via%3Dihub)
         '''
