@@ -65,7 +65,7 @@ elif st.session_state['page'] == 'Analyse':
     tab1, tab2, tab3, tab4 = st.tabs(["PBC Dataset Normal DIB", "Leukemia Dataset", "Acute Promyelocytic Leukemia (APL)", "Recommandations"])
 
     with tab1:
-        st.header("Dataset 1 - PBC Dataset Normal DIB")
+        st.header("PBC Dataset Normal DIB")
     
         st.write(
             '''
@@ -90,7 +90,7 @@ elif st.session_state['page'] == 'Analyse':
             )
         
     with tab2:
-        st.header("Dataset 2 (Leukemia_dataset)")
+        st.header("Leukemia_dataset")
         
         st.write(
             '''
@@ -115,7 +115,7 @@ elif st.session_state['page'] == 'Analyse':
             )
 
     with tab3:
-        st.header("Dataset 3 : Acute Promyelocytic Leukemia (APL)")
+        st.header("Acute Promyelocytic Leukemia (APL)")
         
         st.write(
             '''
