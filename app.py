@@ -12,8 +12,8 @@ st.sidebar.image('images/logo_VisionCellAI.png', width=100)
 # Menu latéral avec des boutons
 if st.sidebar.button('Accueil'):
     st.session_state['page'] = 'Accueil'
-if st.sidebar.button('Projet'):
-    st.session_state['page'] = 'Projet'
+if st.sidebar.button('Analyse'):
+    st.session_state['page'] = 'Analyse'
 if st.sidebar.button('Démonstration'):
     st.session_state['page'] = 'Démonstration'
 if st.sidebar.button('Résultats'):
@@ -58,26 +58,32 @@ if st.session_state['page'] == 'Accueil':
 
 ## %%% PAGE PROJET %%% ##
 
-elif st.session_state['page'] == 'Projet':
-    st.title("Projet")
-    st.header('Le Projet')
+elif st.session_state['page'] == 'Analyse':
+    st.title("Analyse")
+    st.header('Analyse des jeux de données')
 
-    tab1, tab2 = st.tabs(["Objectif du Projet", "Données à disposition"])
+    tab1, tab2, tab3 = st.tabs(["Dataset 1 - PBC Dataset Normal DIB", "Dataset 2 - Leukemia Dataset", "Dataset 3 - Acute Promyelocytic Leukemia APL"])
 
     with tab1:
+        st.header("Section 1 : Dataset 1 - PBC Dataset Normal DIB")
+    
         st.write(
             '''
-            Sur le plan **technique**, le projet repose sur des avancées récentes dans le domaine de la vision par ordinateur et de l'apprentissage automatique. 
-            Des algorithmes de deep learning seront utilisés pour extraire des informations pertinentes à partir d'images de frottis sanguins. 
-            Les données d'entraînement seront essentielles pour former le modèle et permettre une classification des cellules sanguines.
-            \n
-            Du point de vue **économique**, le développement d'un tel outil réduirait possiblement les coûts de main-d'œuvre associés à l'analyse manuelle des échantillons de sang. 
-            Il pourrait également contribuer à des diagnostics plus rapides, améliorer les chances de traitement précoce des patients atteints de maladies du sang et réduire 
-            les coûts de soins de santé à long terme.
-            \n
-            Sur le plan **scientifique**, ce projet permettrait d'explorer des approches pour l'analyse des cellules sanguines et d'approfondir la compréhension des mécanismes sous-jacents aux maladies du sang. En développant des modèles de classification précis, il peut ouvrir la voie à des recherches plus avancées sur la leucémie et autres pathologies.
+            **Description**
+
+            - Type : Images JPEG
+            - Volume : 268 Mo
+            - Nombre d'Images : 17 092
+            - Classes : 8
+            Ce jeu de données contient des images de cellules normales individuelles, classées en huit catégories. Les images ont été acquises à l'Hôpital de Barcelone.
+            
+            **Analyse**
+            
+            - Diversité des formes et des tailles de cellules
+            - Distribution équilibrée des images entre les classes
+            - Nécessité de normaliser la luminosité et la taille des images
             '''
-        )
+            )
         
     with tab2:
         st.write(
@@ -88,24 +94,35 @@ elif st.session_state['page'] == 'Projet':
             - Classification des cellules du sang
             - Diagnostic de la leucémie
             '''
-        )
+            )
 
+    with tab3:
+        st.write(
+            '''
+            Voici les fonctionnalités du projet.
+            Le projet **CellVisionAI** aura les fonctionnalités suivantes :
+            - Reconnaissance des cellules du sang
+            - Classification des cellules du sang
+            - Diagnostic de la leucémie
+            '''
+            )
+        
 ## %%% PAGE DEMONSTRATION %%% ##
 
 elif st.session_state['page'] == 'Démonstration':
     st.title("Démonstration")
     st.header('Objectif de la démonstration')
 
-    tab3, tab4 = st.tabs(["Machine Learning", "Deep Learning"])
+    tab4, tab5 = st.tabs(["Machine Learning", "Deep Learning"])
 
-    with tab3:
+    with tab4:
         st.write(
         '''
         La démonstration du projet **CellVisionAI** consiste en une interface utilisateur permettant à l'utilisateur de charger une image de frottis sanguin. L'outil est ensuite capable de reconnaître et de classifier les cellules du sang présentes dans l'image.
         '''
     )
     
-    with tab4:
+    with tab5:
         st.write(
         '''
         La démonstration du projet **CellVisionAI** consiste en une interface utilisateur permettant à l'utilisateur de charger une image de frottis sanguin. L'outil est ensuite capable de reconnaître et de classifier les cellules du sang présentes dans l'image.
@@ -129,9 +146,9 @@ elif st.session_state['page'] == 'Résultats':
 elif st.session_state['page'] == 'Documentation':
     st.title("Documentation")
     
-    tab5, tab6 = st.tabs(["Datasets", "Bibliographie"])
+    tab6, tab7 = st.tabs(["Datasets", "Bibliographie"])
 
-    with tab5:
+    with tab6:
         st.write(
             '''
             - [PBC Dataset Normal DIB - National Library of Medicine](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7182702/)
@@ -140,7 +157,7 @@ elif st.session_state['page'] == 'Documentation':
         '''
         )
     
-    with tab6:
+    with tab7:
         st.write(
         '''
         - [Recognition of peripheral blood cell images using convolutional neural networks](https://www.sciencedirect.com/science/article/abs/pii/S0169260719303578?via%3Dihub)
