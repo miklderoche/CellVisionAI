@@ -201,22 +201,20 @@ elif st.session_state['page'] == 'Analyse':
             'lymphocyte': '#c1e58d'
         }
         
-        # Créer un graphique d'histogramme empilé pour les largeurs et les hauteurs
-        fig_dimensions_stacked = px.histogram(df_graph_dim_class, x=["Largeur", "Hauteur"], color="Classe",
-                                              labels={"value": "Dimensions", "variable": "Caractéristique"},
+        # Créer un graphique d'histogramme pour les largeurs
+        fig_dimensions_largeur = px.histogram(df_graph_dim_class, x="Largeur", color="Classe",
+                                              labels={"Largeur": "Largeur des images"},
                                               color_discrete_map=palette_couleurs,
-                                              title="Répartition des dimensions des images par classe",
-                                              text="value",  # Ajouter le texte des barres
-                                              category_orders={"Classe": ordre_categories})
+                                              title="Répartition des largeurs des images par classe")
         
         # Mettre à jour la mise en page pour ajuster la taille et mettre un fond transparent
-        fig_dimensions_stacked.update_layout(
-            width=1000,  # Ajustez la valeur comme nécessaire
+        fig_dimensions_largeur.update_layout(
+            width=500,  # Ajustez la valeur comme nécessaire
             height=400,  # Ajustez la valeur comme nécessaire
             paper_bgcolor='rgba(0,0,0,0)',
             plot_bgcolor='rgba(0,0,0,0)',
             title={
-                'text': 'Répartition des dimensions des images par classe',
+                'text': 'Répartition des largeurs des images par classe',
                 'y': 0.9,
                 'x': 0.5,
                 'xanchor': 'center',
@@ -227,8 +225,37 @@ elif st.session_state['page'] == 'Analyse':
             }
         )
         
-        # Afficher le graphique empilé dans l'application Streamlit
-        st.plotly_chart(fig_dimensions_stacked)
+        # Afficher le graphique des largeurs dans l'application Streamlit
+        st.plotly_chart(fig_dimensions_largeur)
+        
+        ##@@ GRAPHIQUE DES DIMENSIONS PAR CLASSE (HAUTEUR) @@##
+        
+        # Créer un graphique d'histogramme pour les hauteurs
+        fig_dimensions_hauteur = px.histogram(df_graph_dim_class, x="Hauteur", color="Classe",
+                                              labels={"Hauteur": "Hauteur des images"},
+                                              color_discrete_map=palette_couleurs,
+                                              title="Répartition des hauteurs des images par classe")
+        
+        # Mettre à jour la mise en page pour ajuster la taille et mettre un fond transparent
+        fig_dimensions_hauteur.update_layout(
+            width=500,  # Ajustez la valeur comme nécessaire
+            height=400,  # Ajustez la valeur comme nécessaire
+            paper_bgcolor='rgba(0,0,0,0)',
+            plot_bgcolor='rgba(0,0,0,0)',
+            title={
+                'text': 'Répartition des hauteurs des images par classe',
+                'y': 0.9,
+                'x': 0.5,
+                'xanchor': 'center',
+                'yanchor': 'top',
+                'font': {
+                    'size': 15
+                }
+            }
+        )
+        
+        # Afficher le graphique des hauteurs dans l'application Streamlit
+        st.plotly_chart(fig_dimensions_hauteur)
 
     with tab2:
         st.header("Leukemia Dataset")
