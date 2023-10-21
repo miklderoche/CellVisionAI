@@ -124,7 +124,7 @@ elif st.session_state['page'] == 'Analyse':
             paper_bgcolor='rgba(0,0,0,0)',
             plot_bgcolor='rgba(0,0,0,0)',
             title={
-                'text': 'Distribution des types de cellules dans le dataset',
+                'text': 'Distribution des types de cellules',
                 'y':0.85,  # Ajustez la position en y si nécessaire
                 'x':0.5,  # Ajustez la position en x si nécessaire
                 'xanchor': 'center', 
@@ -153,7 +153,7 @@ elif st.session_state['page'] == 'Analyse':
             paper_bgcolor='rgba(0,0,0,0)',
             plot_bgcolor='rgba(0,0,0,0)',
             title={
-                'text': 'Proportions des types de cellules dans le dataset',
+                'text': 'Proportions des types de cellules',
                 'y':0.85,  # Ajustez la position en y si nécessaire
                 'x':0.5,  # Ajustez la position en x si nécessaire
                 'xanchor': 'center', 
