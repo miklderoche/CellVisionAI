@@ -200,11 +200,17 @@ elif st.session_state['page'] == 'Analyse':
             'lymphocyte': '#c1e58d'
         }
         
+        # Définir l'ordre des catégories pour la colonne "Classe"
+        ordre_categories = [
+            'neutrophil', 'eosinophil', 'ig', 'platelet', 'erythroblast', 'monocyte', 'basophil', 'lymphocyte'
+        ]
+        
         # Créer un graphique en barres groupées en utilisant la palette de couleurs personnalisée
         fig_dimensions_by_class = px.bar(df_graph_dim_class, x="Classe", y=["Largeur", "Hauteur"], 
                                           title="Répartition des dimensions des images par classe",
                                           labels={"value": "Dimensions", "variable": "Caractéristique"}, 
-                                          color_discrete_map=palette_couleurs)
+                                          color_discrete_map=palette_couleurs,
+                                          category_orders={"Classe": ordre_categories})
         
         # Mettre à jour la mise en page pour ajuster la taille et mettre un fond transparent
         fig_dimensions_by_class.update_layout(
