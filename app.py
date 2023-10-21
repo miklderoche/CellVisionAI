@@ -142,6 +142,7 @@ elif st.session_state['page'] == 'Analyse':
             paper_bgcolor='rgba(0,0,0,0)',
             plot_bgcolor='rgba(0,0,0,0)',
             title='Proportions des types de cellules dans le dataset'
+            showlegend=False  # Ne pas afficher la légende
         )
 
         # Créer des colonnes pour afficher les graphiques côte à côte
