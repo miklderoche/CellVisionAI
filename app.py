@@ -164,7 +164,7 @@ elif st.session_state['page'] == 'Analyse':
             },
             showlegend=False  # Ne pas afficher la légende
         )
-
+        
         # Créer des colonnes pour afficher les graphiques côte à côte
         col1, col2 = st.columns(2)
 
@@ -176,6 +176,9 @@ elif st.session_state['page'] == 'Analyse':
         with col2:
             st.plotly_chart(fig_pie)
 
+        st.write("Echantillon d'images de chaque classe :")
+        st.image('images/PBC_images.png')
+        
     with tab2:
         st.header("Leukemia Dataset")
         
