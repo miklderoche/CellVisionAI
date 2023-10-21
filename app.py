@@ -90,7 +90,11 @@ elif st.session_state['page'] == 'Analyse':
             '''
             )
 
-        # Titre de l'application Streamlit
+        ##@@ GRAPHIQUE @@##
+        import pandas as pd
+        import plotly.graph_objects as go
+
+        # Titre du graphique
         st.title('Distribution des Types de Cellules dans le Dataset')
         
         # Remplacez ce chemin par le chemin réel vers votre fichier CSV
