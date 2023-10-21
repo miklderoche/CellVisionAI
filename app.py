@@ -179,27 +179,31 @@ elif st.session_state['page'] == 'Analyse':
         st.write("Echantillon d'images de chaque classe :")
         st.image('images/PBC_images.png')
 
-##@@ GRAPHIQUE DES DIMENSIONS @@##
+##@@ GRAPHIQUE DES DIMENSIONS & CLASSES @@##
         import plotly.express as px
         
         # Utiliser le DataFrame existant df_data_PBC
-        df_dimensions = df_data_PBC
-
-        # Créer un histogramme des dimensions des images
-        fig_dimensions = px.histogram(df_dimensions, x="Dimensions", title="Répartition des dimensions des images", 
-                                     labels={"Dimensions": "Dimensions des images"}, 
-                                     color_discrete_sequence=['#5f74f4'])
+        df_graph_dim_class = df_data_PBC
+        
+        # Créer un dataframe avec les dimensions et les classes
+        df_graph_dim_class[['Largeur', 'Hauteur']] = df_graph_dim_class['Dimensions'].str.split('x', expand=True)
+        
+        # Créer un graphique à barres empilées
+        fig_dimensions_by_class = px.histogram(df_graph_dim_class, x="Largeur", title="Répartition des dimensions des images par classe",
+                                               labels={"Largeur": "Largeur des images"}, 
+                                               color="Classe", 
+                                               color_discrete_sequence=px.colors.qualitative.Plotly)
         
         # Mettre à jour la mise en page pour ajuster la taille et mettre un fond transparent
-        fig_dimensions.update_layout(
-            width=500,  # Ajustez la valeur comme nécessaire
-            height=300,  # Ajustez la valeur comme nécessaire
+        fig_dimensions_by_class.update_layout(
+            width=800,  # Ajustez la valeur comme nécessaire
+            height=400,  # Ajustez la valeur comme nécessaire
             paper_bgcolor='rgba(0,0,0,0)',
             plot_bgcolor='rgba(0,0,0,0)',
             title={
-                'text': 'Répartition des dimensions des images',
-                'y':0.9,  
-                'x':0.5,  
+                'text': 'Répartition des dimensions des images par classe',
+                'y': 0.9,  
+                'x': 0.5,  
                 'xanchor': 'center',  
                 'yanchor': 'top',  
                 'font': {
@@ -209,7 +213,7 @@ elif st.session_state['page'] == 'Analyse':
         )
         
         # Afficher le graphique dans l'application Streamlit
-        st.plotly_chart(fig_dimensions)
+        st.plotly_chart(fig_dimensions_by_class)
 
     with tab2:
         st.header("Leukemia Dataset")
