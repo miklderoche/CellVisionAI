@@ -152,7 +152,16 @@ elif st.session_state['page'] == 'Analyse':
             height=400,
             paper_bgcolor='rgba(0,0,0,0)',
             plot_bgcolor='rgba(0,0,0,0)',
-            title='Proportions des types de cellules dans le dataset',
+            title={
+                'text': 'Proportions des types de cellules dans le dataset',
+                'y':0.8,  # Ajustez la position en y si nécessaire
+                'x':0,  # Ajustez la position en x si nécessaire
+                'xanchor': 'left', 
+                'yanchor': 'top',
+                'font': {
+                    'size': 12  # Ajustez la taille de la police comme nécessaire
+                }
+            },
             showlegend=False  # Ne pas afficher la légende
         )
 
