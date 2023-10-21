@@ -26,9 +26,11 @@ if st.sidebar.button('Documentation'):
 # Affichage de la page en fonction de l'état de la session
 if st.session_state['page'] == 'Accueil':
 
-    # Afficher l'image redimensionnée
-    st.image('images/illustration_accueil_500px.png', use_column_width=True, output_format='PNG', align='center')
-        
+    # Afficher l'image redimensionnée avec Streamlit et centrer avec une div HTML
+    st.write("<div style='text-align:center'>", unsafe_allow_html=True)
+    st.image('images/illustration_accueil_500px.png', output_format='PNG', align='center')
+    st.write("</div>", unsafe_allow_html=True)
+    
     st.title('Cell Vision AI')
     
     st.write(
