@@ -271,7 +271,7 @@ elif st.session_state['page'] == 'Analyse':
         # Mettre à jour la mise en page pour ajuster la taille et mettre un fond transparent
         fig_hue_box.update_layout(
             width=800,  # Ajustez la valeur comme nécessaire
-            height=400,  # Ajustez la valeur comme nécessaire
+            height=500,  # Ajustez la valeur comme nécessaire
             paper_bgcolor='rgba(0,0,0,0)',
             plot_bgcolor='rgba(0,0,0,0)',
             title={
@@ -296,7 +296,7 @@ elif st.session_state['page'] == 'Analyse':
         # Mettre à jour la mise en page pour ajuster la taille et mettre un fond transparent
         fig_brightness_box.update_layout(
             width=800,  # Ajustez la valeur comme nécessaire
-            height=400,  # Ajustez la valeur comme nécessaire
+            height=500,  # Ajustez la valeur comme nécessaire
             paper_bgcolor='rgba(0,0,0,0)',
             plot_bgcolor='rgba(0,0,0,0)',
             title={
