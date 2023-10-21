@@ -90,7 +90,7 @@ elif st.session_state['page'] == 'Analyse':
             '''
             )
 
-        ###@@@ GRAPHIQUES @@@###
+###@@@ GRAPHIQUES @@@###
         
         import pandas as pd
         import plotly.graph_objects as go
@@ -107,7 +107,7 @@ elif st.session_state['page'] == 'Analyse':
         # Couleurs personnalisées pour les classes
         colors = ['#5f74f4', '#de5e45', '#57c89a', '#a16cf0', '#f7a460', '#5dcdf2', '#ee7193', '#c1e58d']
 
-        ## GRAPHIQUE BARRES #
+## GRAPHIQUE BARRES #
         # Créer un graphique à BARRES avec plotly.graph_objects
         fig_bar = go.Figure(data=[go.Bar(
             x=data['Type de cellule'], 
@@ -137,7 +137,7 @@ elif st.session_state['page'] == 'Analyse':
             yaxis_title='Nombre d\'images'
         )
         
-        ## GRAPHIQUE CAMEMBERT ##
+## GRAPHIQUE CAMEMBERT ##
         # Créer un graphique en camembert avec plotly.graph_objects
         fig_pie = go.Figure(data=[go.Pie(
             labels=data['Type de cellule'], 
@@ -179,40 +179,37 @@ elif st.session_state['page'] == 'Analyse':
         st.write("Echantillon d'images de chaque classe :")
         st.image('images/PBC_images.png')
 
-        ##@@ GRAPHIQUE DES DIMENSIONS @@##
+##@@ GRAPHIQUE DES DIMENSIONS @@##
         import plotly.express as px
         
         # Utiliser le DataFrame existant df_data_PBC
         df_dimensions = df_data_PBC
 
-        # Compter le nombre d'occurrences de chaque dimension
-        dimension_counts = df_dimensions['Dimensions'].value_counts().reset_index().rename(columns={'index': 'Dimensions', 'Dimensions': 'Nombre'})
-        
-        # Créer un graphique à barres pour afficher la répartition des dimensions des images
-        fig_dimension_bar = px.bar(dimension_counts, x='Dimensions', y='Nombre', title="Répartition des dimensions des images",
-                                    labels={"Dimensions": "Dimensions des images", "Nombre": "Nombre d'images"},
-                                    color_discrete_sequence=['#5f74f4'])
+        # Créer un histogramme des dimensions des images
+        fig_dimensions = px.histogram(df_dimensions, x="Dimensions", title="Répartition des dimensions des images", 
+                                     labels={"Dimensions": "Dimensions des images"}, 
+                                     color_discrete_sequence=['#5f74f4'])
         
         # Mettre à jour la mise en page pour ajuster la taille et mettre un fond transparent
-        fig_dimension_bar.update_layout(
+        fig_dimensions.update_layout(
             width=500,  # Ajustez la valeur comme nécessaire
             height=300,  # Ajustez la valeur comme nécessaire
             paper_bgcolor='rgba(0,0,0,0)',
             plot_bgcolor='rgba(0,0,0,0)',
             title={
                 'text': 'Répartition des dimensions des images',
-                'y': 0.9,
-                'x': 0.5,
-                'xanchor': 'center',
-                'yanchor': 'top',
+                'y':0.9,  
+                'x':0.5,  
+                'xanchor': 'center',  
+                'yanchor': 'top',  
                 'font': {
                     'size': 15  # Ajustez la taille de la police comme nécessaire
                 }
             }
         )
         
-        # Afficher le graphique à barres dans l'application Streamlit
-        st.plotly_chart(fig_dimension_bar)
+        # Afficher le graphique dans l'application Streamlit
+        st.plotly_chart(fig_dimensions)
 
     with tab2:
         st.header("Leukemia Dataset")
