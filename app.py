@@ -205,7 +205,9 @@ elif st.session_state['page'] == 'Analyse':
         fig_dimensions_stacked = px.histogram(df_graph_dim_class, x=["Largeur", "Hauteur"], color="Classe",
                                               labels={"value": "Dimensions", "variable": "Caractéristique"},
                                               color_discrete_map=palette_couleurs,
-                                              title="Répartition des dimensions des images par classe")
+                                              title="Répartition des dimensions des images par classe",
+                                              text="value",  # Ajouter le texte des barres
+                                              category_orders={"Classe": ordre_categories})
         
         # Mettre à jour la mise en page pour ajuster la taille et mettre un fond transparent
         fig_dimensions_stacked.update_layout(
