@@ -210,7 +210,7 @@ elif st.session_state['page'] == 'Analyse':
                 'font': {
                     'size': 15
                 }
-            }
+            },
             showlegend=False
         )
         
