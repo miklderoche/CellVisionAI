@@ -7,7 +7,7 @@ if 'page' not in st.session_state:
 ## %%% BARE LATERALE %%% ##
 
 # Image en haut du menu latéral
-st.sidebar.image('images/logo_VisionCellAI.png', width=100)
+st.sidebar.image('images/logo_VisionCellAI.png', width=200)
 
 # Menu latéral avec des boutons
 if st.sidebar.button('Accueil'):
@@ -27,7 +27,7 @@ if st.sidebar.button('Documentation'):
 if st.session_state['page'] == 'Accueil':
     left_co, cent_co, last_co = st.columns(3)
     with cent_co:
-        st.image('images/logo_VisionCellAI.png', width=200)
+        st.image('images/illustration_accueil.png', width=400)
 
     st.title('Cell Vision AI')
 
