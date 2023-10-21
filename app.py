@@ -26,7 +26,7 @@ if st.sidebar.button('Documentation'):
 # Affichage de la page en fonction de l'état de la session
 if st.session_state['page'] == 'Accueil':
 
-    st.image('images/illustration_accueil_500px.png', use_column_width=True)
+    st.image('images/illustration_accueil.png', use_column_width=True)
 
     st.title('Cell Vision AI')
     
