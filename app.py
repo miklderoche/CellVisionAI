@@ -184,7 +184,10 @@ elif st.session_state['page'] == 'Analyse':
         
         # Utiliser le DataFrame existant df_data_PBC
         df_dimensions = df_data_PBC
-        
+
+        # Compter le nombre d'occurrences de chaque dimension
+        dimension_counts = df_dimensions['Dimensions'].value_counts().reset_index().rename(columns={'index': 'Dimensions', 'Dimensions': 'Nombre'})
+
         # Créer un graphique à barres pour afficher la répartition des dimensions des images
         fig_dimension_bar = px.bar(dimension_counts, x='Dimensions', y='Nombre', title="Répartition des dimensions des images",
                                     labels={"Dimensions": "Dimensions des images", "Nombre": "Nombre d'images"},
