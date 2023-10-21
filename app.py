@@ -27,7 +27,7 @@ if st.sidebar.button('Documentation'):
 if st.session_state['page'] == 'Accueil':
     
     # Afficher l'image avec une largeur personnalisée
-    st.image('images/illustration_accueil.png', use_column_width=True, output_format='JPEG', width=400)
+    st.image('images/illustration_accueil.png', use_column_width=True, output_format='JPEG')
 
     st.title('Cell Vision AI')
     
