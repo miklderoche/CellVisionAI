@@ -25,10 +25,11 @@ if st.sidebar.button('Documentation'):
 
 # Affichage de la page en fonction de l'état de la session
 if st.session_state['page'] == 'Accueil':
+
+    st.image('images/illustration_accueil.png', use_column_width=True, width=500)
+
     st.title('Cell Vision AI')
     
-    st.image('images/illustration_accueil.png', use_column_width=True)
-
     st.write(
     '''
     Dans le domaine de la médecine et de la recherche biomédicale, l'analyse des cellules dans les frottis sanguins 
