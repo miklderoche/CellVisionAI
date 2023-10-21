@@ -129,8 +129,6 @@ elif st.session_state['page'] == 'Analyse':
 
         # Créer un graphique en camembert avec plotly.graph_objects
         fig_pie = go.Figure(data=[go.Pie(
-            width=400,
-            height=400,
             labels=data['Type de cellule'], 
             values=data['Nombre d\'images'],
             marker_colors=colors[:len(data)],  # Applique les couleurs aux segments
