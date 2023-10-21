@@ -35,11 +35,8 @@ image = image.resize(new_resolution)
 if st.session_state['page'] == 'Accueil':
     st.title('Cell Vision AI')
 
-    # Afficher l'image redimensionnée avec Streamlit
-    st.image(image, use_column_width=True, output_format='JPEG')
-    
     # Afficher l'image redimensionnée
-    st.image(image, use_column_width=True)
+    st.image(image, use_column_width=True, output_format='JPEG')
         
     st.title('Cell Vision AI')
     
