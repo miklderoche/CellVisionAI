@@ -210,8 +210,7 @@ elif st.session_state['page'] == 'Analyse':
                 'font': {
                     'size': 15
                 }
-            },
-            showlegend=False  # Ne pas afficher la légende
+            }
         )
         
         # Utiliser st.beta_columns pour afficher les graphiques côte à côte
