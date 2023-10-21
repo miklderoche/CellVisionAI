@@ -22,17 +22,14 @@ if st.sidebar.button('Documentation'):
     st.session_state['page'] = 'Documentation'
 
 ## %%% PAGE ACCUEIL %%% ##
-from PIL import Image
-
-# Charger l'image
-image = Image.open('images/illustration_accueil.png')
-
-# Redimensionner l'image à la largeur souhaitée
-new_resolution = (400, 400)
-image = image.resize(new_resolution)
 
 # Affichage de la page en fonction de l'état de la session
 if st.session_state['page'] == 'Accueil':
+    
+    # Afficher l'image avec une largeur personnalisée
+    st.image('images/illustration_accueil.png', use_column_width=True, output_format='JPEG', width=400)
+
+    st.title('Cell Vision AI')
     
     # Afficher l'image redimensionnée
     st.image(image, use_column_width=True)
