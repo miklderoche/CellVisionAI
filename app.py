@@ -90,14 +90,11 @@ elif st.session_state['page'] == 'Analyse':
             '''
             )
 
-        ##@@ GRAPHIQUE @@##
+        ###@@@ GRAPHIQUE A BARRES @@@###
+        
         import pandas as pd
         import plotly.graph_objects as go
-
-        # Titre du graphique
-        st.title('Distribution des Types de Cellules dans le Dataset')
         
-        # Remplacez ce chemin par le chemin réel vers votre fichier CSV
         chemin_fichier_csv = "data/data_PBC.csv"
         
         # Lire le fichier CSV dans un DataFrame
@@ -121,8 +118,8 @@ elif st.session_state['page'] == 'Analyse':
         
         # Mettre à jour la mise en page pour ajuster la taille et mettre un fond transparent
         fig.update_layout(
-            width=800,
-            height=600,
+            width=400,
+            height=300,
             paper_bgcolor='rgba(0,0,0,0)',
             plot_bgcolor='rgba(0,0,0,0)',
             title='Distribution des types de cellules dans le dataset',
