@@ -106,8 +106,9 @@ elif st.session_state['page'] == 'Analyse':
         
         # Couleurs personnalisées pour les classes
         colors = ['#5f74f4', '#de5e45', '#57c89a', '#a16cf0', '#f7a460', '#5dcdf2', '#ee7193', '#c1e58d']
-        
-        # Créer un graphique à barres avec plotly.graph_objects
+
+        ## GRAPHIQUE BARRES #
+        # Créer un graphique à BARRES avec plotly.graph_objects
         fig_bar = go.Figure(data=[go.Bar(
             x=data['Type de cellule'], 
             y=data['Nombre d\'images'], 
@@ -119,14 +120,15 @@ elif st.session_state['page'] == 'Analyse':
         # Mettre à jour la mise en page pour ajuster la taille et mettre un fond transparent
         fig_bar.update_layout(
             width=400,
-            height=450,
+            height=475,
             paper_bgcolor='rgba(0,0,0,0)',
             plot_bgcolor='rgba(0,0,0,0)',
             title='Distribution des types de cellules dans le dataset',
             xaxis_title='Type de cellule',
             yaxis_title='Nombre d\'images'
         )
-
+        
+        ## GRAPHIQUE CAMEMBERT ##
         # Créer un graphique en camembert avec plotly.graph_objects
         fig_pie = go.Figure(data=[go.Pie(
             labels=data['Type de cellule'], 
