@@ -130,7 +130,7 @@ elif st.session_state['page'] == 'Analyse':
                 'xanchor': 'center', 
                 'yanchor': 'top',
                 'font': {
-                    'size': 12  # Ajustez la taille de la police comme nécessaire
+                    'size': 15  # Ajustez la taille de la police comme nécessaire
                 }
             },
             xaxis_title='Type de cellule',
@@ -159,7 +159,7 @@ elif st.session_state['page'] == 'Analyse':
                 'xanchor': 'center', 
                 'yanchor': 'top',
                 'font': {
-                    'size': 12  # Ajustez la taille de la police comme nécessaire
+                    'size': 15  # Ajustez la taille de la police comme nécessaire
                 }
             },
             showlegend=False  # Ne pas afficher la légende
