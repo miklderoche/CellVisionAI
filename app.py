@@ -90,44 +90,44 @@ elif st.session_state['page'] == 'Analyse':
             '''
             )
 
-            # Titre de l'application Streamlit
-            st.title('Distribution des Types de Cellules dans le Dataset')
-            
-            # Remplacez ce chemin par le chemin réel vers votre fichier CSV
-            chemin_fichier_csv = "data/data_PBC.csv"
-            
-            # Lire le fichier CSV dans un DataFrame
-            df_data_PBC = pd.read_csv(chemin_fichier_csv)
-            
-            # Grouper par type de cellule et compter le nombre d'images
-            data = df_data_PBC['Classe'].value_counts().reset_index()
-            data.columns = ['Type de cellule', 'Nombre d\'images']
-            
-            # Couleurs personnalisées pour les classes
-            colors = ['#5f74f4', '#de5e45', '#57c89a', '#a16cf0', '#f7a460', '#5dcdf2', '#ee7193', '#c1e58d']
-            
-            # Créer un graphique à barres avec plotly.graph_objects
-            fig = go.Figure(data=[go.Bar(
-                x=data['Type de cellule'], 
-                y=data['Nombre d\'images'], 
-                text=data['Nombre d\'images'], 
-                marker_color=colors[:len(data)],  # Applique les couleurs aux barres
-                textposition='outside'
-            )])
-            
-            # Mettre à jour la mise en page pour ajuster la taille et mettre un fond transparent
-            fig.update_layout(
-                width=800,
-                height=600,
-                paper_bgcolor='rgba(0,0,0,0)',
-                plot_bgcolor='rgba(0,0,0,0)',
-                title='Distribution des types de cellules dans le dataset',
-                xaxis_title='Type de cellule',
-                yaxis_title='Nombre d\'images'
-            )
-            
-            # Afficher le graphique dans l'application Streamlit
-            st.plotly_chart(fig)
+        # Titre de l'application Streamlit
+        st.title('Distribution des Types de Cellules dans le Dataset')
+        
+        # Remplacez ce chemin par le chemin réel vers votre fichier CSV
+        chemin_fichier_csv = "data/data_PBC.csv"
+        
+        # Lire le fichier CSV dans un DataFrame
+        df_data_PBC = pd.read_csv(chemin_fichier_csv)
+        
+        # Grouper par type de cellule et compter le nombre d'images
+        data = df_data_PBC['Classe'].value_counts().reset_index()
+        data.columns = ['Type de cellule', 'Nombre d\'images']
+        
+        # Couleurs personnalisées pour les classes
+        colors = ['#5f74f4', '#de5e45', '#57c89a', '#a16cf0', '#f7a460', '#5dcdf2', '#ee7193', '#c1e58d']
+        
+        # Créer un graphique à barres avec plotly.graph_objects
+        fig = go.Figure(data=[go.Bar(
+            x=data['Type de cellule'], 
+            y=data['Nombre d\'images'], 
+            text=data['Nombre d\'images'], 
+            marker_color=colors[:len(data)],  # Applique les couleurs aux barres
+            textposition='outside'
+        )])
+        
+        # Mettre à jour la mise en page pour ajuster la taille et mettre un fond transparent
+        fig.update_layout(
+            width=800,
+            height=600,
+            paper_bgcolor='rgba(0,0,0,0)',
+            plot_bgcolor='rgba(0,0,0,0)',
+            title='Distribution des types de cellules dans le dataset',
+            xaxis_title='Type de cellule',
+            yaxis_title='Nombre d\'images'
+        )
+        
+        # Afficher le graphique dans l'application Streamlit
+        st.plotly_chart(fig)
 
     with tab2:
         st.header("Leukemia Dataset")
