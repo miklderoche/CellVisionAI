@@ -255,7 +255,7 @@ elif st.session_state['page'] == 'Analyse':
         )
         
         # Utiliser st.beta_columns pour afficher les graphiques côte à côte
-        col1, col2 = st.beta_columns(2)
+        col1, col2 = st.columns(2)
         
         # Afficher le graphique des largeurs dans la première colonne
         with col1:
