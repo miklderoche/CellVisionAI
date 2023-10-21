@@ -155,7 +155,7 @@ elif st.session_state['page'] == 'Analyse':
             title={
                 'text': 'Proportions des types de cellules dans le dataset',
                 'y':0.8,  # Ajustez la position en y si nécessaire
-                'x':0.2,  # Ajustez la position en x si nécessaire
+                'x':0.1,  # Ajustez la position en x si nécessaire
                 'xanchor': 'left', 
                 'yanchor': 'top',
                 'font': {
