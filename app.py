@@ -28,8 +28,8 @@ from PIL import Image
 image = Image.open('images/illustration_accueil.png')
 
 # Redimensionner l'image à la largeur souhaitée
-new_width = 100
-image = image.resize((new_width, int(new_width * image.height / image.width)))
+new_resolution = (400, 400)
+image = image.resize(new_resolution)
 
 # Affichage de la page en fonction de l'état de la session
 if st.session_state['page'] == 'Accueil':
