@@ -27,7 +27,7 @@ if st.sidebar.button('Documentation'):
 if st.session_state['page'] == 'Accueil':
 
     # Afficher l'image redimensionnée
-    st.image('images/illustration_accueil.png', output_format='PNG')
+    st.image('images/illustration_accueil_500px.png', output_format='PNG')
         
     st.title('Cell Vision AI')
     
