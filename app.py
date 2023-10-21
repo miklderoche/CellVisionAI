@@ -127,10 +127,10 @@ elif st.session_state['page'] == 'Analyse':
                 'text': 'Distribution des types de cellules dans le dataset',
                 'y':0.9,  # Ajustez la position en y si nécessaire
                 'x':0.5,  # Ajustez la position en x si nécessaire
-                'xanchor': 'center', 
-                'yanchor': 'top',
+                'xanchor': 'left', 
+                'yanchor': 'bottom',
                 'font': {
-                    'size': 15  # Ajustez la taille de la police comme nécessaire
+                    'size': 12  # Ajustez la taille de la police comme nécessaire
                 }
             },
             xaxis_title='Type de cellule',
