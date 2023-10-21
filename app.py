@@ -187,7 +187,7 @@ elif st.session_state['page'] == 'Analyse':
 
         # Compter le nombre d'occurrences de chaque dimension
         dimension_counts = df_dimensions['Dimensions'].value_counts().reset_index().rename(columns={'index': 'Dimensions', 'Dimensions': 'Nombre'})
-
+        
         # Créer un graphique à barres pour afficher la répartition des dimensions des images
         fig_dimension_bar = px.bar(dimension_counts, x='Dimensions', y='Nombre', title="Répartition des dimensions des images",
                                     labels={"Dimensions": "Dimensions des images", "Nombre": "Nombre d'images"},
@@ -210,7 +210,7 @@ elif st.session_state['page'] == 'Analyse':
                 }
             }
         )
-
+        
         # Afficher le graphique à barres dans l'application Streamlit
         st.plotly_chart(fig_dimension_bar)
 
