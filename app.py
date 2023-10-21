@@ -180,12 +180,14 @@ elif st.session_state['page'] == 'Analyse':
         st.image('images/PBC_images.png')
 
         ##@@ GRAPHIQUE DES DIMENSIONS @@##
+        # Utiliser le DataFrame existant df_data_PBC
+        df_dimensions = df_data_PBC
         
         # Créer une nouvelle colonne avec les dimensions des images sous forme de chaîne pour l'histogramme
-        df_data_PBC['Dimensions'] = df_data_PBC['Hauteur'].astype(str) + 'x' + df_data_PBC['Largeur'].astype(str)
-        
+        df_dimensions['Dimensions'] = df_dimensions['Hauteur'].astype(str) + 'x' + df_dimensions['Largeur'].astype(str)
+
         # Créer un histogramme des dimensions des images
-        fig_dimensions = px.histogram(df_data_PBC, x="Dimensions", title="Répartition des dimensions des images", 
+        fig_dimensions = px.histogram(df_dimensions, x="Dimensions", title="Répartition des dimensions des images", 
                                      labels={"Dimensions": "Dimensions des images"}, 
                                      color_discrete_sequence=['#5f74f4'])
         
