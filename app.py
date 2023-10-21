@@ -288,7 +288,7 @@ elif st.session_state['page'] == 'Analyse':
         )
         
         # Créer une figure pour la boîte à moustaches de la luminosité par classe
-        fig_brightness_box = px.box(df_data_PBC, x='Classe', y='Luminosite', color='Classe',
+        fig_brightness_box = px.box(df_data_PBC, x='Classe', y='Luminosité', color='Classe',
                                    color_discrete_map=palette_couleurs,
                                    title="Boîte à moustaches de la Luminosité par classe")
         
