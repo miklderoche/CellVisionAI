@@ -33,7 +33,6 @@ image = image.resize(new_resolution)
 
 # Affichage de la page en fonction de l'état de la session
 if st.session_state['page'] == 'Accueil':
-    st.title('Cell Vision AI')
 
     # Afficher l'image redimensionnée
     st.image(image, use_column_width=True, output_format='JPEG')
