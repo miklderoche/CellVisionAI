@@ -178,7 +178,38 @@ elif st.session_state['page'] == 'Analyse':
 
         st.write("Echantillon d'images de chaque classe :")
         st.image('images/PBC_images.png')
+
+        ##@@ GRAPHIQUE DES DIMENSIONS @@##
         
+        # Créer une nouvelle colonne avec les dimensions des images sous forme de chaîne pour l'histogramme
+        df_data_PBC['Dimensions'] = df_data_PBC['Hauteur'].astype(str) + 'x' + df_data_PBC['Largeur'].astype(str)
+        
+        # Créer un histogramme des dimensions des images
+        fig_dimensions = px.histogram(df_data_PBC, x="Dimensions", title="Répartition des dimensions des images", 
+                                     labels={"Dimensions": "Dimensions des images"}, 
+                                     color_discrete_sequence=['#5f74f4'])
+        
+        # Mettre à jour la mise en page pour ajuster la taille et mettre un fond transparent
+        fig_dimensions.update_layout(
+            width=500,  # Ajustez la valeur comme nécessaire
+            height=300,  # Ajustez la valeur comme nécessaire
+            paper_bgcolor='rgba(0,0,0,0)',
+            plot_bgcolor='rgba(0,0,0,0)',
+            title={
+                'text': 'Répartition des dimensions des images',
+                'y':0.9,  
+                'x':0.5,  
+                'xanchor': 'center',  
+                'yanchor': 'top',  
+                'font': {
+                    'size': 12  # Ajustez la taille de la police comme nécessaire
+                }
+            }
+        )
+        
+        # Afficher le graphique dans l'application Streamlit
+        st.plotly_chart(fig_dimensions)
+
     with tab2:
         st.header("Leukemia Dataset")
         
