@@ -179,56 +179,15 @@ elif st.session_state['page'] == 'Analyse':
         st.write("Echantillon d'images de chaque classe :")
         st.image('images/PBC_images.png')
 
-##@@ GRAPHIQUE DES DIMENSIONS & CLASSES @@##
+##@@ GRAPHIQUE DES DIMENSIONS PAR CLASSE (HAUTEUR) @@##
         import plotly.express as px
-        import plotly.subplots as sp        
-
+        import plotly.subplots as sp   
+        
         # Utiliser le DataFrame existant df_data_PBC
         df_graph_dim_class = df_data_PBC
         
         # Créer un dataframe avec les dimensions et les classes
         df_graph_dim_class[['Largeur', 'Hauteur']] = df_graph_dim_class['Dimensions'].str.split('x', expand=True)
-        
-        # Créer une palette de couleurs personnalisée pour vos classes
-        palette_couleurs = {
-            'neutrophil': '#5f74f4',
-            'eosinophil': '#de5e45',
-            'ig': '#57c89a',
-            'platelet': '#a16cf0',
-            'erythroblast': '#f7a460',
-            'monocyte': '#5dcdf2',
-            'basophil': '#ee7193',
-            'lymphocyte': '#c1e58d'
-        }
-        
-        # Créer un graphique d'histogramme pour les largeurs
-        fig_dimensions_largeur = px.histogram(df_graph_dim_class, x="Largeur", color="Classe",
-                                              labels={"Largeur": "Largeur des images"},
-                                              color_discrete_map=palette_couleurs,
-                                              title="Répartition des largeurs des images par classe")
-        
-        # Mettre à jour la mise en page pour ajuster la taille et mettre un fond transparent
-        fig_dimensions_largeur.update_layout(
-            width=500,  # Ajustez la valeur comme nécessaire
-            height=400,  # Ajustez la valeur comme nécessaire
-            paper_bgcolor='rgba(0,0,0,0)',
-            plot_bgcolor='rgba(0,0,0,0)',
-            title={
-                'text': 'Répartition des largeurs des images par classe',
-                'y': 0.9,
-                'x': 0.5,
-                'xanchor': 'center',
-                'yanchor': 'top',
-                'font': {
-                    'size': 15
-                }
-            }
-        )
-        
-        # Afficher le graphique des largeurs dans l'application Streamlit
-        st.plotly_chart(fig_dimensions_largeur)
-        
-        ##@@ GRAPHIQUE DES DIMENSIONS PAR CLASSE (HAUTEUR) @@##
         
         # Créer un graphique d'histogramme pour les hauteurs
         fig_dimensions_hauteur = px.histogram(df_graph_dim_class, x="Hauteur", color="Classe",
@@ -252,6 +211,7 @@ elif st.session_state['page'] == 'Analyse':
                     'size': 15
                 }
             }
+            showlegend=False
         )
         
         # Utiliser st.beta_columns pour afficher les graphiques côte à côte
