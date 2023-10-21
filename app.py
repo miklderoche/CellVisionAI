@@ -27,7 +27,7 @@ if st.sidebar.button('Documentation'):
 if st.session_state['page'] == 'Accueil':
     left_co, cent_co, last_co = st.columns(3)
     with cent_co:
-        st.image('images/illustration_accueil.png', width=400)
+        st.image('images/illustration_accueil.png', width=800)
 
     st.title('Cell Vision AI')
 
