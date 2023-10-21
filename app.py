@@ -31,7 +31,7 @@ if st.session_state['page'] == 'Accueil':
 
     # Afficher l'image centrée dans la colonne du milieu (col2)
     with col2:
-        st.image('images/illustration_accueil.png', width=500)
+        st.image('images/illustration_accueil.png', width=400)
         
     st.title('Cell Vision AI')
     
