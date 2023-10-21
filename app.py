@@ -225,6 +225,7 @@ elif st.session_state['page'] == 'Analyse':
             },
             showlegend=False  # Ne pas afficher la légende
         )
+        st.plotly_chart(fig_dimensions_largeur)
         
         # Créer un graphique d'histogramme pour les hauteurs
         fig_dimensions_hauteur = px.histogram(df_graph_dim_class, x="Hauteur", color="Classe",
@@ -250,17 +251,7 @@ elif st.session_state['page'] == 'Analyse':
             },
             showlegend=False  # Ne pas afficher la légende
         )
-        
-        # Utiliser st.beta_columns pour afficher les graphiques côte à côte
-        col1, col2 = st.columns(2)
-        
-        # Afficher le graphique des largeurs dans la première colonne
-        with col1:
-            st.plotly_chart(fig_dimensions_largeur)
-        
-        # Afficher le graphique des hauteurs dans la deuxième colonne
-        with col2:
-            st.plotly_chart(fig_dimensions_hauteur)
+        st.plotly_chart(fig_dimensions_hauteur)
 
 ##@@ BOÎTES À MOUSTACHES DE LA TEINTE ET DE LA LUMINOSITÉ PAR CLASSE @@##
         
