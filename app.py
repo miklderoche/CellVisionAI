@@ -125,7 +125,7 @@ elif st.session_state['page'] == 'Analyse':
             plot_bgcolor='rgba(0,0,0,0)',
             title={
                 'text': 'Distribution des types de cellules dans le dataset',
-                'y':0.7,  # Ajustez la position en y si nécessaire
+                'y':0.9,  # Ajustez la position en y si nécessaire
                 'x':0,  # Ajustez la position en x si nécessaire
                 'xanchor': 'left', 
                 'yanchor': 'top',
