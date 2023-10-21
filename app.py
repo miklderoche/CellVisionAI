@@ -176,7 +176,7 @@ elif st.session_state['page'] == 'Analyse':
         with col2:
             st.plotly_chart(fig_pie)
 
-        st.write("Echantillon d'images de chaque classe :")
+        st.write("Echantillon d'images par type de cellules :")
         st.image('images/PBC_images.png')
 
 ##@@ GRAPHIQUE DES DIMENSIONS PAR CLASSE (HAUTEUR) @@##
@@ -205,7 +205,7 @@ elif st.session_state['page'] == 'Analyse':
         fig_dimensions_largeur = px.histogram(df_graph_dim_class, x="Largeur", color="Classe",
                                               labels={"Largeur": "Largeur des images"},
                                               color_discrete_map=palette_couleurs,
-                                              title="Répartition des largeurs des images par classe")
+                                              title="Répartition des largeurs des images par type de cellules")
         
         # Mettre à jour la mise en page pour ajuster la taille et mettre un fond transparent
         fig_dimensions_largeur.update_layout(
@@ -214,7 +214,7 @@ elif st.session_state['page'] == 'Analyse':
             paper_bgcolor='rgba(0,0,0,0)',
             plot_bgcolor='rgba(0,0,0,0)',
             title={
-                'text': 'Répartition des largeurs des images par classe',
+                'text': 'Répartition des largeurs des images par type de cellules',
                 'y': 0.9,
                 'x': 0.5,
                 'xanchor': 'center',
@@ -230,7 +230,7 @@ elif st.session_state['page'] == 'Analyse':
         fig_dimensions_hauteur = px.histogram(df_graph_dim_class, x="Hauteur", color="Classe",
                                               labels={"Hauteur": "Hauteur des images"},
                                               color_discrete_map=palette_couleurs,
-                                              title="Répartition des hauteurs des images par classe")
+                                              title="Répartition des hauteurs des images par type de cellules")
         
         # Mettre à jour la mise en page pour ajuster la taille et mettre un fond transparent
         fig_dimensions_hauteur.update_layout(
@@ -239,7 +239,7 @@ elif st.session_state['page'] == 'Analyse':
             paper_bgcolor='rgba(0,0,0,0)',
             plot_bgcolor='rgba(0,0,0,0)',
             title={
-                'text': 'Répartition des hauteurs des images par classe',
+                'text': 'Répartition des hauteurs des images par type de cellules',
                 'y': 0.9,
                 'x': 0.5,
                 'xanchor': 'center',
@@ -266,7 +266,7 @@ elif st.session_state['page'] == 'Analyse':
         # Créer une figure pour la boîte à moustaches de la teinte par classe
         fig_hue_box = px.box(df_data_PBC, x='Classe', y='Teinte', color='Classe',
                              color_discrete_map=palette_couleurs,
-                             title="Boîte à moustaches de la Teinte par classe")
+                             title="Boîte à moustaches de la Teinte par type de cellules)
         
         # Mettre à jour la mise en page pour ajuster la taille et mettre un fond transparent
         fig_hue_box.update_layout(
@@ -275,7 +275,7 @@ elif st.session_state['page'] == 'Analyse':
             paper_bgcolor='rgba(0,0,0,0)',
             plot_bgcolor='rgba(0,0,0,0)',
             title={
-                'text': "Boîte à moustaches de la Teinte par classe",
+                'text': "Boîte à moustaches de la Teinte par type de cellules",
                 'y': 0.9,
                 'x': 0.5,
                 'xanchor': 'center',
@@ -291,7 +291,7 @@ elif st.session_state['page'] == 'Analyse':
         # Créer une figure pour la boîte à moustaches de la luminosité par classe
         fig_brightness_box = px.box(df_data_PBC, x='Classe', y='Luminosité', color='Classe',
                                    color_discrete_map=palette_couleurs,
-                                   title="Boîte à moustaches de la Luminosité par classe")
+                                   title="Boîte à moustaches de la Luminosité par type de cellules")
         
         # Mettre à jour la mise en page pour ajuster la taille et mettre un fond transparent
         fig_brightness_box.update_layout(
@@ -300,7 +300,7 @@ elif st.session_state['page'] == 'Analyse':
             paper_bgcolor='rgba(0,0,0,0)',
             plot_bgcolor='rgba(0,0,0,0)',
             title={
-                'text': "Boîte à moustaches de la Luminosité par classe",
+                'text': "Boîte à moustaches de la Luminosité par type de cellules",
                 'y': 0.9,
                 'x': 0.5,
                 'xanchor': 'center',
