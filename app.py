@@ -201,53 +201,32 @@ elif st.session_state['page'] == 'Analyse':
             'lymphocyte': '#c1e58d'
         }
         
-        # Définir l'ordre des catégories pour la colonne "Classe"
-        ordre_categories = [
-            'neutrophil', 'eosinophil', 'ig', 'platelet', 'erythroblast', 'monocyte', 'basophil', 'lymphocyte'
-        ]
-        
-        # Créer deux sous-graphiques côte à côte
-        fig = sp.make_subplots(rows=1, cols=2, subplot_titles=("Répartition des largeurs", "Répartition des hauteurs"))
-        
-        # Ajouter le graphique pour les largeurs
-        fig_dimensions_largeur = px.bar(df_graph_dim_class, x="Classe", y="Largeur",
-                                          labels={"value": "Largeur", "variable": "Caractéristique"},
-                                          color_discrete_map=palette_couleurs,
-                                          category_orders={"Classe": ordre_categories})
-        
-        # Ajouter le graphique pour les hauteurs
-        fig_dimensions_hauteur = px.bar(df_graph_dim_class, x="Classe", y="Hauteur",
-                                          labels={"value": "Hauteur", "variable": "Caractéristique"},
-                                          color_discrete_map=palette_couleurs,
-                                          category_orders={"Classe": ordre_categories})
+        # Créer un graphique d'histogramme empilé pour les largeurs et les hauteurs
+        fig_dimensions_stacked = px.histogram(df_graph_dim_class, x=["Largeur", "Hauteur"], color="Classe",
+                                              labels={"value": "Dimensions", "variable": "Caractéristique"},
+                                              color_discrete_map=palette_couleurs,
+                                              title="Répartition des dimensions des images par classe")
         
         # Mettre à jour la mise en page pour ajuster la taille et mettre un fond transparent
-        for f in [fig_dimensions_largeur, fig_dimensions_hauteur]:
-            f.update_layout(
-                paper_bgcolor='rgba(0,0,0,0)',
-                plot_bgcolor='rgba(0,0,0,0)',
-                title={
-                    'y': 0.9,
-                    'xanchor': 'center',
-                    'yanchor': 'top',
-                    'font': {
-                        'size': 15
-                    }
-                }
-            )
-        
-        # Ajouter les deux graphiques aux sous-graphiques
-        fig.add_trace(fig_dimensions_largeur.data[0], row=1, col=1)
-        fig.add_trace(fig_dimensions_hauteur.data[0], row=1, col=2)
-        
-        # Mettre à jour la mise en page des sous-graphiques
-        fig.update_layout(
+        fig_dimensions_stacked.update_layout(
             width=1000,  # Ajustez la valeur comme nécessaire
             height=400,  # Ajustez la valeur comme nécessaire
+            paper_bgcolor='rgba(0,0,0,0)',
+            plot_bgcolor='rgba(0,0,0,0)',
+            title={
+                'text': 'Répartition des dimensions des images par classe',
+                'y': 0.9,
+                'x': 0.5,
+                'xanchor': 'center',
+                'yanchor': 'top',
+                'font': {
+                    'size': 15
+                }
+            }
         )
         
-        # Afficher les sous-graphiques dans l'application Streamlit
-        st.plotly_chart(fig)
+        # Afficher le graphique empilé dans l'application Streamlit
+        st.plotly_chart(fig_dimensions_stacked)
 
     with tab2:
         st.header("Leukemia Dataset")
