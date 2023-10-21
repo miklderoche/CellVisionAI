@@ -211,7 +211,7 @@ elif st.session_state['page'] == 'Analyse':
                     'size': 15
                 }
             },
-            showlegend=False
+            showlegend=False  # Ne pas afficher la légende
         )
         
         # Utiliser st.beta_columns pour afficher les graphiques côte à côte
