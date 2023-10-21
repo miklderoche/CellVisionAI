@@ -283,7 +283,8 @@ elif st.session_state['page'] == 'Analyse':
                 'font': {
                     'size': 15
                 }
-            }
+            },
+            showlegend=False  # Ne pas afficher la légende
         )
         st.plotly_chart(fig_hue_box)
         
@@ -307,7 +308,8 @@ elif st.session_state['page'] == 'Analyse':
                 'font': {
                     'size': 15
                 }
-            }
+            },
+            showlegend=False  # Ne pas afficher la légende
         )
         st.plotly_chart(fig_brightness_box)
             
