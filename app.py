@@ -115,7 +115,6 @@ elif st.session_state['page'] == 'Analyse':
             text=data['Nombre d\'images'], 
             marker_color=colors[:len(data)],  # Applique les couleurs aux barres
             textposition='inside',
-            insidetextanchor='start'
         )])
 
         # Mettre à jour la mise en page pour ajuster la taille et mettre un fond transparent
@@ -124,7 +123,16 @@ elif st.session_state['page'] == 'Analyse':
             height=400,
             paper_bgcolor='rgba(0,0,0,0)',
             plot_bgcolor='rgba(0,0,0,0)',
-            title='Distribution des types de cellules dans le dataset',
+            title={
+                'text': 'Distribution des types de cellules dans le dataset',
+                'y':0.9,  # Ajustez la position en y si nécessaire
+                'x':0.5,  # Ajustez la position en x si nécessaire
+                'xanchor': 'center', 
+                'yanchor': 'top',
+                'font': {
+                    'size': 15  # Ajustez la taille de la police comme nécessaire
+                }
+            },
             xaxis_title='Type de cellule',
             yaxis_title='Nombre d\'images'
         )
