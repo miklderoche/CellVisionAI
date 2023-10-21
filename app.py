@@ -141,7 +141,7 @@ elif st.session_state['page'] == 'Analyse':
             height=400,
             paper_bgcolor='rgba(0,0,0,0)',
             plot_bgcolor='rgba(0,0,0,0)',
-            title='Proportions des types de cellules dans le dataset'
+            title='Proportions des types de cellules dans le dataset',
             showlegend=False  # Ne pas afficher la légende
         )
 
