@@ -185,31 +185,31 @@ elif st.session_state['page'] == 'Analyse':
         # Utiliser le DataFrame existant df_data_PBC
         df_dimensions = df_data_PBC
         
-        # Créer un histogramme des dimensions des images
-        fig_dimensions = px.histogram(df_dimensions, x="Dimensions", title="Répartition des dimensions des images", 
-                                     labels={"Dimensions": "Dimensions des images"}, 
-                                     color_discrete_sequence=['#5f74f4'])
+        # Créer un graphique à barres pour afficher la répartition des dimensions des images
+        fig_dimension_bar = px.bar(dimension_counts, x='Dimensions', y='Nombre', title="Répartition des dimensions des images",
+                                    labels={"Dimensions": "Dimensions des images", "Nombre": "Nombre d'images"},
+                                    color_discrete_sequence=['#5f74f4'])
         
         # Mettre à jour la mise en page pour ajuster la taille et mettre un fond transparent
-        fig_dimensions.update_layout(
+        fig_dimension_bar.update_layout(
             width=500,  # Ajustez la valeur comme nécessaire
             height=300,  # Ajustez la valeur comme nécessaire
             paper_bgcolor='rgba(0,0,0,0)',
             plot_bgcolor='rgba(0,0,0,0)',
             title={
                 'text': 'Répartition des dimensions des images',
-                'y':0.9,  
-                'x':0.5,  
-                'xanchor': 'center',  
-                'yanchor': 'top',  
+                'y': 0.9,
+                'x': 0.5,
+                'xanchor': 'center',
+                'yanchor': 'top',
                 'font': {
                     'size': 15  # Ajustez la taille de la police comme nécessaire
                 }
             }
         )
-        
-        # Afficher le graphique dans l'application Streamlit
-        st.plotly_chart(fig_dimensions)
+
+        # Afficher le graphique à barres dans l'application Streamlit
+        st.plotly_chart(fig_dimension_bar)
 
     with tab2:
         st.header("Leukemia Dataset")
