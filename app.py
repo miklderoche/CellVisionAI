@@ -214,7 +214,7 @@ elif st.session_state['page'] == 'Analyse':
             paper_bgcolor='rgba(0,0,0,0)',
             plot_bgcolor='rgba(0,0,0,0)',
             title={
-                'text': 'Répartition des largeurs des images par classe II',
+                'text': 'Répartition des largeurs des images par classe',
                 'y': 0.9,
                 'x': 0.5,
                 'xanchor': 'center',
