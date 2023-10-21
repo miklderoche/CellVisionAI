@@ -121,6 +121,7 @@ elif st.session_state['page'] == 'Analyse':
         fig_bar.update_layout(
             width=400,
             height=475,
+            margin=dict(t=50),
             paper_bgcolor='rgba(0,0,0,0)',
             plot_bgcolor='rgba(0,0,0,0)',
             title='Distribution des types de cellules dans le dataset',
