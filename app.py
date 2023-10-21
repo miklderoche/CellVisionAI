@@ -65,7 +65,7 @@ if st.session_state['page'] == 'Accueil':
 elif st.session_state['page'] == 'Analyse':
     st.title("Analyse des jeux de données")
 
-    st.image('images/bandeau_3.jpg')
+    st.image('images/bandeau_4.jpg')
 
     tab1, tab2, tab3, tab4 = st.tabs(["PBC Dataset Normal DIB", "Leukemia Dataset", "Acute Promyelocytic Leukemia (APL)", "Recommandations"])
 
