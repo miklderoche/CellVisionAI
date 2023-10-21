@@ -188,11 +188,23 @@ elif st.session_state['page'] == 'Analyse':
         # Créer un dataframe avec les dimensions et les classes
         df_graph_dim_class[['Largeur', 'Hauteur']] = df_graph_dim_class['Dimensions'].str.split('x', expand=True)
         
-        # Créer un graphique à barres empilées
-        fig_dimensions_by_class = px.histogram(df_graph_dim_class, x="Largeur", title="Répartition des dimensions des images par classe",
-                                               labels={"Largeur": "Largeur des images"}, 
-                                               color="Classe", 
-                                               color_discrete_sequence=px.colors.qualitative.Plotly)
+        # Créer une palette de couleurs personnalisée pour vos classes
+        palette_couleurs = {
+            'neutrophil': '#5f74f4',
+            'eosinophil': '#de5e45',
+            'ig': '#57c89a',
+            'platelet': '#a16cf0',
+            'erythroblast': '#f7a460',
+            'monocyte': '#5dcdf2',
+            'basophil': '#ee7193',
+            'lymphocyte': '#c1e58d'
+        }
+        
+        # Créer un graphique en barres groupées en utilisant la palette de couleurs personnalisée
+        fig_dimensions_by_class = px.bar(df_graph_dim_class, x="Classe", y=["Largeur", "Hauteur"], 
+                                          title="Répartition des dimensions des images par classe",
+                                          labels={"value": "Dimensions", "variable": "Caractéristique"}, 
+                                          color_discrete_map=palette_couleurs)
         
         # Mettre à jour la mise en page pour ajuster la taille et mettre un fond transparent
         fig_dimensions_by_class.update_layout(
