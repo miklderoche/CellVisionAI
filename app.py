@@ -255,14 +255,14 @@ elif st.session_state['page'] == 'Analyse':
         )
         
         # Utiliser st.beta_columns pour afficher les graphiques côte à côte
-        col3, col4 = st.beta_columns(2)
+        col1, col2 = st.beta_columns(2)
         
         # Afficher le graphique des largeurs dans la première colonne
-        with col3:
+        with col1:
             st.plotly_chart(fig_dimensions_largeur)
         
         # Afficher le graphique des hauteurs dans la deuxième colonne
-        with col4:
+        with col2:
             st.plotly_chart(fig_dimensions_hauteur)
 
     with tab2:
