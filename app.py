@@ -119,7 +119,7 @@ elif st.session_state['page'] == 'Analyse':
         # Mettre à jour la mise en page pour ajuster la taille et mettre un fond transparent
         fig.update_layout(
             width=400,
-            height=300,
+            height=400,
             paper_bgcolor='rgba(0,0,0,0)',
             plot_bgcolor='rgba(0,0,0,0)',
             title='Distribution des types de cellules dans le dataset',
