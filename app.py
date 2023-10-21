@@ -115,7 +115,6 @@ elif st.session_state['page'] == 'Analyse':
             text=data['Nombre d\'images'], 
             marker_color=colors[:len(data)],  # Applique les couleurs aux barres
             textposition='inside',
-            insidetextanchor='horizontal'
         )])
 
         # Mettre à jour la mise en page pour ajuster la taille et mettre un fond transparent
