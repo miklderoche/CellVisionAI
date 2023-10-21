@@ -5,12 +5,9 @@ if 'page' not in st.session_state:
     st.session_state['page'] = 'Accueil'
 
 ## %%% BARE LATERALE %%% ##
-# Créer une colonne pour centrer l'image
-col1, col2, col3 = st.columns([1, 2, 1])
 
-# Afficher l'image centrée dans la colonne du milieu (col2)
-with col2:
-    st.sidebar.image('images/logo_VisionCellAI.png', use_column_width=True)
+# Afficher l'image
+    st.sidebar.image('images/logo_VisionCellAI.png', width=150)
 
 # Menu latéral avec des boutons
 if st.sidebar.button('Accueil'):
