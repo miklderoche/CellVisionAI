@@ -59,7 +59,7 @@ if st.session_state['page'] == 'Accueil':
 ## %%% PAGE PROJET %%% ##
 
 elif st.session_state['page'] == 'Analyse':
-    st.title("Analyse des jeux de données")
+    st.title("Analyse des jeux de données II")
 
     st.image('images/bandeau_analyse_3.jpg')
 
