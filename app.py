@@ -222,7 +222,8 @@ elif st.session_state['page'] == 'Analyse':
                 'font': {
                     'size': 15
                 }
-            }
+            },
+            showlegend=False  # Ne pas afficher la légende
         )
         
         # Créer un graphique d'histogramme pour les hauteurs
