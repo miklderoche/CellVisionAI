@@ -266,7 +266,7 @@ elif st.session_state['page'] == 'Analyse':
         # Créer une figure pour la boîte à moustaches de la teinte par classe
         fig_hue_box = px.box(df_data_PBC, x='Classe', y='Teinte', color='Classe',
                              color_discrete_map=palette_couleurs,
-                             title="Boîte à moustaches de la Teinte par type de cellules)
+                             title="Boîte à moustaches de la Teinte par type de cellules")
         
         # Mettre à jour la mise en page pour ajuster la taille et mettre un fond transparent
         fig_hue_box.update_layout(
