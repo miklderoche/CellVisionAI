@@ -225,7 +225,6 @@ elif st.session_state['page'] == 'Analyse':
             },
             showlegend=False  # Ne pas afficher la légende
         )
-        st.plotly_chart(fig_dimensions_largeur)
         
         # Créer un graphique d'histogramme pour les hauteurs
         fig_dimensions_hauteur = px.histogram(df_graph_dim_class, x="Hauteur", color="Classe",
@@ -251,7 +250,16 @@ elif st.session_state['page'] == 'Analyse':
             },
             showlegend=False  # Ne pas afficher la légende
         )
-        st.plotly_chart(fig_dimensions_hauteur)
+        # Utiliser st.beta_columns pour afficher les graphiques côte à côte
+        col1, col2 = st.columns(2)
+        
+        # Afficher le graphique de la boîte à moustaches de la teinte dans la première colonne
+        with col1:
+            st.plotly_chart(fig_dimensions_largeur)
+        
+        # Afficher le graphique de la boîte à moustaches de la luminosité dans la deuxième colonne
+        with col2:
+            st.plotly_chart(fig_dimensions_hauteur)
 
 ##@@ BOÎTES À MOUSTACHES DE LA TEINTE ET DE LA LUMINOSITÉ PAR CLASSE @@##
         
@@ -277,6 +285,7 @@ elif st.session_state['page'] == 'Analyse':
                 }
             }
         )
+        st.plotly_chart(fig_hue_box)
         
         # Créer une figure pour la boîte à moustaches de la luminosité par classe
         fig_brightness_box = px.box(df_data_PBC, x='Classe', y='Luminosité', color='Classe',
@@ -300,17 +309,7 @@ elif st.session_state['page'] == 'Analyse':
                 }
             }
         )
-        
-        # Utiliser st.beta_columns pour afficher les graphiques côte à côte
-        col1, col2 = st.columns(2)
-        
-        # Afficher le graphique de la boîte à moustaches de la teinte dans la première colonne
-        with col1:
-            st.plotly_chart(fig_hue_box)
-        
-        # Afficher le graphique de la boîte à moustaches de la luminosité dans la deuxième colonne
-        with col2:
-            st.plotly_chart(fig_brightness_box)
+        st.plotly_chart(fig_brightness_box)
             
     with tab2:
         st.header("Leukemia Dataset")
