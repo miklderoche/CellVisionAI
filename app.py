@@ -205,7 +205,7 @@ elif st.session_state['page'] == 'Analyse':
         fig_dimensions_largeur = px.histogram(df_graph_dim_class, x="Largeur", color="Classe",
                                               labels={"Largeur": "Largeur des images"},
                                               color_discrete_map=palette_couleurs,
-                                              title="Répartition des largeurs des images par type de cellules")
+                                              title="Répartition des largeurs des images \npar type de cellules")
         
         # Mettre à jour la mise en page pour ajuster la taille et mettre un fond transparent
         fig_dimensions_largeur.update_layout(
@@ -214,7 +214,7 @@ elif st.session_state['page'] == 'Analyse':
             paper_bgcolor='rgba(0,0,0,0)',
             plot_bgcolor='rgba(0,0,0,0)',
             title={
-                'text': 'Répartition des largeurs des images par type de cellules',
+                'text': 'Répartition des largeurs des images \npar type de cellules',
                 'y': 0.9,
                 'x': 0.5,
                 'xanchor': 'center',
@@ -266,7 +266,7 @@ elif st.session_state['page'] == 'Analyse':
         # Créer une figure pour la boîte à moustaches de la teinte par classe
         fig_hue_box = px.box(df_data_PBC, x='Classe', y='Teinte', color='Classe',
                              color_discrete_map=palette_couleurs,
-                             title="Boîte à moustaches de la Teinte par type de cellules")
+                             title="Boîtes à moustaches de la Teinte par type de cellules")
         
         # Mettre à jour la mise en page pour ajuster la taille et mettre un fond transparent
         fig_hue_box.update_layout(
@@ -275,7 +275,7 @@ elif st.session_state['page'] == 'Analyse':
             paper_bgcolor='rgba(0,0,0,0)',
             plot_bgcolor='rgba(0,0,0,0)',
             title={
-                'text': "Boîte à moustaches de la Teinte par type de cellules",
+                'text': "Boîtes à moustaches de la Teinte par type de cellules",
                 'y': 0.9,
                 'x': 0.5,
                 'xanchor': 'center',
@@ -291,7 +291,7 @@ elif st.session_state['page'] == 'Analyse':
         # Créer une figure pour la boîte à moustaches de la luminosité par classe
         fig_brightness_box = px.box(df_data_PBC, x='Classe', y='Luminosité', color='Classe',
                                    color_discrete_map=palette_couleurs,
-                                   title="Boîte à moustaches de la Luminosité par type de cellules")
+                                   title="Boîtes à moustaches de la Luminosité par type de cellules")
         
         # Mettre à jour la mise en page pour ajuster la taille et mettre un fond transparent
         fig_brightness_box.update_layout(
@@ -300,7 +300,7 @@ elif st.session_state['page'] == 'Analyse':
             paper_bgcolor='rgba(0,0,0,0)',
             plot_bgcolor='rgba(0,0,0,0)',
             title={
-                'text': "Boîte à moustaches de la Luminosité par type de cellules",
+                'text': "Boîtes à moustaches de la Luminosité par type de cellules",
                 'y': 0.9,
                 'x': 0.5,
                 'xanchor': 'center',
