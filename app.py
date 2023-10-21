@@ -145,7 +145,7 @@ elif st.session_state['page'] == 'Analyse':
         )
 
         # Créer des colonnes pour afficher les graphiques côte à côte
-        col1, col2 = st.beta_columns(2)
+        col1, col2 = st.columns(2)
 
         # Afficher le graphique à barres dans la première colonne
         with col1:
