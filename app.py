@@ -90,7 +90,7 @@ elif st.session_state['page'] == 'Analyse':
             '''
             )
 
-        ###@@@ GRAPHIQUE A BARRES @@@###
+        ###@@@ GRAPHIQUES @@@###
         
         import pandas as pd
         import plotly.graph_objects as go
@@ -108,27 +108,52 @@ elif st.session_state['page'] == 'Analyse':
         colors = ['#5f74f4', '#de5e45', '#57c89a', '#a16cf0', '#f7a460', '#5dcdf2', '#ee7193', '#c1e58d']
         
         # Créer un graphique à barres avec plotly.graph_objects
-        fig = go.Figure(data=[go.Bar(
+        fig_bar = go.Figure(data=[go.Bar(
             x=data['Type de cellule'], 
             y=data['Nombre d\'images'], 
             text=data['Nombre d\'images'], 
             marker_color=colors[:len(data)],  # Applique les couleurs aux barres
             textposition='outside'
         )])
-        
+
         # Mettre à jour la mise en page pour ajuster la taille et mettre un fond transparent
-        fig.update_layout(
+        fig_bar.update_layout(
             width=400,
-            height=550,
+            height=400,
             paper_bgcolor='rgba(0,0,0,0)',
             plot_bgcolor='rgba(0,0,0,0)',
             title='Distribution des types de cellules dans le dataset',
             xaxis_title='Type de cellule',
             yaxis_title='Nombre d\'images'
         )
-        
-        # Afficher le graphique dans l'application Streamlit
-        st.plotly_chart(fig)
+
+        # Créer un graphique en camembert avec plotly.graph_objects
+        fig_pie = go.Figure(data=[go.Pie(
+            labels=data['Type de cellule'], 
+            values=data['Nombre d\'images'],
+            marker_colors=colors[:len(data)],  # Applique les couleurs aux segments
+            textinfo='percent+label'
+        )])
+
+        # Mettre à jour la mise en page pour ajuster la taille et mettre un fond transparent
+        fig_pie.update_layout(
+            width=550,
+            height=500,
+            paper_bgcolor='rgba(0,0,0,0)',
+            plot_bgcolor='rgba(0,0,0,0)',
+            title='Proportions des types de cellules dans le dataset'
+        )
+
+        # Créer des colonnes pour afficher les graphiques côte à côte
+        col1, col2 = st.beta_columns(2)
+
+        # Afficher le graphique à barres dans la première colonne
+        with col1:
+            st.plotly_chart(fig_bar)
+
+        # Afficher le graphique en camembert dans la deuxième colonne
+        with col2:
+            st.plotly_chart(fig_pie)
 
     with tab2:
         st.header("Leukemia Dataset")
