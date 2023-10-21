@@ -180,6 +180,8 @@ elif st.session_state['page'] == 'Analyse':
         st.image('images/PBC_images.png')
 
         ##@@ GRAPHIQUE DES DIMENSIONS @@##
+        import plotly.express as px
+        
         # Utiliser le DataFrame existant df_data_PBC
         df_dimensions = df_data_PBC
         
