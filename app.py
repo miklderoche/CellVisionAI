@@ -108,6 +108,9 @@ elif st.session_state['page'] == 'Analyse':
         data = df_data_PBC['Classe'].value_counts().reset_index()
         data.columns = ['Type de cellule', 'Nombre d\'images']
         
+        # Couleurs personnalisées pour les classes
+        colors = ['#5f74f4', '#de5e45', '#57c89a', '#a16cf0', '#f7a460', '#5dcdf2', '#ee7193', '#c1e58d']
+
         # Créer une palette de couleurs personnalisée pour vos classes
         palette_couleurs = {
             'neutrophil': '#5f74f4',
@@ -126,7 +129,7 @@ elif st.session_state['page'] == 'Analyse':
             x=data['Type de cellule'], 
             y=data['Nombre d\'images'], 
             text=data['Nombre d\'images'], 
-            marker_color=palette_couleurs[:len(data)],  # Applique les couleurs aux barres
+            marker_color=colors[:len(data)],  # Applique les couleurs aux barres
             textposition='inside',
         )])
 
@@ -155,7 +158,7 @@ elif st.session_state['page'] == 'Analyse':
         fig_pie = go.Figure(data=[go.Pie(
             labels=data['Type de cellule'], 
             values=data['Nombre d\'images'],
-            marker_colors=palette_couleurs[:len(data)],  # Applique les couleurs aux segments
+            marker_colors=colors[:len(data)],  # Applique les couleurs aux segments
             textinfo='percent+label'
         )])
 
