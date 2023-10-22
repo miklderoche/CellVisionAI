@@ -381,18 +381,18 @@ elif st.session_state['page'] == 'Analyse':
 
         st.write(
             '''
-            **Analyse Exploratoire des Données :**
+            - **Analyse Exploratoire des Données :**
             Effectuer une analyse approfondie pour comprendre les limites potentielles et les caractéristiques spécifiques de chaque jeu de données.
             
-            **Nettoyage des Données :**
+            - **Nettoyage des Données :**
             Pour le Dataset 3, bien que la majorité des données soient propres, une analyse détaillée des images peut révéler des problèmes, 
             tels que la difficulté de reconnaissance des noyaux par les algorithmes, nécessitant l'élimination de certaines données.
             
-            **Prétraitement :**
+            - **Prétraitement :**
             Des fichiers de données au format CSV ont été créés pour simplifier l’analyse statistique des données, y compris le nombre de classes, 
             le nombre d’images par classe, et les formats et dimensions des images.
             
-            **Gestion des Limitations :**
+            - **Gestion des Limitations :**
             Les différences en termes de qualité, de format, et de représentativité des catégories de cellules entre les jeux de données peuvent poser des défis.
             Une stratégie d'intégration et de normalisation doit être développée pour gérer ces différences.
             Le manque de classification des cellules dans le Dataset 2 et les incertitudes dans le Dataset 3 nécessitent des stratégies spécifiques pour gérer et, si possible, minimiser ces limitations.
