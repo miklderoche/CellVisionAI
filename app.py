@@ -88,7 +88,7 @@ elif st.session_state['page'] == 'Analyse':
             
             **Analyse**
             
-            - Diversité des formes et des tailles de cellules.
+            - Diversité des formes et des tailles des cellules dans les images.
             - Diversité de propriétés entre les classes nous permettra de pouvoir classer les cellules.
             - Distribution équilibrée des images entre les classes semblent adaptées à une utilisation dans des tâches d'analyse ou de modélisation.
             - Nécessité de normaliser la luminosité, la teinte et la taille des images.
