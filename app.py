@@ -90,6 +90,7 @@ elif st.session_state['page'] == 'Analyse':
             
             - Diversité des formes et des tailles des cellules dans les images.
             - Diversité de propriétés entre les classes nous permettra de pouvoir classer les cellules.
+            - Le fond des images (basé sur la taille des hématies) semble indiquer que le zoom utilisé pour capturer les cellules est le même.
             - Distribution équilibrée des images entre les classes semblent adaptées à une utilisation dans des tâches d'analyse ou de modélisation.
             - Nécessité de normaliser la luminosité, la teinte et la taille des images.
             '''
