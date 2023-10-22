@@ -377,7 +377,7 @@ elif st.session_state['page'] == 'Analyse':
             )
         
     with tab4:
-        st.header("Recommandations pour le Traitement des Données")
+        st.header("Recommandations pour le traitement des données")
 
         st.write(
             '''
