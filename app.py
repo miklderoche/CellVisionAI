@@ -33,7 +33,7 @@ if st.session_state['page'] == 'Accueil':
     with col2:
         st.image('images/illustration_accueil.png')
         
-    st.title('Cell Vision AI 2')
+    st.title('Cell Vision AI')
     
     st.write(
     '''
