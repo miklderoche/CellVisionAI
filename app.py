@@ -343,6 +343,7 @@ elif st.session_state['page'] == 'Analyse':
             '''
             )
 ###@@@ GRAPHIQUES @@@###
+        import plotly.express as px
 
         # Charger le jeu de données depuis le fichier CSV
         chemin_fichier_csv = "data/data_leukemia_dataset.csv"
