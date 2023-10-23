@@ -346,19 +346,65 @@ elif st.session_state['page'] == 'Analyse':
 
         # Charger le jeu de données depuis le fichier CSV
         chemin_fichier_csv = "data/data_leukemia_dataset.csv"
-        df = pd.read_csv(chemin_fichier_csv)
+        df_data_leukemia_dataset = pd.read_csv(chemin_fichier_csv)
         
-        # Afficher la distribution des classes ALL_IDB1 et ALL_IDB2
-        st.subheader("Distribution des classes ALL_IDB1 et ALL_IDB2")
-        class_counts = df['Classe'].value_counts()
-        fig1 = px.bar(class_counts, x=class_counts.index, y=class_counts.values, labels={'x': 'Classe', 'y': 'Nombre'})
+        # Filtrer les données pour les classes "ALL_IDB1" et "ALL_IDB2"
+        df_all_idb1 = df_data_leukemia_dataset[df_data_leukemia_dataset['Classe'] == 'ALL_IDB1']
+        df_all_idb2 = df_data_leukemia_dataset[df_data_leukemia_dataset['Classe'] == 'ALL_IDB2']
+        
+        # Créer une application Streamlit
+        st.title("Analyse des données de leucémie")
+        
+        # Analyse de la distribution des classes
+        st.header("Distribution des classes (Patients sains vs. Patients malades)")
+        
+        # Comptage des patients sains (Y=0) et malades (Y=1) pour chaque classe
+        count_all_idb1 = df_all_idb1['Leucémie_ALL'].value_counts()
+        count_all_idb2 = df_all_idb2['Leucémie_ALL'].value_counts()
+        
+        # Création d'un graphique à barres pour la classe ALL_IDB1
+        fig1 = px.bar(
+            x=count_all_idb1.index,
+            y=count_all_idb1.values,
+            labels={'x': 'Leucémie_ALL', 'y': 'Nombre d\'images'},
+            title='Distribution des classes pour ALL_IDB1'
+        )
+        
+        # Création d'un graphique à barres pour la classe ALL_IDB2
+        fig2 = px.bar(
+            x=count_all_idb2.index,
+            y=count_all_idb2.values,
+            labels={'x': 'Leucémie_ALL', 'y': 'Nombre d\'images'},
+            title='Distribution des classes pour ALL_IDB2'
+        )
+        
+        # Afficher les graphiques dans Streamlit
         st.plotly_chart(fig1)
-        
-        # Afficher la distribution de la dimension et de la résolution pour les classes ALL_IDB1 et ALL_IDB2
-        st.subheader("Distribution de la dimension et de la résolution par classe")
-        fig2 = px.scatter(df, x='Dimensions', y='Résolution', color='Classe', title="Dimension vs. Résolution")
-        
         st.plotly_chart(fig2)
+        
+        # Analyse de la distribution des dimensions et résolutions
+        st.header("Distribution des dimensions et résolutions pour ALL_IDB1 et ALL_IDB2")
+        
+        # Création de graphiques à dispersion (scatter plots)
+        fig3 = px.scatter(
+            df_all_idb1,
+            x='Dimensions',
+            y='Résolution',
+            color='Classe',
+            title='Distribution des dimensions et résolutions pour ALL_IDB1'
+        )
+        
+        fig4 = px.scatter(
+            df_all_idb2,
+            x='Dimensions',
+            y='Résolution',
+            color='Classe',
+            title='Distribution des dimensions et résolutions pour ALL_IDB2'
+        )
+        
+        # Afficher les graphiques de dispersion dans Streamlit
+        st.plotly_chart(fig3)
+        st.plotly_chart(fig4)
     
     with tab3:
         st.header("Acute Promyelocytic Leukemia (APL)")
