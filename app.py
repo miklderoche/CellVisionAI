@@ -352,19 +352,28 @@ elif st.session_state['page'] == 'Analyse':
         df_data_leukemia_dataset['Statut_patient'] = df_data_leukemia_dataset['Leucémie_ALL'].apply(lambda x: 'Malade' if x == 1 else 'Sain')
         
         # Afficher la distribution des classes en distinguant les patients sains et malades
-        st.write('Distribution des classes (ALL_IDB1 et ALL_IDB2) en distinguant les patients sains et malades')
-        fig1 = px.histogram(df_data_leukemia_dataset, x='Classe', color='Statut_patient')
+        st.write('**Distribution des classes ALL_IDB1 et ALL_IDB2 en distinguant les patients sains et malades**')
+        fig1 = px.histogram(df_data_leukemia_dataset, x='Classe', color='Statut patient')
         st.plotly_chart(fig1)
         
         # Afficher la distribution de la dimension pour les classes ALL_IDB1 et ALL_IDB2
-        st.write('Distribution de la dimension pour les classes ALL_IDB1 et ALL_IDB2')
+        st.write('**Distribution de la dimension pour les classes ALL_IDB1 et ALL_IDB2**')
         fig2 = px.histogram(df_data_leukemia_dataset, x='Dimensions', color='Classe')
         st.plotly_chart(fig2)
         
         # Afficher la distribution de la résolution pour les classes ALL_IDB1 et ALL_IDB2
-        st.write('Distribution de la résolution pour les classes ALL_IDB1 et ALL_IDB2')
+        st.write('**Distribution de la résolution pour les classes ALL_IDB1 et ALL_IDB2%%')
         fig3 = px.histogram(df_data_leukemia_dataset, x='Résolution', color='Classe')
         st.plotly_chart(fig3)
+
+        # Sélectionner les caractéristiques numériques à visualiser
+        caracteristiques_numeriques = ["Luminosité", "Teinte", "Dimensions"]  # Ajoutez "Dimensions" à la liste
+        
+        # Afficher une boîte à moustaches pour chaque caractéristique numérique
+        for caracteristique in caracteristiques_numeriques:
+            st.subheader(f'Distribution de {caracteristique}')
+            fig = px.box(df, x='Classe', y=caracteristique, color='Statut_patient')
+            st.plotly_chart(fig)
     
     with tab3:
         st.header("Acute Promyelocytic Leukemia (APL)")
