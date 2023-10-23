@@ -366,15 +366,16 @@ elif st.session_state['page'] == 'Analyse':
         fig3 = px.histogram(df_data_leukemia_dataset, x='Résolution', color='Classe')
         st.plotly_chart(fig3)
 
-        # Sélectionner les caractéristiques numériques à visualiser
-        caracteristiques_numeriques = ["Luminosité", "Teinte", "Dimensions"]  # Ajoutez "Dimensions" à la liste
+        # Ajouter une boîte à moustaches pour la luminosité
+        st.subheader('Distribution de la luminosité pour les classes ALL_IDB1 et ALL_IDB2')
+        fig4 = px.box(df, x='Classe', y='Luminosité', color='Classe')
+        st.plotly_chart(fig4)
         
-        # Afficher une boîte à moustaches pour chaque caractéristique numérique
-        for caracteristique in caracteristiques_numeriques:
-            st.subheader(f'Distribution de {caracteristique}')
-            fig = px.box(df, x='Classe', y=caracteristique, color='Statut_patient')
-            st.plotly_chart(fig)
-    
+        # Ajouter une boîte à moustaches pour la teinte
+        st.subheader('Distribution de la teinte pour les classes ALL_IDB1 et ALL_IDB2')
+        fig5 = px.box(df, x='Classe', y='Teinte', color='Classe')
+        st.plotly_chart(fig5)
+
     with tab3:
         st.header("Acute Promyelocytic Leukemia (APL)")
         
