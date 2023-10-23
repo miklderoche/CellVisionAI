@@ -65,6 +65,10 @@ if st.session_state['page'] == 'Accueil':
 elif st.session_state['page'] == 'Analyse':
     st.title("Analyse des jeux de données")
 
+    # Charger le fichier CSV dans un DataFrame
+    chemin_fichier_csv = "data/data_PBC.csv"
+    df_data_PBC = pd.read_csv(chemin_fichier_csv)
+
     st.image('images/bandeau_analyse_1.jpg')
 
     tab1, tab2, tab3, tab4 = st.tabs(["PBC Dataset Normal DIB", "Leukemia Dataset", "Acute Promyelocytic Leukemia (APL)", "Recommandations"])
@@ -85,26 +89,39 @@ elif st.session_state['page'] == 'Analyse':
             - Classes : 8
             
             Ce jeu de données contient des images de cellules normales individuelles, classées en huit catégories. Les images ont été acquises à l'Hôpital de Barcelone.
-            
-            **Analyse**
-            
-            - Diversité des formes et des tailles des cellules dans les images.
-            - Diversité de propriétés entre les classes nous permettra de pouvoir classer les cellules.
-            - Le fond des images (basé sur la taille des hématies) semble indiquer que le zoom utilisé pour capturer les cellules est le même.
-            - Distribution équilibrée des images entre les classes semblent adaptées à une utilisation dans des tâches d'analyse ou de modélisation.
-            - Nécessité de normaliser la luminosité, la teinte et la taille des images.
             '''
             )
-
+        
+        # Afficher df_data_PBC
+        st.write(
+            '''
+            Afin de faciliter l'analyse, un dataset a été créé à partir des différentes informations disponibles à partir des images. 
+            '''
+            )
+        st.write(df_data_PBC)
+        
+        # Définir le texte avec une couleur de fond transparente
+        texte_formatte = """
+        <div style="background-color: #F0F0F5; padding: 20px; border-radius: 0px;">
+        <p><strong>Analyse</strong></p>
+        <p>            
+        - Diversité des formes et des tailles des cellules dans les images.
+        - Diversité de propriétés entre les classes nous permettra de pouvoir classer les cellules.
+        - Le fond des images (basé sur la taille des hématies) semble indiquer que le zoom utilisé pour capturer les cellules est le même.
+        - Distribution équilibrée des images entre les classes semblent adaptées à une utilisation dans des tâches d'analyse ou de modélisation.
+        - Nécessité de normaliser la luminosité, la teinte et la taille des images.
+        </p>
+        </div>
+        """
+        
+        # Afficher le texte formaté avec le fond transparent
+        st.markdown(texte_formatte, unsafe_allow_html=True)
+        
 ###@@@ GRAPHIQUES @@@###
+        st.write('')
         
         import pandas as pd
         import plotly.graph_objects as go
-        
-        chemin_fichier_csv = "data/data_PBC.csv"
-        
-        # Lire le fichier CSV dans un DataFrame
-        df_data_PBC = pd.read_csv(chemin_fichier_csv)
         
         # Grouper par type de cellule et compter le nombre d'images
         data = df_data_PBC['Classe'].value_counts().reset_index()
