@@ -369,12 +369,12 @@ elif st.session_state['page'] == 'Analyse':
 
         # Ajouter une boîte à moustaches pour la luminosité
         st.subheader('Distribution de la luminosité pour les classes ALL_IDB1 et ALL_IDB2')
-        fig4 = px.box(df, x='Classe', y='Luminosité', color='Classe')
+        fig4 = px.box(df_data_leukemia_dataset, x='Classe', y='Luminosité', color='Classe')
         st.plotly_chart(fig4)
         
         # Ajouter une boîte à moustaches pour la teinte
         st.subheader('Distribution de la teinte pour les classes ALL_IDB1 et ALL_IDB2')
-        fig5 = px.box(df, x='Classe', y='Teinte', color='Classe')
+        fig5 = px.box(df_data_leukemia_dataset, x='Classe', y='Teinte', color='Classe')
         st.plotly_chart(fig5)
 
     with tab3:
