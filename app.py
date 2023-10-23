@@ -352,25 +352,39 @@ elif st.session_state['page'] == 'Analyse':
         
         data = load_data()
         
-        # Sélection entre ALL_IDB1 et ALL_IDB2
-        source_selection = st.radio("Sélectionnez la source", ('ALL_IDB1', 'ALL_IDB2'))
+        # Créer une figure Plotly vide
+        fig = None
         
-        # Filtrer les données en fonction de la source sélectionnée
-        filtered_data = data[data['Source'] == source_selection]
+        # Créer une liste de boutons pour sélectionner la source
+        buttons = [
+            dict(label='ALL_IDB1',
+                 method='update',
+                 args=[{'visible': [True, False]}, {'title': 'Distribution des classes (cellules) pour ALL_IDB1'}]),
+            dict(label='ALL_IDB2',
+                 method='update',
+                 args=[{'visible': [False, True]}, {'title': 'Distribution des noms d\'images pour ALL_IDB2'}])
+        ]
         
-        # Créer un graphique de répartition des dimensions
-        fig_dimensions = px.scatter(filtered_data, x='Largeur', y='Hauteur', color='Classe', title='Répartition des dimensions des images')
-        fig_dimensions.update_xaxes(title='Largeur')
-        fig_dimensions.update_yaxes(title='Hauteur')
+        # Créer une figure Plotly avec deux sous-graphiques
+        fig = go.Figure(data=[
+            go.Bar(x=data['Classe'].unique(), y=data[data['Source'] == 'ALL_IDB1']['Classe'].value_counts(), name='ALL_IDB1'),
+            go.Bar(x=data['Nom image'], y=1, showlegend=False, visible=False, name='ALL_IDB2')  # Utilisé pour la sélection
+        ])
         
-        # Créer un graphique de répartition de la résolution
-        fig_resolution = px.scatter(filtered_data, x='Resolution_Largeur', y='Resolution_Hauteur', color='Classe', title='Répartition de la résolution des images')
-        fig_resolution.update_xaxes(title='Résolution Largeur')
-        fig_resolution.update_yaxes(title='Résolution Hauteur')
+        # Mettre en place les boutons de sélection
+        fig.update_layout(updatemenu=[{'buttons': buttons,
+                                      'direction': 'down',
+                                      'showactive': True,
+                                      'x': 0.1,
+                                      'xanchor': 'left',
+                                      'y': 1.15,
+                                      'yanchor': 'top'}])
         
-        # Afficher les graphiques avec la sélection de la source
-        st.plotly_chart(fig_dimensions)
-        st.plotly_chart(fig_resolution)
+        # Mettre en place le titre initial
+        fig.update_layout(title='Distribution des classes (cellules) pour ALL_IDB1')
+        
+        # Afficher le graphique Plotly
+        st.plotly_chart(fig)
     
     with tab3:
         st.header("Acute Promyelocytic Leukemia (APL)")
