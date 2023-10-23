@@ -343,8 +343,7 @@ elif st.session_state['page'] == 'Analyse':
             '''
             )
 ###@@@ GRAPHIQUES @@@###
-        import plotly.express as px
-
+        
         # Charger le jeu de données depuis le fichier CSV
         chemin_fichier_csv = "data/data_leukemia_dataset.csv"
         df_data_leukemia_dataset = pd.read_csv(chemin_fichier_csv)
@@ -353,7 +352,7 @@ elif st.session_state['page'] == 'Analyse':
         df_data_leukemia_dataset['Statut patient'] = df_data_leukemia_dataset['Leucémie_ALL'].apply(lambda x: 'Malade' if x == 1 else 'Sain')
         
         # Afficher la distribution des classes en distinguant les patients sains et malades
-        st.write('**Distribution des classes ALL_IDB1 et ALL_IDB2 en distinguant les patients sains et malades**')
+        st.markdown('<h2 style="text-align: center;">Distribution des classes ALL_IDB1 et ALL_IDB2 en distinguant les patients sains et malades</h2>', unsafe_allow_html=True)
         fig1 = px.histogram(df_data_leukemia_dataset, x='Classe', color='Statut patient')
         st.plotly_chart(fig1)
         
