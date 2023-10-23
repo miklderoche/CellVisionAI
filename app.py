@@ -348,63 +348,23 @@ elif st.session_state['page'] == 'Analyse':
         chemin_fichier_csv = "data/data_leukemia_dataset.csv"
         df_data_leukemia_dataset = pd.read_csv(chemin_fichier_csv)
         
-        # Filtrer les données pour les classes "ALL_IDB1" et "ALL_IDB2"
-        df_all_idb1 = df_data_leukemia_dataset[df_data_leukemia_dataset['Classe'] == 'ALL_IDB1']
-        df_all_idb2 = df_data_leukemia_dataset[df_data_leukemia_dataset['Classe'] == 'ALL_IDB2']
+        # Créer une nouvelle colonne pour différencier les patients sains et malades
+        df_data_leukemia_dataset['Statut_patient'] = df_data_leukemia_dataset['Leucémie_ALL'].apply(lambda x: 'Malade' if x == 1 else 'Sain')
         
-        # Créer une application Streamlit
-        st.title("Analyse des données de leucémie")
-        
-        # Analyse de la distribution des classes
-        st.header("Distribution des classes (Patients sains vs. Patients malades)")
-        
-        # Comptage des patients sains (Y=0) et malades (Y=1) pour chaque classe
-        count_all_idb1 = df_all_idb1['Leucémie_ALL'].value_counts()
-        count_all_idb2 = df_all_idb2['Leucémie_ALL'].value_counts()
-        
-        # Création d'un graphique à barres pour la classe ALL_IDB1
-        fig1 = px.bar(
-            x=count_all_idb1.index,
-            y=count_all_idb1.values,
-            labels={'x': 'Leucémie_ALL', 'y': 'Nombre d\'images'},
-            title='Distribution des classes pour ALL_IDB1'
-        )
-        
-        # Création d'un graphique à barres pour la classe ALL_IDB2
-        fig2 = px.bar(
-            x=count_all_idb2.index,
-            y=count_all_idb2.values,
-            labels={'x': 'Leucémie_ALL', 'y': 'Nombre d\'images'},
-            title='Distribution des classes pour ALL_IDB2'
-        )
-        
-        # Afficher les graphiques dans Streamlit
+        # Afficher la distribution des classes en distinguant les patients sains et malades
+        st.subheader('Distribution des classes (ALL_IDB1 et ALL_IDB2) en distinguant les patients sains et malades')
+        fig1 = px.histogram(df_data_leukemia_dataset, x='Classe', color='Statut_patient')
         st.plotly_chart(fig1)
+        
+        # Afficher la distribution de la dimension pour les classes ALL_IDB1 et ALL_IDB2
+        st.subheader('Distribution de la dimension pour les classes ALL_IDB1 et ALL_IDB2')
+        fig2 = px.histogram(df_data_leukemia_dataset, x='Dimensions', color='Classe')
         st.plotly_chart(fig2)
         
-        # Analyse de la distribution des dimensions et résolutions
-        st.header("Distribution des dimensions et résolutions pour ALL_IDB1 et ALL_IDB2")
-        
-        # Création de graphiques à dispersion (scatter plots)
-        fig3 = px.scatter(
-            df_all_idb1,
-            x='Dimensions',
-            y='Résolution',
-            color='Classe',
-            title='Distribution des dimensions et résolutions pour ALL_IDB1'
-        )
-        
-        fig4 = px.scatter(
-            df_all_idb2,
-            x='Dimensions',
-            y='Résolution',
-            color='Classe',
-            title='Distribution des dimensions et résolutions pour ALL_IDB2'
-        )
-        
-        # Afficher les graphiques de dispersion dans Streamlit
+        # Afficher la distribution de la résolution pour les classes ALL_IDB1 et ALL_IDB2
+        st.subheader('Distribution de la résolution pour les classes ALL_IDB1 et ALL_IDB2')
+        fig3 = px.histogram(df_data_leukemia_dataset, x='Résolution', color='Classe')
         st.plotly_chart(fig3)
-        st.plotly_chart(fig4)
     
     with tab3:
         st.header("Acute Promyelocytic Leukemia (APL)")
