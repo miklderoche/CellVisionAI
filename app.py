@@ -320,7 +320,7 @@ elif st.session_state['page'] == 'Analyse':
         st.plotly_chart(fig_brightness_box)
             
     with tab2:
-        st.header("Leukemia Dataset")
+        st.header("Leukemia Dataset 2")
         
         st.write(
             '''
