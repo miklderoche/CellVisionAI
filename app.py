@@ -352,7 +352,7 @@ elif st.session_state['page'] == 'Analyse':
         df_data_leukemia_dataset['Statut patient'] = df_data_leukemia_dataset['Leucémie_ALL'].apply(lambda x: 'Malade' if x == 1 else 'Sain')
         
         # Afficher la distribution des classes en distinguant les patients sains et malades
-        st.markdown('<h2 style="text-align: center;">Distribution des classes ALL_IDB1 et ALL_IDB2 en distinguant les patients sains et malades</h2>', unsafe_allow_html=True)
+        st.markdown('<h3 style="text-align: center;">Distribution des classes ALL_IDB1 et ALL_IDB2 en distinguant les patients sains et malades</h3>', unsafe_allow_html=True)
         fig1 = px.histogram(df_data_leukemia_dataset, x='Classe', color='Statut patient')
         st.plotly_chart(fig1)
         
