@@ -356,7 +356,7 @@ elif st.session_state['page'] == 'Analyse':
         
         st.write(
             '''
-            <b>Analyse</b>
+            Analyse
             
             - Une limitation est l'absence de classification des cellules, rendant difficile la vérification de la performance des modèles.
             - Les coordonnées des centroïdes des cellules sont fournies pour les images ALL_IDB1.
@@ -367,10 +367,11 @@ elif st.session_state['page'] == 'Analyse':
         # Définir le texte avec une couleur de fond transparente
         texte_formatte = """
         <div style="background-color: #F0F0F5; padding: 10px; border-radius: 0px;">
-        <p>**Analyse**</p>
+        <p>>strong>Analyse**</strong></p>
+        <br><br>
         <p>            
-        - Une limitation est l'absence de classification des cellules, rendant difficile la vérification de la performance des modèles.
-        - Les coordonnées des centroïdes des cellules sont fournies pour les images ALL_IDB1.
+        - Une limitation est l'absence de classification des cellules, rendant difficile la vérification de la performance des modèles.<br>
+        - Les coordonnées des centroïdes des cellules sont fournies pour les images ALL_IDB1.<br>
         - Diversité des données pour construire un modèle robuste.
         </p>
         </div>
