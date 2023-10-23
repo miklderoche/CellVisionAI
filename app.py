@@ -358,22 +358,22 @@ elif st.session_state['page'] == 'Analyse':
         
         # Afficher la distribution de la dimension pour les classes ALL_IDB1 et ALL_IDB2
         fig2 = px.histogram(df_data_leukemia_dataset, x='Dimensions', color='Classe')
-        fig2.update_layout(title={'text': 'Distribution de la dimension pour les classes ALL_IDB1 et ALL_IDB2', 'y':0.95, 'x':0.5})
+        fig2.update_layout(title={'text': 'Distribution de la dimension pour les classes ALL_IDB1 et ALL_IDB2', 'x':0.5, 'xanchor': 'center'})
         st.plotly_chart(fig2)
         
         # Afficher la distribution de la résolution pour les classes ALL_IDB1 et ALL_IDB2
         fig3 = px.histogram(df_data_leukemia_dataset, x='Résolution', color='Classe')
-        fig3.update_layout(title={'text': 'Distribution de la résolution pour les classes ALL_IDB1 et ALL_IDB2', 'y':0.95, 'x':0.5})
+        fig3.update_layout(title={'text': 'Distribution de la résolution pour les classes ALL_IDB1 et ALL_IDB2', 'x':0.5, 'xanchor': 'center'})
         st.plotly_chart(fig3)
         
         # Ajouter une boîte à moustaches pour la luminosité
         fig4 = px.box(df_data_leukemia_dataset, x='Classe', y='Luminosité', color='Classe')
-        fig4.update_layout(title={'text': 'Distribution de la luminosité pour les classes ALL_IDB1 et ALL_IDB2', 'y':0.95, 'x':0.5})
+        fig4.update_layout(title={'text': 'Distribution de la luminosité pour les classes ALL_IDB1 et ALL_IDB2', 'x':0.5, 'xanchor': 'center'})
         st.plotly_chart(fig4)
         
         # Ajouter une boîte à moustaches pour la teinte
         fig5 = px.box(df_data_leukemia_dataset, x='Classe', y='Teinte', color='Classe')
-        fig5.update_layout(title={'text': 'Distribution de la teinte pour les classes ALL_IDB1 et ALL_IDB2', 'y':0.95, 'x':0.5})
+        fig5.update_layout(title={'text': 'Distribution de la teinte pour les classes ALL_IDB1 et ALL_IDB2', 'x':0.5, 'xanchor': 'center'})
         st.plotly_chart(fig5)
 
     with tab3:
