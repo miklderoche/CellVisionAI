@@ -355,47 +355,56 @@ elif st.session_state['page'] == 'Analyse':
         # Titre de l'application Streamlit
         st.title('Analyse du jeu de données sur la leucémie')
         
-        # Filtrer les données pour ALL-IDB1
-        filtered_data_idb1 = data[data['Source'] == 'ALL_IDB1']
+        # Créer une figure Plotly vide
+        fig = None
         
-        # Filtrer les données pour ALL-IDB2
-        filtered_data_idb2 = data[data['Source'] == 'ALL_IDB2']
+        # Options de sélection pour ALL_IDB1 et ALL_IDB2
+        source_options = ['ALL_IDB1', 'ALL_IDB2']
+        selected_source = st.radio('Sélectionner la source', source_options)
         
-        # Graphique de distribution des classes (cellules) pour ALL-IDB1
-        st.subheader('Distribution des classes (cellules) pour ALL-IDB1')
-        class_counts_idb1 = filtered_data_idb1['Classe'].value_counts()
-        fig1_idb1 = px.bar(class_counts_idb1, x=class_counts_idb1.index, y=class_counts_idb1.values, labels={'x': 'Classe', 'y': 'Nombre'})
-        st.plotly_chart(fig1_idb1)
+        if selected_source == 'ALL_IDB1':
+            # Filtrer les données pour ALL_IDB1
+            filtered_data = data[data['Source'] == 'ALL_IDB1']
+            
+            # Graphique de distribution des classes (cellules)
+            st.subheader('Distribution des classes (cellules) pour ALL_IDB1')
+            class_counts = filtered_data['Classe'].value_counts()
+            fig = px.bar(class_counts, x=class_counts.index, y=class_counts.values, labels={'x': 'Classe', 'y': 'Nombre'})
+            
+            # Graphique de répartition des dimensions et résolution des images
+            st.subheader('Répartition des dimensions et résolution des images pour ALL_IDB1')
+            fig2 = px.scatter(filtered_data, x='Dimensions', y='Résolution', color='Classe', title='Répartition des dimensions et résolution des images pour ALL_IDB1')
+            
+            # Boîte à moustaches pour la teinte et la luminosité
+            st.subheader('Boîte à moustaches pour la teinte et la luminosité pour ALL_IDB1')
+            fig3 = px.box(filtered_data, x='Classe', y='Teinte', color='Classe', title='Boîte à moustaches pour la teinte pour ALL_IDB1')
+            fig4 = px.box(filtered_data, x='Classe', y='Luminosité', color='Classe', title='Boîte à moustaches pour la luminosité pour ALL_IDB1')
         
-        # Graphique de distribution des classes (cellules) pour ALL-IDB2
-        st.subheader('Distribution des classes (cellules) pour ALL-IDB2')
-        class_counts_idb2 = filtered_data_idb2['Classe'].value_counts()
-        fig1_idb2 = px.bar(class_counts_idb2, x=class_counts_idb2.index, y=class_counts_idb2.values, labels={'x': 'Classe', 'y': 'Nombre'})
-        st.plotly_chart(fig1_idb2)
+        elif selected_source == 'ALL_IDB2':
+            # Filtrer les données pour ALL_IDB2
+            filtered_data = data[data['Source'] == 'ALL_IDB2']
+            
+            # Graphique de distribution des classes (cellules)
+            st.subheader('Distribution des classes (cellules) pour ALL_IDB2')
+            class_counts = filtered_data['Classe'].value_counts()
+            fig = px.bar(class_counts, x=class_counts.index, y=class_counts.values, labels={'x': 'Classe', 'y': 'Nombre'})
+            
+            # Graphique de répartition des dimensions et résolution des images
+            st.subheader('Répartition des dimensions et résolution des images pour ALL_IDB2')
+            fig2 = px.scatter(filtered_data, x='Dimensions', y='Résolution', color='Classe', title='Répartition des dimensions et résolution des images pour ALL_IDB2')
+            
+            # Boîte à moustaches pour la teinte et la luminosité
+            st.subheader('Boîte à moustaches pour la teinte et la luminosité pour ALL_IDB2')
+            fig3 = px.box(filtered_data, x='Classe', y='Teinte', color='Classe', title='Boîte à moustaches pour la teinte pour ALL_IDB2')
+            fig4 = px.box(filtered_data, x='Classe', y='Luminosité', color='Classe', title='Boîte à moustaches pour la luminosité pour ALL_IDB2')
         
-        # Graphique de répartition des dimensions et résolution des images pour ALL-IDB1
-        st.subheader('Répartition des dimensions et résolution des images pour ALL-IDB1')
-        fig2_idb1 = px.scatter(filtered_data_idb1, x='Dimensions', y='Résolution', color='Classe', title='Répartition des dimensions et résolution des images pour ALL-IDB1')
-        st.plotly_chart(fig2_idb1)
+        # Afficher le graphique Plotly
+        st.plotly_chart(fig)
         
-        # Graphique de répartition des dimensions et résolution des images pour ALL-IDB2
-        st.subheader('Répartition des dimensions et résolution des images pour ALL-IDB2')
-        fig2_idb2 = px.scatter(filtered_data_idb2, x='Dimensions', y='Résolution', color='Classe', title='Répartition des dimensions et résolution des images pour ALL-IDB2')
-        st.plotly_chart(fig2_idb2)
-        
-        # Boîte à moustaches pour la teinte et la luminosité pour ALL-IDB1
-        st.subheader('Boîte à moustaches pour la teinte et la luminosité pour ALL-IDB1')
-        fig3_idb1 = px.box(filtered_data_idb1, x='Classe', y='Teinte', color='Classe', title='Boîte à moustaches pour la teinte pour ALL-IDB1')
-        fig4_idb1 = px.box(filtered_data_idb1, x='Classe', y='Luminosité', color='Classe', title='Boîte à moustaches pour la luminosité pour ALL-IDB1')
-        st.plotly_chart(fig3_idb1)
-        st.plotly_chart(fig4_idb1)
-        
-        # Boîte à moustaches pour la teinte et la luminosité pour ALL-IDB2
-        st.subheader('Boîte à moustaches pour la teinte et la luminosité pour ALL-IDB2')
-        fig3_idb2 = px.box(filtered_data_idb2, x='Classe', y='Teinte', color='Classe', title='Boîte à moustaches pour la teinte pour ALL-IDB2')
-        fig4_idb2 = px.box(filtered_data_idb2, x='Classe', y='Luminosité', color='Classe', title='Boîte à moustaches pour la luminosité pour ALL-IDB2')
-        st.plotly_chart(fig3_idb2)
-        st.plotly_chart(fig4_idb2)
+        # Afficher les autres graphiques en fonction de la sélection
+        st.plotly_chart(fig2)
+        st.plotly_chart(fig3)
+        st.plotly_chart(fig4)
     
     with tab3:
         st.header("Acute Promyelocytic Leukemia (APL)")
