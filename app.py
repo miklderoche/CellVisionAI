@@ -366,8 +366,8 @@ elif st.session_state['page'] == 'Analyse':
         
         # Définir le texte avec une couleur de fond transparente
         texte_formatte = """
-        <div style="background-color: #F0F0F5; padding: 10px; border-radius: 0px;">
-        <p>>strong>Analyse**</strong></p>
+        <div style="background-color: #F0F0F5; padding: 15px; border-radius: 0px;">
+        <p><strong>Analyse**</strong></p>
         <br><br>
         <p>            
         - Une limitation est l'absence de classification des cellules, rendant difficile la vérification de la performance des modèles.<br>
