@@ -339,7 +339,7 @@ elif st.session_state['page'] == 'Analyse':
         st.plotly_chart(fig_brightness_box)
             
     with tab2:
-        st.header("Leukemia Dataset 2")
+        st.header("Leukemia Dataset")
 
         # Charger le jeu de données depuis le fichier CSV
         chemin_fichier_csv = "data/data_leukemia_dataset.csv"
