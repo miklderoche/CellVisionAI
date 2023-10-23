@@ -356,7 +356,7 @@ elif st.session_state['page'] == 'Analyse':
         st.title('Analyse du jeu de données sur la leucémie')
         
         # Sélectionner la source (ALL_IDB1 ou ALL_IDB2)
-        selected_source = st.sidebar.selectbox('Sélectionner la source', data['Source'].unique())
+        selected_source = st.radio('Sélectionner la source', ['ALL_IDB1', 'ALL_IDB2'])
         
         # Filtrer les données en fonction de la source sélectionnée
         filtered_data = data[data['Source'] == selected_source]
