@@ -321,6 +321,10 @@ elif st.session_state['page'] == 'Analyse':
             
     with tab2:
         st.header("Leukemia Dataset 2")
+
+        # Charger le jeu de données depuis le fichier CSV
+        chemin_fichier_csv = "data/data_leukemia_dataset.csv"
+        df_data_leukemia_dataset = pd.read_csv(chemin_fichier_csv)
         
         st.write(
             '''
@@ -375,10 +379,6 @@ elif st.session_state['page'] == 'Analyse':
         st.markdown(texte_formatte, unsafe_allow_html=True)
 
 ###@@@ GRAPHIQUES @@@###
-        
-        # Charger le jeu de données depuis le fichier CSV
-        chemin_fichier_csv = "data/data_leukemia_dataset.csv"
-        df_data_leukemia_dataset = pd.read_csv(chemin_fichier_csv)
 
         # Créer une nouvelle colonne pour différencier les patients sains et malades
         df_data_leukemia_dataset['Statut patient'] = df_data_leukemia_dataset['Leucémie_ALL'].apply(lambda x: 'Malade' if x == 1 else 'Sain')
