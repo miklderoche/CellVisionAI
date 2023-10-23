@@ -358,53 +358,85 @@ elif st.session_state['page'] == 'Analyse':
         # Créer une figure Plotly vide
         fig = None
         
-        # Options de sélection pour ALL_IDB1 et ALL_IDB2
-        source_options = ['ALL_IDB1', 'ALL_IDB2']
-        selected_source = st.radio('Sélectionner la source', source_options)
+        # Filtrer les données pour ALL_IDB1
+        filtered_data_idb1 = data[data['Source'] == 'ALL_IDB1']
         
-        if selected_source == 'ALL_IDB1':
-            # Filtrer les données pour ALL_IDB1
-            filtered_data = data[data['Source'] == 'ALL_IDB1']
-            
-            # Graphique de distribution des classes (cellules)
-            st.subheader('Distribution des classes (cellules) pour ALL_IDB1')
-            class_counts = filtered_data['Classe'].value_counts()
-            fig = px.bar(class_counts, x=class_counts.index, y=class_counts.values, labels={'x': 'Classe', 'y': 'Nombre'})
-            
-            # Graphique de répartition des dimensions et résolution des images
-            st.subheader('Répartition des dimensions et résolution des images pour ALL_IDB1')
-            fig2 = px.scatter(filtered_data, x='Dimensions', y='Résolution', color='Classe', title='Répartition des dimensions et résolution des images pour ALL_IDB1')
-            
-            # Boîte à moustaches pour la teinte et la luminosité
-            st.subheader('Boîte à moustaches pour la teinte et la luminosité pour ALL_IDB1')
-            fig3 = px.box(filtered_data, x='Classe', y='Teinte', color='Classe', title='Boîte à moustaches pour la teinte pour ALL_IDB1')
-            fig4 = px.box(filtered_data, x='Classe', y='Luminosité', color='Classe', title='Boîte à moustaches pour la luminosité pour ALL_IDB1')
+        # Filtrer les données pour ALL_IDB2
+        filtered_data_idb2 = data[data['Source'] == 'ALL_IDB2']
         
-        elif selected_source == 'ALL_IDB2':
-            # Filtrer les données pour ALL_IDB2
-            filtered_data = data[data['Source'] == 'ALL_IDB2']
-            
-            # Graphique de distribution des classes (cellules)
-            st.subheader('Distribution des classes (cellules) pour ALL_IDB2')
-            class_counts = filtered_data['Classe'].value_counts()
-            fig = px.bar(class_counts, x=class_counts.index, y=class_counts.values, labels={'x': 'Classe', 'y': 'Nombre'})
-            
-            # Graphique de répartition des dimensions et résolution des images
-            st.subheader('Répartition des dimensions et résolution des images pour ALL_IDB2')
-            fig2 = px.scatter(filtered_data, x='Dimensions', y='Résolution', color='Classe', title='Répartition des dimensions et résolution des images pour ALL_IDB2')
-            
-            # Boîte à moustaches pour la teinte et la luminosité
-            st.subheader('Boîte à moustaches pour la teinte et la luminosité pour ALL_IDB2')
-            fig3 = px.box(filtered_data, x='Classe', y='Teinte', color='Classe', title='Boîte à moustaches pour la teinte pour ALL_IDB2')
-            fig4 = px.box(filtered_data, x='Classe', y='Luminosité', color='Classe', title='Boîte à moustaches pour la luminosité pour ALL_IDB2')
+        # Créer un graphique de distribution des classes (cellules) pour ALL_IDB1
+        class_counts_idb1 = filtered_data_idb1['Classe'].value_counts()
+        fig_idb1 = px.bar(class_counts_idb1, x=class_counts_idb1.index, y=class_counts_idb1.values, labels={'x': 'Classe', 'y': 'Nombre'})
+        fig_idb1.update_layout(updatemenu=[{'buttons': [{'method': 'relayout',
+                                                       'label': 'ALL_IDB1',
+                                                       'args': [{'x': [class_counts_idb1.index.tolist()],
+                                                                 'y': [class_counts_idb1.values.tolist()],
+                                                                 'xaxis.title.text': 'Classe',
+                                                                 'yaxis.title.text': 'Nombre'}]},
+                                                      {'method': 'relayout',
+                                                       'label': 'ALL_IDB2',
+                                                       'args': [{'x': [class_counts_idb2.index.tolist()],
+                                                                 'y': [class_counts_idb2.values.tolist()],
+                                                                 'xaxis.title.text': 'Classe',
+                                                                 'yaxis.title.text': 'Nombre'}]}],
+                                            'direction': 'down',
+                                            'showactive': True,
+                                            'x': 0.1,
+                                            'xanchor': 'left',
+                                            'y': 1.1,
+                                            'yanchor': 'top'}])
+        
+        # Créer un graphique de distribution des classes (cellules) pour ALL_IDB2
+        class_counts_idb2 = filtered_data_idb2['Classe'].value_counts()
+        fig_idb2 = px.bar(class_counts_idb2, x=class_counts_idb2.index, y=class_counts_idb2.values, labels={'x': 'Classe', 'y': 'Nombre'})
+        fig_idb2.update_layout(updatemenu=[{'buttons': [{'method': 'relayout',
+                                                       'label': 'ALL_IDB1',
+                                                       'args': [{'x': [class_counts_idb1.index.tolist()],
+                                                                 'y': [class_counts_idb1.values.tolist()],
+                                                                 'xaxis.title.text': 'Classe',
+                                                                 'yaxis.title.text': 'Nombre'}]},
+                                                      {'method': 'relayout',
+                                                       'label': 'ALL_IDB2',
+                                                       'args': [{'x': [class_counts_idb2.index.tolist()],
+                                                                 'y': [class_counts_idb2.values.tolist()],
+                                                                 'xaxis.title.text': 'Classe',
+                                                                 'yaxis.title.text': 'Nombre'}]}],
+                                            'direction': 'down',
+                                            'showactive': True,
+                                            'x': 0.1,
+                                            'xanchor': 'left',
+                                            'y': 1.1,
+                                            'yanchor': 'top'}])
+        
+        # Afficher le graphique initial (ALL_IDB1)
+        fig = fig_idb1
         
         # Afficher le graphique Plotly
         st.plotly_chart(fig)
         
-        # Afficher les autres graphiques en fonction de la sélection
-        st.plotly_chart(fig2)
-        st.plotly_chart(fig3)
-        st.plotly_chart(fig4)
+        # Créer un graphique de répartition des dimensions et résolution des images pour ALL_IDB1
+        fig2_idb1 = px.scatter(filtered_data_idb1, x='Dimensions', y='Résolution', color='Classe', title='Répartition des dimensions et résolution des images pour ALL_IDB1')
+        
+        # Créer un graphique de répartition des dimensions et résolution des images pour ALL_IDB2
+        fig2_idb2 = px.scatter(filtered_data_idb2, x='Dimensions', y='Résolution', color='Classe', title='Répartition des dimensions et résolution des images pour ALL_IDB2')
+        
+        # Boîte à moustaches pour la teinte et la luminosité pour ALL_IDB1
+        fig3_idb1 = px.box(filtered_data_idb1, x='Classe', y='Teinte', color='Classe', title='Boîte à moustaches pour la teinte pour ALL_IDB1')
+        fig4_idb1 = px.box(filtered_data_idb1, x='Classe', y='Luminosité', color='Classe', title='Boîte à moustaches pour la luminosité pour ALL_IDB1')
+        
+        # Boîte à moustaches pour la teinte et la luminosité pour ALL_IDB2
+        fig3_idb2 = px.box(filtered_data_idb2, x='Classe', y='Teinte', color='Classe', title='Boîte à moustaches pour la teinte pour ALL_IDB2')
+        fig4_idb2 = px.box(filtered_data_idb2, x='Classe', y='Luminosité', color='Classe', title='Boîte à moustaches pour la luminosité pour ALL_IDB2')
+        
+        # Afficher les graphiques supplémentaires en fonction de la sélection
+        if fig.data[0]['y'][0] == class_counts_idb1.values.tolist()[0]:
+            st.plotly_chart(fig2_idb1)
+            st.plotly_chart(fig3_idb1)
+            st.plotly_chart(fig4_idb1)
+        else:
+            st.plotly_chart(fig2_idb2)
+            st.plotly_chart(fig3_idb2)
+            st.plotly_chart(fig4_idb2)
     
     with tab3:
         st.header("Acute Promyelocytic Leukemia (APL)")
