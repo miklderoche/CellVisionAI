@@ -353,7 +353,7 @@ elif st.session_state['page'] == 'Analyse':
         
         # Afficher la distribution des classes en distinguant les patients sains et malades
         fig1 = px.histogram(df_data_leukemia_dataset, x='Classe', color='Statut patient')
-        fig1.update_layout(title={'text': 'Distribution des classes ALL_IDB1 et ALL_IDB2 en distinguant les patients sains et malades'})
+        fig1.update_layout(title={'text': 'Distribution des classes ALL_IDB1 et ALL_IDB2 en distinguant les patients sains et malades', 'xanchor': 'center'})
         st.plotly_chart(fig1)
         
         # Afficher la distribution de la dimension pour les classes ALL_IDB1 et ALL_IDB2
