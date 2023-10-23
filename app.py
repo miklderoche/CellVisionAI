@@ -343,11 +343,10 @@ elif st.session_state['page'] == 'Analyse':
 
         # Afficher les 5 premières lignes de df_data_leukemia_dataset
         st.write(
-            f'''
+            '''
             Afin de faciliter l'analyse, un dataset a été créé à partir des différentes informations des images dans les dossiers ALL_IDB1 et ALL_IDB2. 
             '''
             )
-        {df_data_leukemia_dataset.shape}
         st.write(df_data_leukemia_dataset)
         
         # Définir le texte avec une couleur de fond transparente
