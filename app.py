@@ -1,4 +1,7 @@
 import streamlit as st
+import pandas as pd
+import plotly.graph_objects as go
+
 
 # Initialisation de l'état de la session
 if 'page' not in st.session_state:
@@ -119,10 +122,7 @@ elif st.session_state['page'] == 'Analyse':
         
 ###@@@ GRAPHIQUES @@@###
         st.write('')
-        
-        import pandas as pd
-        import plotly.graph_objects as go
-        
+                
         # Grouper par type de cellule et compter le nombre d'images
         data = df_data_PBC['Classe'].value_counts().reset_index()
         data.columns = ['Type de cellule', 'Nombre d\'images']
