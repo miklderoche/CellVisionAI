@@ -354,21 +354,10 @@ elif st.session_state['page'] == 'Analyse':
         # Afficher le nombre de lignes et de colonnes du jeu de données
         st.write('Nombre de lignes et de colonnes du jeu de données :', df_data_leukemia_dataset.shape)
         
-        st.write(
-            '''
-            Analyse
-            
-            - Une limitation est l'absence de classification des cellules, rendant difficile la vérification de la performance des modèles.
-            - Les coordonnées des centroïdes des cellules sont fournies pour les images ALL_IDB1.
-            - Diversité des données pour construire un modèle robuste.
-            '''
-            )
-        
         # Définir le texte avec une couleur de fond transparente
         texte_formatte = """
-        <div style="background-color: #F0F0F5; padding: 15px; border-radius: 0px;">
-        <p><strong>Analyse**</strong></p>
-        <br><br>
+        <div style="background-color: #F0F0F5; padding: 20px; border-radius: 0px;">
+        <p><strong>Analyse</strong></p>
         <p>            
         - Une limitation est l'absence de classification des cellules, rendant difficile la vérification de la performance des modèles.<br>
         - Les coordonnées des centroïdes des cellules sont fournies pour les images ALL_IDB1.<br>
