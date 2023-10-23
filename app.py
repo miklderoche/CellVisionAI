@@ -386,8 +386,8 @@ elif st.session_state['page'] == 'Analyse':
                                             'y': 1.1,
                                             'yanchor': 'top'}])
         
-        # Créer un graphique de distribution des classes (cellules) pour ALL_IDB2 (initialisé avec des valeurs nulles)
-        class_counts_idb2 = pd.Series(data=[0] * len(class_counts_idb1), index=class_counts_idb1.index)
+        # Créer un graphique de distribution des classes (cellules) pour ALL_IDB2
+        class_counts_idb2 = filtered_data_idb2['Classe'].value_counts()
         fig_idb2 = px.bar(class_counts_idb2, x=class_counts_idb2.index, y=class_counts_idb2.values, labels={'x': 'Classe', 'y': 'Nombre'})
         fig_idb2.update_layout(updatemenu=[{'buttons': [{'method': 'relayout',
                                                        'label': 'ALL_IDB1',
