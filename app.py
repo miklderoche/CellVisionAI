@@ -108,10 +108,10 @@ elif st.session_state['page'] == 'Analyse':
         <div style="background-color: #F0F0F5; padding: 20px; border-radius: 0px;">
         <p><strong>Analyse</strong></p>
         <p>            
-        - Diversité des formes et des tailles des cellules dans les images.
-        - Diversité de propriétés entre les classes nous permettra de pouvoir classer les cellules.
-        - Le fond des images (basé sur la taille des hématies) semble indiquer que le zoom utilisé pour capturer les cellules est le même.
-        - Distribution équilibrée des images entre les classes semblent adaptées à une utilisation dans des tâches d'analyse ou de modélisation.
+        - Diversité des formes et des tailles des cellules dans les images.<br>
+        - Diversité de propriétés entre les classes nous permettra de pouvoir classer les cellules.<br>
+        - Le fond des images (basé sur la taille des hématies) semble indiquer que le zoom utilisé pour capturer les cellules est le même.<BR>
+        - Distribution équilibrée des images entre les classes semblent adaptées à une utilisation dans des tâches d'analyse ou de modélisation.<BR>
         - Nécessité de normaliser la luminosité, la teinte et la taille des images.
         </p>
         </div>
