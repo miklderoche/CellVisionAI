@@ -342,7 +342,43 @@ elif st.session_state['page'] == 'Analyse':
             - Diversité des données pour construire un modèle robuste.
             '''
             )
+###@@@ GRAPHIQUES @@@###
 
+        # Charger les données depuis le fichier CSV
+        @st.cache
+        def load_data():
+            data = pd.read_csv('data/data_leukemia_dataset.csv')
+            return data
+        
+        data = load_data()
+        
+        # Titre de l'application Streamlit
+        st.title('Analyse du jeu de données sur la leucémie')
+        
+        # Sélectionner la source (ALL_IDB1 ou ALL_IDB2)
+        selected_source = st.sidebar.selectbox('Sélectionner la source', data['Source'].unique())
+        
+        # Filtrer les données en fonction de la source sélectionnée
+        filtered_data = data[data['Source'] == selected_source]
+        
+        # Graphique de distribution des classes (cellules)
+        st.subheader('Distribution des classes (cellules)')
+        class_counts = filtered_data['Classe'].value_counts()
+        fig1 = px.bar(class_counts, x=class_counts.index, y=class_counts.values, labels={'x': 'Classe', 'y': 'Nombre'})
+        st.plotly_chart(fig1)
+        
+        # Graphique de répartition des dimensions et résolution des images
+        st.subheader('Répartition des dimensions et résolution des images')
+        fig2 = px.scatter(filtered_data, x='Dimensions', y='Résolution', color='Classe', title='Répartition des dimensions et résolution des images')
+        st.plotly_chart(fig2)
+        
+        # Boîte à moustaches pour la teinte et la luminosité
+        st.subheader('Boîte à moustaches pour la teinte et la luminosité')
+        fig3 = px.box(filtered_data, x='Classe', y='Teinte', color='Classe', title='Boîte à moustaches pour la teinte')
+        fig4 = px.box(filtered_data, x='Classe', y='Luminosité', color='Classe', title='Boîte à moustaches pour la luminosité')
+        st.plotly_chart(fig3)
+        st.plotly_chart(fig4)
+    
     with tab3:
         st.header("Acute Promyelocytic Leukemia (APL)")
         
