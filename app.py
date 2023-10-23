@@ -356,7 +356,7 @@ elif st.session_state['page'] == 'Analyse':
         
         st.write(
             '''
-            **Analyse**
+            <b>Analyse</b>
             
             - Une limitation est l'absence de classification des cellules, rendant difficile la vérification de la performance des modèles.
             - Les coordonnées des centroïdes des cellules sont fournies pour les images ALL_IDB1.
