@@ -345,7 +345,7 @@ elif st.session_state['page'] == 'Analyse':
         # Afficher les 5 premières lignes de df_data_leukemia_dataset
         st.write(
             '''
-            Afin de faciliter l'analyse, un dataset a été extrait à partir des différentes informations des images dans les dossiers ALL_IDB1 et ALL_IDB2. 
+            Afin de faciliter l'analyse, un dataset a été créé à partir des différentes informations des images dans les dossiers ALL_IDB1 et ALL_IDB2. 
             Les 5 premières lignes du jeu de données :
             '''
             )
@@ -364,14 +364,15 @@ elif st.session_state['page'] == 'Analyse':
             '''
             )
         
-        # Créer une application Streamlit
-        st.title('Exemple de texte avec fond transparent')
-        
         # Définir le texte avec une couleur de fond transparente
         texte_formatte = """
-        <div style="background-color: rgba(0, 0, 0, 0.2); padding: 10px; border-radius: 0px;">
-        <p>Ceci est un exemple de texte avec un fond de couleur transparent.</p>
-        <p>Vous pouvez personnaliser la couleur en ajustant les valeurs RGBA.</p>
+        <div style="background-color: #F0F0F5; padding: 10px; border-radius: 0px;">
+        <p>**Analyse**</p>
+        <p>            
+        - Une limitation est l'absence de classification des cellules, rendant difficile la vérification de la performance des modèles.
+        - Les coordonnées des centroïdes des cellules sont fournies pour les images ALL_IDB1.
+        - Diversité des données pour construire un modèle robuste.
+        </p>
         </div>
         """
         
