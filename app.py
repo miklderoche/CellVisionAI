@@ -364,6 +364,8 @@ elif st.session_state['page'] == 'Analyse':
         st.write(
             '''
             Afin de faciliter l'analyse, un dataset a été créé à partir des différentes informations des images dans les dossiers ALL_IDB1 et ALL_IDB2. 
+            
+            **data_leukemia_dataset.csv :**
             '''
             )
         st.write(df_data_leukemia_dataset)
