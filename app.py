@@ -352,27 +352,27 @@ elif st.session_state['page'] == 'Analyse':
         df_data_leukemia_dataset['Statut patient'] = df_data_leukemia_dataset['Leucémie_ALL'].apply(lambda x: 'Malade' if x == 1 else 'Sain')
         
         # Afficher la distribution des classes en distinguant les patients sains et malades
-        st.markdown('<h3 style="text-align: center;">Distribution des classes ALL_IDB1 et ALL_IDB2 en distinguant les patients sains et malades</h3>', unsafe_allow_html=True)
+        st.markdown('<h4 style="text-align: center;">Distribution des classes ALL_IDB1 et ALL_IDB2 en distinguant les patients sains et malades</h4>', unsafe_allow_html=True)
         fig1 = px.histogram(df_data_leukemia_dataset, x='Classe', color='Statut patient')
         st.plotly_chart(fig1)
         
         # Afficher la distribution de la dimension pour les classes ALL_IDB1 et ALL_IDB2
-        st.write('Distribution de la dimension pour les classes ALL_IDB1 et ALL_IDB2')
+        st.markdown('<h4 style="text-align: center;">Distribution de la dimension pour les classes ALL_IDB1 et ALL_IDB2</h4>', unsafe_allow_html=True)
         fig2 = px.histogram(df_data_leukemia_dataset, x='Dimensions', color='Classe')
         st.plotly_chart(fig2)
         
         # Afficher la distribution de la résolution pour les classes ALL_IDB1 et ALL_IDB2
-        st.write('Distribution de la résolution pour les classes ALL_IDB1 et ALL_IDB2')
+        st.markdown('<h4 style="text-align: center;">Distribution de la résolution pour les classes ALL_IDB1 et ALL_IDB2</h4>', unsafe_allow_html=True)
         fig3 = px.histogram(df_data_leukemia_dataset, x='Résolution', color='Classe')
         st.plotly_chart(fig3)
-
+        
         # Ajouter une boîte à moustaches pour la luminosité
-        st.write('Distribution de la luminosité pour les classes ALL_IDB1 et ALL_IDB2')
+        st.markdown('<h4 style="text-align: center;">Distribution de la luminosité pour les classes ALL_IDB1 et ALL_IDB2</h4>', unsafe_allow_html=True)
         fig4 = px.box(df_data_leukemia_dataset, x='Classe', y='Luminosité', color='Classe')
         st.plotly_chart(fig4)
         
         # Ajouter une boîte à moustaches pour la teinte
-        st.write('Distribution de la teinte pour les classes ALL_IDB1 et ALL_IDB2')
+        st.markdown('<h4 style="text-align: center;">Distribution de la teinte pour les classes ALL_IDB1 et ALL_IDB2</h4>', unsafe_allow_html=True)
         fig5 = px.box(df_data_leukemia_dataset, x='Classe', y='Teinte', color='Classe')
         st.plotly_chart(fig5)
 
