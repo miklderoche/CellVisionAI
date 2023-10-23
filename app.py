@@ -372,7 +372,7 @@ elif st.session_state['page'] == 'Analyse':
         st.plotly_chart(fig4)
         
         # Ajouter une boîte à moustaches pour la teinte
-        st.markdown('<h4 style="text-align: center;">Distribution de la teinte pour les classes ALL_IDB1 et ALL_IDB2</h4>', unsafe_allow_html=True)
+        st.markdown('<h6 style="text-align: center;">Distribution de la teinte pour les classes ALL_IDB1 et ALL_IDB2</h6>', unsafe_allow_html=True)
         fig5 = px.box(df_data_leukemia_dataset, x='Classe', y='Teinte', color='Classe')
         st.plotly_chart(fig5)
 
