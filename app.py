@@ -348,7 +348,7 @@ elif st.session_state['page'] == 'Analyse':
         st.write(df_data_leukemia_dataset.head())
             
         # Afficher le nombre de lignes et de colonnes du jeu de données
-        st.write('Nombre de lignes et de colonnes du jeu de données :' df_data_leukemia_dataset.shape)
+        st.write('Nombre de lignes et de colonnes du jeu de données :', df_data_leukemia_dataset.shape)
         
         st.write(
             '''
