@@ -344,47 +344,21 @@ elif st.session_state['page'] == 'Analyse':
             )
 ###@@@ GRAPHIQUES @@@###
 
-        # Charger les données depuis le fichier CSV
-        @st.cache
-        def load_data():
-            data = pd.read_csv('data/data_leukemia_dataset.csv')
-            return data
+        # Charger le jeu de données depuis le fichier CSV
+        chemin_fichier_csv = "data/data_leukemia_dataset.csv"
+        df = pd.read_csv(chemin_fichier_csv)
         
-        data = load_data()
+        # Afficher la distribution des classes ALL_IDB1 et ALL_IDB2
+        st.subheader("Distribution des classes ALL_IDB1 et ALL_IDB2")
+        class_counts = df['Classe'].value_counts()
+        fig1 = px.bar(class_counts, x=class_counts.index, y=class_counts.values, labels={'x': 'Classe', 'y': 'Nombre'})
+        st.plotly_chart(fig1)
         
-        # Créer une figure Plotly vide
-        fig = None
+        # Afficher la distribution de la dimension et de la résolution pour les classes ALL_IDB1 et ALL_IDB2
+        st.subheader("Distribution de la dimension et de la résolution par classe")
+        fig2 = px.scatter(df, x='Dimensions', y='Résolution', color='Classe', title="Dimension vs. Résolution")
         
-        # Créer une liste de boutons pour sélectionner la source
-        buttons = [
-            dict(label='ALL_IDB1',
-                 method='update',
-                 args=[{'visible': [True, False]}, {'title': 'Distribution des classes (cellules) pour ALL_IDB1'}]),
-            dict(label='ALL_IDB2',
-                 method='update',
-                 args=[{'visible': [False, True]}, {'title': 'Distribution des noms d\'images pour ALL_IDB2'}])
-        ]
-        
-        # Créer une figure Plotly avec deux sous-graphiques
-        fig = go.Figure(data=[
-            go.Bar(x=data['Classe'].unique(), y=data[data['Source'] == 'ALL_IDB1']['Classe'].value_counts(), name='ALL_IDB1'),
-            go.Bar(x=data['Nom image'], y=1, showlegend=False, visible=False, name='ALL_IDB2')  # Utilisé pour la sélection
-        ])
-        
-        # Mettre en place les boutons de sélection
-        fig.update_layout(updatemenu=[{'buttons': buttons,
-                                      'direction': 'down',
-                                      'showactive': True,
-                                      'x': 0.1,
-                                      'xanchor': 'left',
-                                      'y': 1.15,
-                                      'yanchor': 'top'}])
-        
-        # Mettre en place le titre initial
-        fig.update_layout(title='Distribution des classes (cellules) pour ALL_IDB1')
-        
-        # Afficher le graphique Plotly
-        st.plotly_chart(fig)
+        st.plotly_chart(fig2)
     
     with tab3:
         st.header("Acute Promyelocytic Leukemia (APL)")
