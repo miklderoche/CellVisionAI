@@ -341,7 +341,6 @@ elif st.session_state['page'] == 'Analyse':
             '''
             )
 
-
         # Afficher les 5 premières lignes de df_data_leukemia_dataset
         st.write(
             '''
@@ -349,7 +348,8 @@ elif st.session_state['page'] == 'Analyse':
             Les 5 premières lignes du jeu de données :
             '''
             )
-        st.write(df_data_leukemia_dataset.head())
+       
+        st.write(df_data_leukemia_dataset)
             
         # Afficher le nombre de lignes et de colonnes du jeu de données
         st.write('Nombre de lignes et de colonnes du jeu de données :', df_data_leukemia_dataset.shape)
@@ -373,6 +373,8 @@ elif st.session_state['page'] == 'Analyse':
 
         # Créer une nouvelle colonne pour différencier les patients sains et malades
         df_data_leukemia_dataset['Statut patient'] = df_data_leukemia_dataset['Leucémie_ALL'].apply(lambda x: 'Malade' if x == 1 else 'Sain')
+
+        st.write('')
         
         # Afficher la distribution des classes en distinguant les patients sains et malades
         fig1 = px.histogram(df_data_leukemia_dataset, x='Classe', color='Statut patient')
