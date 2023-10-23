@@ -350,7 +350,7 @@ elif st.session_state['page'] == 'Analyse':
         df_data_leukemia_dataset = pd.read_csv(chemin_fichier_csv)
         
         # Créer une nouvelle colonne pour différencier les patients sains et malades
-        df_data_leukemia_dataset['Statut_patient'] = df_data_leukemia_dataset['Leucémie_ALL'].apply(lambda x: 'Malade' if x == 1 else 'Sain')
+        df_data_leukemia_dataset['Statut patient'] = df_data_leukemia_dataset['Leucémie_ALL'].apply(lambda x: 'Malade' if x == 1 else 'Sain')
         
         # Afficher la distribution des classes en distinguant les patients sains et malades
         st.write('Distribution des classes ALL_IDB1 et ALL_IDB2 en distinguant les patients sains et malades')
