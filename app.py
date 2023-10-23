@@ -362,17 +362,17 @@ elif st.session_state['page'] == 'Analyse':
         st.plotly_chart(fig2)
         
         # Afficher la distribution de la résolution pour les classes ALL_IDB1 et ALL_IDB2
-        st.write('**Distribution de la résolution pour les classes ALL_IDB1 et ALL_IDB2%%')
+        st.write('**Distribution de la résolution pour les classes ALL_IDB1 et ALL_IDB2**')
         fig3 = px.histogram(df_data_leukemia_dataset, x='Résolution', color='Classe')
         st.plotly_chart(fig3)
 
         # Ajouter une boîte à moustaches pour la luminosité
-        st.subheader('Distribution de la luminosité pour les classes ALL_IDB1 et ALL_IDB2')
+        st.subheader('**Distribution de la luminosité pour les classes ALL_IDB1 et ALL_IDB2**')
         fig4 = px.box(df, x='Classe', y='Luminosité', color='Classe')
         st.plotly_chart(fig4)
         
         # Ajouter une boîte à moustaches pour la teinte
-        st.subheader('Distribution de la teinte pour les classes ALL_IDB1 et ALL_IDB2')
+        st.subheader('**Distribution de la teinte pour les classes ALL_IDB1 et ALL_IDB2**')
         fig5 = px.box(df, x='Classe', y='Teinte', color='Classe')
         st.plotly_chart(fig5)
 
