@@ -406,7 +406,7 @@ elif st.session_state['page'] == 'Analyse':
                                             'x': 0.1,
                                             'xanchor': 'left',
                                             'y': 1.1,
-                                            'yanchor': 'top'})
+                                            'yanchor': 'top'}])
         
         # Afficher le graphique initial (ALL_IDB1)
         fig = fig_idb1
