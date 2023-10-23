@@ -334,7 +334,24 @@ elif st.session_state['page'] == 'Analyse':
             - Classes : Patients sains et patients atteints de Leucémie Lymphoblastique Aiguë (ALL)
             
             Ce jeu de données contient des images de cellules sanguines provenant de patients sains et atteints de leucémie.
+            '''
+            )
+
+
+        # Afficher les 5 premières lignes de df_data_leukemia_dataset
+        st.write(
+            '''
+            Afin de faciliter l'analyse, un dataset a été extrait à partir des différentes informations des images dans les dossiers ALL_IDB1 et ALL_IDB2. 
+            Les 5 premières lignes du jeu de données :
+            '''
+            )
+        st.write(df_data_leukemia_dataset.head())
             
+        # Afficher le nombre de lignes et de colonnes du jeu de données
+        st.write('Nombre de lignes et de colonnes du jeu de données :' df_data_leukemia_dataset.shape)
+        
+        st.write(
+            '''
             **Analyse**
             
             - Une limitation est l'absence de classification des cellules, rendant difficile la vérification de la performance des modèles.
@@ -342,19 +359,26 @@ elif st.session_state['page'] == 'Analyse':
             - Diversité des données pour construire un modèle robuste.
             '''
             )
+        
+        # Créer une application Streamlit
+        st.title('Exemple de texte avec fond transparent')
+        
+        # Définir le texte avec une couleur de fond transparente
+        texte_formatte = """
+        <div style="background-color: rgba(0, 0, 0, 0.2); padding: 10px; border-radius: 0px;">
+        <p>Ceci est un exemple de texte avec un fond de couleur transparent.</p>
+        <p>Vous pouvez personnaliser la couleur en ajustant les valeurs RGBA.</p>
+        </div>
+        """
+        
+        # Afficher le texte formaté avec le fond transparent
+        st.markdown(texte_formatte, unsafe_allow_html=True)
+
 ###@@@ GRAPHIQUES @@@###
         
         # Charger le jeu de données depuis le fichier CSV
         chemin_fichier_csv = "data/data_leukemia_dataset.csv"
         df_data_leukemia_dataset = pd.read_csv(chemin_fichier_csv)
-
-        # Afficher les 5 premières lignes de df_data_leukemia_dataset
-        st.write('**Les 5 premières lignes du jeu de données :**')
-        st.write(df_data_leukemia_dataset.head())
-        
-        # Afficher le nombre de lignes et de colonnes du jeu de données
-        st.write('**Nombre de lignes et de colonnes du jeu de données :**')
-        st.write(df_data_leukemia_dataset.shape)
 
         # Créer une nouvelle colonne pour différencier les patients sains et malades
         df_data_leukemia_dataset['Statut patient'] = df_data_leukemia_dataset['Leucémie_ALL'].apply(lambda x: 'Malade' if x == 1 else 'Sain')
