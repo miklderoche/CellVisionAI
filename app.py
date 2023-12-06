@@ -5,7 +5,7 @@ import plotly.graph_objects as go
 
 # Initialisation de l'état de la session
 if 'page' not in st.session_state:
-    st.session_state['page'] = 'HAccueil'
+    st.session_state['page'] = 'Accueil'
 
 ## %%% BARE LATERALE %%% ##
 
